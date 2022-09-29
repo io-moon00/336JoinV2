@@ -1,9 +1,35 @@
 :root{
     --menu-color: #42526E;
-
+    --color-theme: #4589FF;
 }
 
 body{
     margin: 0;
     font-family: 'Open Sans';
+}
+
+.kontakt-circle{
+    width: 35px;
+    height: 35px;
+    border-radius: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.pos-rel{
+    position: relative;
+}
+
+.d-none{
+    display: none;
+}
+
+.flex{
+    display: flex;
 }
