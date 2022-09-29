@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/fonts.css">
     <link rel="stylesheet" href="../styles/board.css">
+    <link rel="stylesheet" href="../styles/colorStyle.css">
+    <link rel="stylesheet" href="../styles/BoradsHover.css">
     <link rel="stylesheet" href="../styles/generalStyle.css">
     <title>Board</title>
 </head>
@@ -22,11 +24,11 @@
                 <div class="flex top-section">
                     <div class="search-field">
                         <input type="text" placeholder="Find Task">
-                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" class="pointer">
                             <path d="M9 0.343018C13.968 0.343018 18 4.37502 18 9.34302C18 14.311 13.968 18.343 9 18.343C4.032 18.343 0 14.311 0 9.34302C0 4.37502 4.032 0.343018 9 0.343018ZM9 16.343C12.867 16.343 16 13.21 16 9.34302C16 5.47502 12.867 2.34302 9 2.34302C5.132 2.34302 2 5.47502 2 9.34302C2 13.21 5.132 16.343 9 16.343ZM17 15.843L19.6247 18.535C20.0068 18.9269 20.0028 19.5532 19.6158 19.9402L19.5972 19.9588C19.2102 20.3458 18.5839 20.3498 18.192 19.9677L15.5 17.343L17 15.843Z" fill="black"/>
                         </svg>       
                     </div>
-                    <button class="add-task-button">
+                    <button class="add-task-button pointer">
                         <span>Add task</span>
                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
                             <path d="M8.5 1V16" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -39,13 +41,13 @@
                     <div class="task-column">
                         <div class="category-top">
                             <span class="category-title">To do</span>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                <path d="M15 7.5V22.5" stroke="#4589FF" stroke-width="2" stroke-linecap="round" />
-                                <path d="M22.5 15.1416L7.5 15.1416" stroke="#4589FF" stroke-width="2" stroke-linecap="round" />
-                                <rect x="1" y="1" width="28" height="28" rx="9" stroke="#4589FF" stroke-width="2" />
+                            <svg viewBox="0 0 30 30" class="pointer add-svg">
+                                <path class="path-fill" d="M15 7.5V22.5"/>
+                                <path class="path-fill" d="M22.5 15.1416L7.5 15.1416"/>
+                                <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9" />
                             </svg>
                         </div>
-                        <div class="task-card">
+                        <div class="task-card pointer">
                             <div class="category-tag design">Design</div>
                             <h3 class="task-title">Webseite redesign</h3>
                             <span class="task-description">Modify the contents of the main webseite</span>
@@ -70,13 +72,13 @@
                     <div class="task-column">
                         <div class="category-top">
                             <span class="category-title">In progress</span>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                <path d="M15 7.5V22.5" stroke="#4589FF" stroke-width="2" stroke-linecap="round" />
-                                <path d="M22.5 15.1416L7.5 15.1416" stroke="#4589FF" stroke-width="2" stroke-linecap="round" />
-                                <rect x="1" y="1" width="28" height="28" rx="9" stroke="#4589FF" stroke-width="2" />
+                            <svg viewBox="0 0 30 30" class="pointer add-svg">
+                                <path class="path-fill" d="M15 7.5V22.5"/>
+                                <path class="path-fill" d="M22.5 15.1416L7.5 15.1416"/>
+                                <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9"/>
                             </svg>
                         </div>
-                        <div class="task-card">
+                        <div class="task-card pointer">
                             <div class="category-tag sales">Sales</div>
                             <h3 class="task-title">Call potencial clients</h3>
                             <span class="task-description">Make the product presentation to prospective buyers</span>
@@ -88,7 +90,7 @@
                                 </div>
                                 <svg viewBox="0 0 21 15" class="task-priority">
                                     <path d="M9.00026 5.25488C9.19969 5.25455 9.39397 5.31645 9.55451 5.43149L17.123 10.8655C17.2215 10.9362 17.3046 11.0251 17.3678 11.1272C17.4309 11.2292 17.4727 11.3423 17.4909 11.46C17.5276 11.6978 17.4656 11.94 17.3186 12.1334C17.1716 12.3267 16.9516 12.4554 16.7071 12.4911C16.4625 12.5267 16.2134 12.4665 16.0145 12.3236L9.00026 7.29262L1.98602 12.3236C1.88754 12.3943 1.7757 12.4455 1.65687 12.4743C1.53803 12.503 1.41455 12.5087 1.29345 12.4911C1.17235 12.4734 1.05602 12.4327 0.951088 12.3714C0.846159 12.31 0.754691 12.2291 0.681906 12.1334C0.609122 12.0376 0.556445 11.9289 0.526885 11.8134C0.497325 11.6978 0.491459 11.5778 0.509623 11.46C0.527789 11.3423 0.569626 11.2292 0.632752 11.1272C0.695876 11.0251 0.779049 10.9362 0.877524 10.8654L8.44602 5.43149C8.60656 5.31645 8.80083 5.25455 9.00026 5.25488Z" fill="#FF3D00"/>
-                                    <path d="M9.00002 0.500001C9.19945 0.499667 9.39372 0.56157 9.55427 0.676604L17.1228 6.11057C17.3216 6.25348 17.454 6.46736 17.4907 6.70514C17.5273 6.94292 17.4654 7.18513 17.3184 7.37849C17.1714 7.57185 16.9514 7.70051 16.7068 7.73618C16.4623 7.77185 16.2131 7.7116 16.0143 7.56868L9.00002 2.53774L1.98577 7.56868C1.78689 7.7116 1.53777 7.77185 1.2932 7.73618C1.04863 7.70051 0.828657 7.57185 0.681662 7.37849C0.534667 7.18513 0.472695 6.94292 0.509379 6.70514C0.546065 6.46736 0.678402 6.25348 0.87728 6.11057L8.44577 0.676604C8.60631 0.561569 8.80059 0.499667 9.00002 0.500001Z" fill="#FF3D00"/>
+                                    <path d="M9.00002 0.500001C9.19945 0.499667 9.39372 0.56157 9.55427 0.676604L17.1228 6.11057C17.3216 6.25348 17.454 6.46736 17.4907 6.70514C17.5273 6.94292 17.4654 7.18513 17.3184 7.37849C17.1714 7.57185 16.9514 7.70051 16.7068 7.73618C16.4623 7.77185 16.2131 7.7116 16.0143 7.56868L9.00002 2.53774L1.98577 7.56868C1.78689 7.7116 1.53777 7.77185 1.2932 7.73618C1.04863 7.70051 0.828657 7.57185 0.681662 7.37849C0.534667 7.18513 0.472695 6.94292 0.509379 6.70514C0.546065 6.46736 0.678402 6.25348 0.87728 6.11057L8.44577 0.676604C8.60631 0.561569 8.80059 0.499667 9.00002 0.500001Z"  fill="#FF3D00"/>
                                 </svg>
                              </div>
                         </div>
@@ -97,13 +99,13 @@
                     <div class="task-column">
                         <div class="category-top">
                             <span class="category-title">Await feedback</span>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                <path d="M15 7.5V22.5" stroke="#4589FF" stroke-width="2" stroke-linecap="round" />
-                                <path d="M22.5 15.1416L7.5 15.1416" stroke="#4589FF" stroke-width="2" stroke-linecap="round" />
-                                <rect x="1" y="1" width="28" height="28" rx="9" stroke="#4589FF" stroke-width="2" />
+                            <svg viewBox="0 0 30 30" class="pointer add-svg">
+                                <path class="path-fill" d="M15 7.5V22.5"/>
+                                <path class="path-fill" d="M22.5 15.1416L7.5 15.1416"/>
+                                <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9"/>
                             </svg>
                         </div>
-                        <div class="task-card">
+                        <div class="task-card pointer">
                             <div class="category-tag backoffice">Backoffice</div>
                             <h3 class="task-title">Accounting invoices</h3>
                             <span class="task-description">Write open invoices for customer</span>
@@ -124,13 +126,13 @@
                     <div class="task-column">
                         <div class="category-top">
                             <span class="category-title">Done</span>
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                <path d="M15 7.5V22.5" stroke="#4589FF" stroke-width="2" stroke-linecap="round" />
-                                <path d="M22.5 15.1416L7.5 15.1416" stroke="#4589FF" stroke-width="2" stroke-linecap="round" />
-                                <rect x="1" y="1" width="28" height="28" rx="9" stroke="#4589FF" stroke-width="2" />
+                            <svg viewBox="0 0 30 30" class="pointer add-svg">
+                                <path class="path-fill" d="M15 7.5V22.5"/>
+                                <path class="path-fill" d="M22.5 15.1416L7.5 15.1416"/>
+                                <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9"/>
                             </svg>
                         </div>
-                        <div class="task-card">
+                        <div class="task-card pointer">
                             <div class="category-tag marketing">Marketing</div>
                             <h3 class="task-title">Social media strategy</h3>
                             <span class="task-description">Develop and ad campaign for brand positioning Develop an ad campaign for brand positioning</span>

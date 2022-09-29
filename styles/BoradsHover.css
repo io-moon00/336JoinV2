@@ -1,0 +1,12 @@
+.add-task-button:hover{
+    background-color: #005DFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.pointer:hover{
+    cursor: pointer;
+}
+
+.add-svg:hover .path-fill{
+    stroke:var(--light-blue);
+}
