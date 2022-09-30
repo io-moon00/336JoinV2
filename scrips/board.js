@@ -59,8 +59,16 @@ function moveTo(status){
 }
 
 function addEmptyCard(){
-    document.getElementById('to-do-tasks').innerHTML += `<div style = "width: 250px; height: 220px"></div>`;
-    document.getElementById('progress-tasks').innerHTML += `<div style = "width: 250px; height: 220px"></div>`;
-    document.getElementById('feedback-tasks').innerHTML += `<div style = "width: 250px; height: 220px"></div>`;
-    document.getElementById('done-tasks').innerHTML += `<div style = "width: 250px; height: 220px"></div>`;
+    document.getElementById('to-do-tasks').innerHTML += `<div id= "to-do-tasks-empty" class = "empty-task-card"></div>`;
+    document.getElementById('progress-tasks').innerHTML += `<div id= "progress-tasks-empty" class = "empty-task-card"></div>`;
+    document.getElementById('feedback-tasks').innerHTML += `<div id= "feedback-tasks-empty"  class = "empty-task-card"></div>`;
+    document.getElementById('done-tasks').innerHTML += `<div id= "done-tasks-empty"  class = "empty-task-card"></div>`;
+}
+
+function highlight(id){
+    document.getElementById(id).classList.add('drag-area-border');
+}
+
+function removeHighlight(id){
+    document.getElementById(id).classList.remove('drag-area-border');
 }

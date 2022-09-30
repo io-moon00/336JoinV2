@@ -182,6 +182,22 @@ input{
     fill: none;
 }
 
+.empty-task-card{
+    width: 250px;
+    height: 220px;
+    box-sizing: border-box;
+    margin-top: 35px;
+}
+
+.dragging {
+    transform: rotate(2.5deg);
+}
+
+.drag-area-border{
+    border: 1px dashed #A8A8A8;
+    border-radius: 30px;
+}
+
 .navbar{
     width: 232px;
     height: 100vh;

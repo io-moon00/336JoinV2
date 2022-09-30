@@ -50,7 +50,7 @@
                                 <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9" />
                             </svg>
                         </div>
-                        <div id="to-do-tasks" ondrop="moveTo('to-do')" ondragover="allowDrop(event)">
+                        <div id="to-do-tasks" ondrop="moveTo('to-do')" ondragover="allowDrop(event); highlight('to-do-tasks-empty')" ondragleave="removeHighlight('to-do-tasks-empty')">
 
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                                 <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9"/>
                             </svg>
                         </div>
-                        <div id="progress-tasks" ondrop="moveTo('progress')" ondragover="allowDrop(event)">
+                        <div id="progress-tasks" ondrop="moveTo('progress')" ondragover="allowDrop(event); highlight('progress-tasks-empty')" ondragleave="removeHighlight('progress-tasks-empty')">
 
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                                 <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9"/>
                             </svg>
                         </div>
-                        <div id="feedback-tasks" ondrop="moveTo('feedback')" ondragover="allowDrop(event)">
+                        <div id="feedback-tasks" ondrop="moveTo('feedback')" ondragover="allowDrop(event); highlight('feedback-tasks-empty')" ondragleave="removeHighlight('feedback-tasks-empty')">
 
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                                 <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9"/>
                             </svg>
                         </div>
-                        <div id="done-tasks" ondrop="moveTo('done')" ondragover="allowDrop(event)">
+                        <div id="done-tasks" ondrop="moveTo('done')" ondragover="allowDrop(event); highlight('done-tasks-empty')" ondragleave="removeHighlight('done-tasks-empty')">
 
                         </div>
                     </div>

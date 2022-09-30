@@ -1,5 +1,5 @@
 function loadTaskCardHTML(i){
-    return `<div draggable="true" ondragstart="startDragging(${tasks[i].id})" class="task-card pointer">
+    return `<div id="card-${tasks[i].id}" draggable="true" ondragstart="startDragging(${tasks[i].id})" class="task-card pointer">
         <div class="category-tag design">${tasks[i].category}</div>
         <h3 class="task-title">${tasks[i].title}</h3>
         <span class="task-description">${tasks[i].description}</span>
