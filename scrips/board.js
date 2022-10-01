@@ -1,6 +1,10 @@
 let currentDraggedTask;
 
-
+async function init(){
+    await includeHTML();
+    markActivePage('board');
+    loadAllTasks();
+}
 
 function loadAllTasks(){
     clearTaskBoard();

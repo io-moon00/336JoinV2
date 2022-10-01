@@ -10,18 +10,20 @@
     <link rel="stylesheet" href="../styles/colorStyle.css">
     <link rel="stylesheet" href="../styles/BoradsHover.css">
     <link rel="stylesheet" href="../styles/generalStyle.css">
+    <link rel="stylesheet" href="../templates/sideBarStyle.css">
     <title>Board</title>
     <script src="../scrips/board.js"></script>
     <script src="../scrips/HTMLTemplates.js"></script>
     <script src="../scrips/tasks.js"></script>
+    <script src="../scrips/script.js"></script>
 </head>
 
-<body onload="loadAllTasks()">
+<body onload="init()">
     <header>
 
     </header>
     <div class="content">
-        <div class="navbar">Navbar</div>
+        <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
         <div class="tasks">
             <div>
                 <div class="flex top-section">

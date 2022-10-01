@@ -8,6 +8,8 @@ h3{
 }
 
 .tasks{
+    margin-top: 92px;
+    margin-left: 234px;
     padding: 74px 70px;
     width: 100%;
 }
@@ -198,14 +200,11 @@ input{
     border-radius: 30px;
 }
 
-.navbar{
-    width: 232px;
-    height: 100vh;
-    background-color: white;
-    border-right: 1px solid rgba(0, 0, 0, 0.08);
-}
-
 header{
     background-color: var(--main-color);
-    height: 100px;
+    height: 92px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
