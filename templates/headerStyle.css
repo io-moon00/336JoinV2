@@ -1,0 +1,31 @@
+header{
+    background-color: var(--main-color);
+    height: 92px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 39px;
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 20px;
+    height: 39px;
+}
+
+.right-header-section{
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.user-profile-img{
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background-color: white;
+}
