@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../styles/colorStyle.css">
+    <link rel="stylesheet" href="../styles/fonts.css">
+    <link rel="stylesheet" href="../styles/generalStyle.css">
+    <link rel="stylesheet" href="../styles/summaryStyle.css">
+    <link rel="stylesheet" href="../templates/headerStyle.css">
+    <link rel="stylesheet" href="../templates/sideBarStyle.css">
+    <title>Summary</title>
+    <script src="../scrips/script.js"></script>
+    <script src="../scrips/summary.js"></script>
+</head>
+
+<body onload="init()">
+    <header w3-include-html="../templates/header.html">
+
+    </header>
+    <div class="content">
+        <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
+        <div class="summary-board">
+            <div class="greet">
+                <span class="greeting-text">Good morning,</span>
+                <span class="user-name">Sofia Müller</span>
+            </div>
+            <div>
+                <div class="summary-board-top-section">
+                    <div class="task-urgency">
+                        <div class="left-urgency-section">
+                            <div class="flex urgent-summary">
+                                <img class="urgency-icon" src="../img/urgency-icon-with-border.svg">
+                                <span class="tasks-amount">1</span>
+                            </div>
+                            <span class="task-urgent-text">Tasks Urgent</span>
+                        </div>
+                        <img src="../img/vertical-line.svg">
+                        <div class="right-urgency-section">
+                            <span class="date">October 16, 2022</span>
+                            <span class="deadline">Upcoming Deadline</span>
+                        </div>
+                    </div>
+                    <div class="to-do-task-summary">
+                        <div class="to-do-top">
+                            <img src="../img/board-summary-icon.svg">
+                            <span class="tasks-amount">1</span>
+                        </div>
+                        <span class="to-do-text">Tasks To-do</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

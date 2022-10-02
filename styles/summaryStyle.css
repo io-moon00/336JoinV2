@@ -1,0 +1,109 @@
+.summary-board{
+    margin-top: 92px;
+    margin-left: 234px;
+    padding: 74px 70px;
+}
+
+.greet{
+    margin-bottom: 78px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.greeting-text{
+    font-size: 48px;
+    line-height: 57.6px;
+    color: #2A3647;
+    margin-right: 22px;
+}
+
+.user-name{
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 76.8px;
+    color: var(--main-color);
+}
+
+.summary-board-top-section{
+    display: flex;
+    gap: 35px;
+}
+
+.task-urgency{
+    display: flex;
+    padding: 28px 99px;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 30px;
+    width: fit-content;
+    box-sizing: border-box;
+    gap: 35px;
+}
+
+.tasks-amount{
+    font-size: 48px;
+    line-height: 57.6px;
+    font-weight: 700;
+}
+
+.left-urgency-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.urgent-summary{
+    align-items: center;
+}
+
+.urgency-icon{
+    width: 65px;
+    height: 65px;
+    margin-right: 25px;
+    margin-bottom: 14px;
+}
+
+.task-urgent-text{
+    font-size: 23px;
+    line-height: 27.6px;
+}
+
+.right-urgency-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 13px;
+}
+
+.date{
+    font-size: 33px;
+    line-height: 39.6px;
+}
+
+.deadline{
+    font-size: 23px;
+    line-height: 27.6px;
+}
+
+.to-do-task-summary{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--versio-2-main-color);
+    padding: 40px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.to-do-top{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.to-do-text{
+    color: var(--main-color);
+    font-size: 23px;
+    line-height: 27.6px;
+}
