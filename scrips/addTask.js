@@ -1,4 +1,4 @@
 async function init(){
     await includeHTML();
-    markActivePage('contacts');
+    markActivePage('addTask');
 }
