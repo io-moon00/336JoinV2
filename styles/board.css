@@ -179,9 +179,8 @@ input{
     position: absolute;
     bottom: 10.5px;
     right: 18px;
-    width:21;
-    height: 15px;; 
-    fill: none;
+    width: 17px;
+    height: 12px;
 }
 
 .empty-task-card{

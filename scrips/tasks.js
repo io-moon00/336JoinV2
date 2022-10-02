@@ -33,7 +33,7 @@ let tasks = [
     },
 
     {
-        "id":2,
+        "id":3,
         "category": "marketing",
         "title": "Social media strategy",
         "description": "Develop and ad campaign for brand positioning Develop an ad campaign for brand positioning",
@@ -42,7 +42,5 @@ let tasks = [
         "priority": "low",
         "assignedTo": ["sm", "mv", "ef"],
     }
-
-
 ]
     
