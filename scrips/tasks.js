@@ -4,7 +4,7 @@ let tasks = [
         "category": "design",
         "title": "Website redesign",
         "description": "Modify the contents of the main website",
-        "status": "to-do",
+        "status": "toDo",
         "progress": "1/2",
         "priority": "low",
         "assignedTo": ["sm", "mv", "ef"],
