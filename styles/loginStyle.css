@@ -1,0 +1,37 @@
+.front-wrapper{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bg 250ms;
+    animation-fill-mode: forwards;
+}
+
+.fill-animation{
+    fill: rgb(255, 255, 255);
+    animation: fill 250ms;
+    animation-fill-mode: forwards;
+}
+
+.logo {
+    width: 265px;
+    animation: mymove 250ms;
+    animation-fill-mode: forwards;
+    position: absolute;
+    top: 30%;
+    left: 35%
+  }
+  
+  @keyframes mymove {
+    to {top: 80px; left: 77px; width: 100px;}
+  }
+
+  @keyframes fill {
+    to{fill: var(--main-color);}
+  }
+
+  @keyframes bg {
+    to{background-color: white;}
+  }
