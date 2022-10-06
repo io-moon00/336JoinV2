@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
     <script src="../scrips/tasks.js"></script>
     <script src="../scrips/addTask.js"></script>
 </head>
+
 <body onload="init()">
     <header w3-include-html="../templates/header.html">
 
@@ -42,10 +44,11 @@
             <div>
                 <h2>Category</h2>
             </div>
-            <div class="categorie-container">
-                <h3>Select task category</h3>
-                <img class="arrow-down" src="../img/arrow-down.png">
-            </div>
+
+            <select class="select-categorie">
+                <option disabled selected>Select task category</option>
+            </select>
+
             <div class="arrow-container">
                 <div class="urgent-container">
                     <p class="h3-urgent-font">Urgent</p>
@@ -107,4 +110,5 @@
 
 
 </body>
+
 </html>
