@@ -13,6 +13,7 @@
 }
 
 .title-container {
+    margin-bottom: 25px;
     width: 422px;
     height: 74px;
     gap: 10px;
@@ -115,7 +116,6 @@ h3 {
 
 .arrow-container {
     display: flex;
-    margin-top: 45px;
     margin-bottom: 25px;
 }
 
@@ -179,19 +179,6 @@ textarea::placeholder {
 
 }
 
-
-.subtasks-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 51px;
-    width: 422px;
-    left: 0px;
-    top: 0px;
-    border-bottom: 1px solid #D1D1D1;
-    margin-bottom: 9, 5px;
-
-}
 
 .square {
     margin-right: 20px;
@@ -330,7 +317,6 @@ textarea::placeholder {
 }
 
 .select-categorie {
-    font-size: ;
     height: 51px;
     width: 422px;
     left: 0px;
@@ -342,9 +328,9 @@ textarea::placeholder {
     appearance: none;
     background-repeat: no-repeat;
     background-image: url(../img/arrow-down.png);
-    background-position: right 0.7rem top 50%;
+    background-position: right 0.7rem top 70%;
     background-size: 16px;
-    color: #D1D1D1;
+    color: #000000;
     position: relative;
     font-family: Open Sans;
     font-size: 19px;

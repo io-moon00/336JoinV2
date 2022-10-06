@@ -28,12 +28,12 @@
         <div class="addTask-container">
             <div class="title-container">
                 <input type="text" class="input" required="" placeholder="Enter a title">
+            </div>
 
-            </div>
-            <div class="select-container">
-                <h3>Select contacts to assign</h3>
-                <img class="arrow-down" src="../img/arrow-down.png">
-            </div>
+            <select class="select-categorie" style="margin-bottom: 25px;">
+                <option disabled selected>Select contacts to assign</option>
+            </select>
+
             <div>
                 <h2>Due Date</h2>
             </div>
@@ -45,7 +45,7 @@
                 <h2>Category</h2>
             </div>
 
-            <select class="select-categorie">
+            <select class="select-categorie" style="margin-bottom: 45px;">
                 <option disabled selected>Select task category</option>
             </select>
 
@@ -82,10 +82,9 @@
             <div>
                 <h2>Subtasks</h2>
             </div>
-            <div class="subtasks-container">
-                <h3 class="date-font">Add new subtask</h3>
-                <img class="arrow-down" src="../img/plus.png">
-            </div>
+            <select class="select-categorie" style="background-image: url(../img/plus.png); color: #d1d1d1; ">
+                <option disabled selected>Add new subtask</option>
+            </select>
             <div class="footer-container">
                 <div class="subtask-container">
                     <div class="square"></div>
