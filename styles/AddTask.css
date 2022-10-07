@@ -86,15 +86,45 @@ h3 {
 }
 
 .date-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     height: 51px;
-    width: 422px;
+    width: 400px;
     left: 0px;
-    margin-top: 8px;
-    margin-bottom: 45px;
-    border-bottom: 1px solid #D1D1D1
+    top: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #D1D1D1;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-image: url(../img/date.png);
+    background-position: right 0.7rem top 70%;
+    background-size: 23px;
+    color: #D1D1D1;
+    position: relative;
+    font-family: Open Sans;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 21px;
+    padding-top: 14px;
+}
+
+
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
 }
 
 .date-font {
@@ -243,15 +273,18 @@ textarea::placeholder {
 }
 
 .create-container {
+    background-color: var(--main-color);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: white;
+    text-align: center;
+    font-size: 23px;
+    line-height: 27.6px;
+    border: none;
+    gap: 10px;
+    width: 184px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 61px;
-    width: 180px;
-    left: 161px;
-    top: 0px;
-    border-radius: 10px;
-    background: #4589FF;
 }
 
 .createTask {
@@ -263,8 +296,9 @@ textarea::placeholder {
     text-align: left;
     color: #FFFFFF;
     padding-left: 2px;
-    padding-right: 14px;
+    padding-right: 4px;
     margin: 0;
+    width: 160px;
 }
 
 .arrow-red1 {
@@ -340,4 +374,12 @@ textarea::placeholder {
     text-align: left;
     padding-left: 21px;
     padding-top: 14px;
+}
+
+textarea:focus, input:focus, select:focus {
+    outline: none;
+}
+
+.button:hover {
+    cursor: pointer;
 }

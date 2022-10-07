@@ -43,4 +43,3 @@ let tasks = [
         "assignedTo": ["sm", "mv", "ef"],
     }
 ]
-    
