@@ -1,4 +1,4 @@
-let tasks = [
+ [
     {   
         "id":0,
         "category": "design",
@@ -8,7 +8,7 @@ let tasks = [
         "progress": "1/2",
         "priority": "low",
         "duDate": "",
-        "assignedTo": ["sm", "mv", "ef"],
+        "assignedTo": ["sm", "mv", "ef"]
     },
 
     {
@@ -19,7 +19,7 @@ let tasks = [
         "status": "progress",
         "progress": "",
         "priority": "high",
-        "assignedTo": ["sm", "mv", "ef"],
+        "assignedTo": ["sm", "mv", "ef"]
     },
 
     {
@@ -30,7 +30,7 @@ let tasks = [
         "status": "feedback",
         "progress": "",
         "priority": "medium",
-        "assignedTo": ["sm", "mv", "ef"],
+        "assignedTo": ["sm", "mv", "ef"]
     },
 
     {
@@ -41,6 +41,6 @@ let tasks = [
         "status": "done",
         "progress": "3/3",
         "priority": "low",
-        "assignedTo": ["sm", "mv", "ef"],
+        "assignedTo": ["sm", "mv", "ef"]
     }
 ]
