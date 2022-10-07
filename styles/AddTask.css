@@ -129,7 +129,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .date-font {
     margin: 0;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;

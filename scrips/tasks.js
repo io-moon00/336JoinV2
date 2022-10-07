@@ -7,6 +7,7 @@ let tasks = [
         "status": "toDo",
         "progress": "1/2",
         "priority": "low",
+        "duDate": "",
         "assignedTo": ["sm", "mv", "ef"],
     },
 
