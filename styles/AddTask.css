@@ -152,6 +152,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .urgent-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 51px;
     width: 136px;
     left: 0px;
@@ -159,11 +160,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-right: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 4px 0px #00000029;
+    background: #FFFFFF;
+    padding: 18px 10px 18px 10px;
+    border: none;
 }
 
 .h3-urgent-font {
     padding-top: 14px;
-    padding-left: 22px;
+    padding-left: 6px;
     padding-bottom: 14px;
     padding-right: 22px;
     font-family: Open Sans;
@@ -248,6 +252,9 @@ textarea::placeholder {
     border-radius: 10px;
     border: 1px solid #647188;
     margin-right: 25px;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+        linear-gradient(0deg, #647188, #647188);
+
 }
 
 
@@ -285,6 +292,11 @@ textarea::placeholder {
     width: 184px;
     display: flex;
     align-items: center;
+}
+
+.create-container:hover {
+    background-color: #005DFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .createTask {
@@ -376,10 +388,12 @@ textarea::placeholder {
     padding-top: 14px;
 }
 
-textarea:focus, input:focus, select:focus {
+textarea:focus,
+input:focus,
+select:focus {
     outline: none;
 }
 
-.button:hover {
+button:hover {
     cursor: pointer;
 }
