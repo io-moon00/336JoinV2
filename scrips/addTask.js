@@ -75,7 +75,7 @@ async function getTasks (){
     }
  }
 
-
+ 
 function clearTaskForm () {
     document.getElementById('category').value = '';
     document.getElementById('title').innerHTML = '';
