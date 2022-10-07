@@ -1,0 +1,73 @@
+.display-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.display-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.mail-name {
+    display: flex;
+    flex-direction: column;
+}
+.contact-container {
+    display: flex;
+    height: 100vh;
+    margin-top: 92px;
+    margin-left: 234px;
+    padding: 74px 70px;
+    box-shadow: 0 15px 15px 0px rgb(0 0 0 / 30%);
+}
+.headline {
+    margin-bottom: 20px;
+    width: 300px;
+    height: 30px;
+    border-bottom: 1px solid #D1D1D1;
+}
+.btn-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: sticky;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    
+}
+.new-contact-btn:hover {
+    background-color: #f86600;
+    transition: all 225ms ease-in-out;
+    cursor: pointer;
+}
+.new-contact-btn {
+    background-color:#4589FF; 
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 5px 15px 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.new-contact-btn img {
+    margin-left: 15px;
+}
+.contact-name-container {
+    padding-bottom: 30px;
+}
+.contact-name {
+    margin-left: 15px;
+}
+.contact-name-container:hover {
+    background-color: #4589FF;
+    transition: all 225ms ease-in-out;
+    border-radius: 15px;
+    display: inline-flex;
+    padding: 15px 15px 15px 15px;
+    cursor: pointer;
+}
+.new-contact {
+ 
+}
