@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../styles/fonts.css">
     <link rel="stylesheet" href="../styles/colorStyle.css">
     <link rel="stylesheet" href="../styles/AddTask.css">
-    <title>Contacts</title>
+    <title>Add Task</title>
     <script src="../scrips/script.js"></script>
     <script src="../scrips/tasks.js"></script>
     <script src="../scrips/addTask.js"></script>
@@ -27,10 +27,10 @@
 
         <div class="addTask-container">
             <div class="title-container">
-                <input type="text" class="input" required="" placeholder="Enter a title">
+                <input type="text" class="input" id="tasktitle" required="" placeholder="Enter a title">
             </div>
 
-            <select class="select-categorie" style="margin-bottom: 25px;">
+            <select class="select-categorie" style="margin-bottom: 25px;" id="assignedTo">
                 <option >Select contacts to assign</option>
             </select>
 
@@ -39,14 +39,14 @@
             </div>
 
 
-            <input class="date-container" type="date" name="effective-date" minlength="1" maxlength="64" placeholder=" "
+            <input class="date-container" id="dueDate" type="date" name="effective-date" minlength="1" maxlength="64" placeholder=" "
                 autocomplete="nope" required="required"></input>
 
             <div>
                 <h2>Category</h2>
             </div>
 
-            <select class="select-categorie" style="margin-bottom: 45px;">
+            <select class="select-categorie" id="category" style="margin-bottom: 45px;">
                 <option disabled selected>Select task category</option>
                 <option>Low</option>
                 <option>Medium</option>
@@ -62,26 +62,26 @@
                         <img class="arrow-red2" src="../img/arrow-red.png">
                     </div>
                 </button>
-                <div class="urgent-container">
+                <button class="urgent-container">
                     <p class="h3-urgent-font">Medium</p>
                     <div class="arrow-red-container">
                         <img class="arrow-yellow1" src="../img/arrow-yellow.png">
                         <img class="arrow-yellow2" src="../img/arrow-yellow.png">
                     </div>
-                </div>
-                <div class="urgent-container">
+                </button>
+                <button class="urgent-container">
                     <p class="h3-urgent-font">Low</p>
                     <div class="arrow-red-container">
                         <img class="arrow-red1" src="../img/arrow-green.png">
                         <img class="arrow-red2" src="../img/arrow-green.png">
                     </div>
-                </div>
+                </button>
             </div>
             <div>
                 <h2>Description</h2>
             </div>
 
-            <textarea class="description-container" placeholder="Enter a Discription"></textarea>
+            <textarea class="description-container" id="desc" placeholder="Enter a Discription"></textarea>
 
 
             <div>
@@ -96,10 +96,11 @@
                     <span class="subtask1">Subtask 1</span>
                 </div>
                 <div class="clear-create">
-                    <div class="clear-container">
+                    
+                    <button class="clear-container">
                         <span class="clear">Clear</span>
                         <img src="../img/Vector.png">
-                    </div>
+                    </button>
                     
                     <button class="create-container">
                         <span class="createTask">Create Task</span>
