@@ -28,19 +28,19 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: bg 250ms;
+    animation: bg 500ms;
     animation-fill-mode: forwards;
 }
 
 .fill-animation{
     fill: rgb(255, 255, 255);
-    animation: fill 250ms;
+    animation: fill 500ms;
     animation-fill-mode: forwards;
 }
 
 .logo {
     width: 265px;
-    animation: mymove 250ms;
+    animation: mymove 500ms;
     animation-fill-mode: forwards;
     position: absolute;
     top: 30%;
