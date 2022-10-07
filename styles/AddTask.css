@@ -397,3 +397,24 @@ select:focus {
 button:hover {
     cursor: pointer;
 }
+
+.priority {
+    border: none;
+    display: flex;
+}
+
+.priority option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
+    width: 136px;
+    left: 0px;
+    top: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 0px #00000029;
+    background: #FFFFFF;
+    padding: 18px 10px 18px 10px;
+}
+
