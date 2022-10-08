@@ -363,7 +363,7 @@ button:hover {
     margin-bottom: 25px;
 }
 
-.btn-priority {
+.btn-priority1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -379,7 +379,65 @@ button:hover {
     border: none;
 }
 
-.p-arrow-red{
+.btn-priority1:hover {
+    background: #FFFFFF;
+    border-bottom: 2px solid #FF3D00;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    flex: none;
+
+}
+
+.btn-priority2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
+    width: 136px;
+    left: 0px;
+    top: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 18px 10px 18px 10px;
+    box-shadow: 0px 0px 4px 0px #00000029;
+    background: #FFFFFF;
+    border: none;
+}
+
+.btn-priority2:hover {
+    background: #FFFFFF;
+    border-bottom: 2px solid #FFA800;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    flex: none;
+ 
+}
+
+.btn-priority3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
+    width: 136px;
+    left: 0px;
+    top: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 18px 10px 18px 10px;
+    box-shadow: 0px 0px 4px 0px #00000029;
+    background: #FFFFFF;
+    border: none;
+}
+
+.btn-priority3:hover {
+    background: #FFFFFF;
+    border-bottom: 2px solid #7AE229;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    flex: none;
+}
+
+.p-arrow-red {
     position: relative;
     right: 10px;
     height: 23px;
@@ -393,7 +451,7 @@ button:hover {
     margin: 0;
 }
 
-.p-arrow-yellow{
+.p-arrow-yellow {
     position: relative;
     right: 10px;
     height: 23px;
@@ -407,7 +465,7 @@ button:hover {
     margin: 0;
 }
 
-.p-arrow-green{
+.p-arrow-green {
     height: 23px;
     width: 62px;
     font-family: Open Sans;
@@ -426,6 +484,7 @@ button:hover {
     right: -10px;
     width: 20px;
 }
+
 
 
 .arrow-yellow {
