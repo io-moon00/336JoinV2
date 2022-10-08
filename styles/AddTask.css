@@ -109,6 +109,7 @@ h3 {
     text-align: left;
     padding-left: 21px;
     padding-top: 14px;
+    margin-bottom: 45px;
 }
 
 
@@ -295,29 +296,6 @@ textarea::placeholder {
     width: 160px;
 }
 
-.arrow-red1 {
-    position: relative;
-    top: 0px;
-    right: 7px;
-}
-
-.arrow-red2 {
-    position: relative;
-    top: -5px;
-    right: 7px;
-}
-
-.arrow-yellow1 {
-    position: relative;
-    top: -2px;
-    right: 11px;
-}
-
-.arrow-yellow2 {
-    position: relative;
-    top: 0px;
-    right: 11px;
-}
 
 .slash-container {
     position: relative;
@@ -380,48 +358,86 @@ button:hover {
     cursor: pointer;
 }
 
-#priority {
-    border: none;  
-    width: 1000px; 
+.priority {
+    display: flex;
+    margin-bottom: 25px;
 }
 
-#priority option{
-    display: inline;
+.btn-priority {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    height: 51px;
+    width: 136px;
     left: 0px;
     top: 0px;
     margin-right: 10px;
     border-radius: 10px;
+    padding: 18px 10px 18px 10px;
     box-shadow: 0px 0px 4px 0px #00000029;
     background: #FFFFFF;
-    padding: 18px 10px 18px 10px;
+    border: none;
 }
 
-#priority:focus {
-    outline: none;
-}
-
-option:after {
-    content: " ";
-    height: 50px;
-    width: 100px;
-    border-radius: 5px;
-    display: inline-block;
-}
-#priority option[value="high"] {
-    background-image: url(../img/priority-high.svg);
-    background-repeat: no-repeat;
-    padding-top: 14px;
-    padding-left: 6px;
-    padding-bottom: 14px;
-    padding-right: 22px;
+.p-arrow-red{
+    position: relative;
+    right: 10px;
+    height: 23px;
+    width: 62px;
     font-family: Open Sans;
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0em;
     text-align: left;
+    margin: 0;
+}
+
+.p-arrow-yellow{
+    position: relative;
+    right: 10px;
+    height: 23px;
+    width: 62px;
+    font-family: Open Sans;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+}
+
+.p-arrow-green{
+    height: 23px;
+    width: 62px;
+    font-family: Open Sans;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
 }
 
 
+.arrow-red {
+    position: relative;
+    top: 0px;
+    right: -10px;
+    width: 20px;
+}
 
+
+.arrow-yellow {
+    position: relative;
+    top: 0px;
+    right: -12px;
+    width: 20px;
+}
+
+.arrow-green {
+    position: relative;
+    top: 0px;
+    right: 12px;
+    width: 20px;
+}

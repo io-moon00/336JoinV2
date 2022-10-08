@@ -30,7 +30,7 @@
                 <input type="text" class="input" id="tasktitle" required="" placeholder="Enter a title">
             </div>
 
-            <select class="select-categorie" style="margin-bottom: 25px;" id="assignedTo">
+            <select class="select-categorie" style="margin-bottom: 25px; background-image: url(../img/Vector\ 2.svg);" id="assignedTo">
                 <option>Select contacts to assign</option>
             </select>
 
@@ -43,7 +43,7 @@
             <div>
                 <h2>Category</h2>
             </div>
-            <select class="select-categorie" id="category" style="margin-bottom: 45px;">
+            <select class="select-categorie" id="category" style="margin-bottom: 45px; background-image: url(../img/Vector\ 2.svg);">
                 <option disabled selected>Select task category</option>
                 <option value="design">Design</option>
                 <option value="sales">Sales</option>
@@ -52,27 +52,23 @@
                 <option value="media">Media</option>
             </select>
 
-            
-                <select multiple class="priority" id="priority">
-                    <option value="high">
-                    High 
-                    </option>
-                    <option value="medium">
-                        <p class="h3-urgent-font">Medium</p>
-                        <div class="arrow-red-container">
-                            <img class="arrow-yellow1" src="../img/arrow-yellow.png">
-                            <img class="arrow-yellow2" src="../img/arrow-yellow.png">
-                        </div>
-                    </option>
-                    <option value="low">
-                        <p class="h3-urgent-font">Low</p>
-                        <div class="arrow-red-container">
-                            <img class="arrow-red1" src="../img/arrow-green.png">
-                            <img class="arrow-red2" src="../img/arrow-green.png">
-                        </div>
-                    </option>
-                </select>
-            
+
+            <div class="priority" id="priority">
+                <button class="btn-priority">
+                    <span class="p-arrow-red">Urgent</span>
+                    <img class="arrow-red" src="../img/priority-high.svg">
+                </button>
+                <button class="btn-priority">
+                    <span class="p-arrow-yellow">Medium</span>
+                    <img class="arrow-yellow" src="../img/priority-medium.svg">
+                </button>
+                <button class="btn-priority">
+                    <span class="p-arrow-green">Low</span>
+                    <img class="arrow-green" src="../img/priority-low.svg">
+                </button>
+            </div>
+
+
 
             <div>
                 <h2>Description</h2>
