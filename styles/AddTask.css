@@ -165,25 +165,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: none;
 }
 
-.h3-urgent-font {
-    padding-top: 14px;
-    padding-left: 6px;
-    padding-bottom: 14px;
-    padding-right: 22px;
-    font-family: Open Sans;
-    font-size: 19px;
-    font-weight: 400;
-    line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-}
 
-.arrow-red-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
 
 textarea {
     height: 103px;
@@ -398,17 +380,14 @@ button:hover {
     cursor: pointer;
 }
 
-.priority {
-    border: none;
-    display: flex;
+#priority {
+    border: none;  
+    width: 1000px; 
 }
 
-.priority option{
-    display: flex;
+#priority option{
+    display: inline;
     align-items: center;
-    justify-content: center;
-    height: 51px;
-    width: 136px;
     left: 0px;
     top: 0px;
     margin-right: 10px;
@@ -418,8 +397,30 @@ button:hover {
     padding: 18px 10px 18px 10px;
 }
 
-.priority:focus {
+#priority:focus {
+    outline: none;
+}
 
+option:after {
+    content: " ";
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    display: inline-block;
+}
+#priority option[value="high"] {
+    background-image: url(../img/priority-high.svg);
+    background-repeat: no-repeat;
+    padding-top: 14px;
+    padding-left: 6px;
+    padding-bottom: 14px;
+    padding-right: 22px;
+    font-family: Open Sans;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 
 

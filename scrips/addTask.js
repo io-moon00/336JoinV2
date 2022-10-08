@@ -73,7 +73,7 @@ function getCategorie () {
     window.open('../pages/board.html');
 }
 
- 
+
 function clearTaskForm () {
     document.getElementById('category').value = '';
     document.getElementById('title').innerHTML = '';
