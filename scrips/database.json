@@ -1,4 +1,5 @@
- [
+{
+    "tasks":[
     {   
         "id":0,
         "category": "design",
@@ -43,4 +44,18 @@
         "priority": "low",
         "assignedTo": ["sm", "mv", "ef"]
     }
-]
+],
+
+    "users":[
+        {
+            "name": "Severin Wenger",
+            "email": "sevi97.wenger@gmail.com",
+            "password" : "halloSeverin"
+        },
+        {
+            "name": "Klaus Müller",
+            "email": "claus.mueller@gmail.com",
+            "password" : "hallomueller"
+        }      
+    ]
+}

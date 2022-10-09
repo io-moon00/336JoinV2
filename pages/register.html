@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="/styles/generalStyle.css">
+    <link rel="stylesheet" href="/styles/colorStyle.css">
+    <link rel="stylesheet" href="/styles/registerStyle.css">
+    <link rel="stylesheet" href="/styles/fonts.css">
+    <link rel="stylesheet" href="/styles/loginStyle.css">
+    <title>Join</title>
+    <script src="/scrips/mini_backend.js"></script>
+    <script src="/scrips/login.js"></script>
+</head>
+<body onload="init()"> 
+    <div class="wrapper">
+       <img class="logo-white" src="/img/logo-white.svg">
+        <div class="login-panel">
+            <img class="back-arrow" src="/img/back-arrow.svg" alt="back-arrow">
+            <h1>Sign up</h1>
+            <div class="login-input">
+                <input id="name" type="text" required placeholder="Name">
+                <img src="/img/name-login-icon.svg">
+            </div>
+            <div class="login-input">
+                <input id="email" type="email" required placeholder="Email">
+                <img src="/img/eMail-icon.svg">
+            </div>
+            <div class="login-input">
+                <input id="password" type="text" required placeholder="Password">
+                <img src="/img/lock-icon.svg">
+            </div>
+                <button onclick="addUser()" class="login-button">Sign up</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="styles/loginStyle.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <title>Join</title>
-
+    <script src="/scrips/mini_backend.js"></script>
+    <script src="/scrips/login.js"></script>
 </head>
 
-<body>
+<body onload="init()">
     <div class="front-wrapper">
         <svg id="logo" class="logo" viewBox="0 0 47 58" fill="none">
             <path class="fill-animation" d="M33.6743 0H23.2637V11.9773H33.6743V0Z" />
@@ -27,14 +28,18 @@
             <path class="fill-animation"
                 d="M42.4434 55.7196V49.2202H43.7247L45.1021 51.8988C45.4567 52.5992 45.7721 53.3189 46.047 54.0546C45.975 53.2502 45.9429 52.3251 45.9429 51.2955V49.2202H47V55.7196H45.8068L44.4134 52.9847C44.0445 52.2663 43.7156 51.5278 43.4284 50.7727C43.4284 51.5771 43.4844 52.486 43.4844 53.6041V55.7116L42.4434 55.7196Z" />
         </svg>
+        <div class="register">
+            <span class="notUser">Not a Join user?</span>
+            <button onclick="openRegisterPage()" class="login-button">Sign up</button>
+        </div>
         <div class="login-panel">
             <h1>Log in</h1>
             <div class="login-input">
-                <input type="email" required placeholder="Email">
+                <input id="email" type="email" required placeholder="Email">
                 <img src="/img/eMail-icon.svg">
             </div>
             <div class="login-input">
-                <input type="text" required placeholder="Password">
+                <input id="password" type="text" required placeholder="Password">
                 <img src="/img/lock-icon.svg">
             </div>
             <div class="remember-forgott-ps">
@@ -46,8 +51,8 @@
                 <span class="pw-reset">Forgot my password</span>
             </div>
             <div class="login-buttons">
-                <button class="login-button">Log in</button>
-                <button class="guest-button">Guest log in</button>
+                <button onclick="logIn()" class="login-button">Log in</button>
+                <button onclick="guestLogin()" class="guest-button">Guest log in</button>
             </div>
         </div>
     </div>
