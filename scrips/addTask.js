@@ -1,11 +1,12 @@
 let tasks = [];
 let task;
+setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 async function init(){
     await includeHTML();
     markActivePage('addTask');
     await downloadFromServer();
-    tasks = JSON.parse(backend.getItem('tasks')) || [];
+    tasks = backend.getItem('tasks') || [];
 }
 
 
@@ -66,11 +67,11 @@ function getCategorie () {
  }
 
   async function addTask () {
-    setTask();
-    tasks.push('John');
-    await backend.setItem('tasks', JSON.stringify(task));
-    clearTaskForm ();
-    window.open('../pages/board.html');
+   setTask();
+   tasks.push(task);
+   await backend.setItem('tasks', JSON.stringify(tasks));
+   clearTaskForm ();
+   window.location.href = '/board.html';
 }
 
 
