@@ -32,7 +32,7 @@
 }
 
 .input[type="text"] {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 40px;
     font-weight: 400;
     line-height: 48px;
@@ -69,7 +69,7 @@ h2 {
 
 
 h3 {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -96,7 +96,7 @@ h3 {
     border-bottom: 1px solid #D1D1D1;
     appearance: none;
     background-repeat: no-repeat;
-    background-image: url(../img/date.png);
+    background-image: url(../img/calendar-icon.svg);
     background-position: right 0.7rem top 70%;
     background-size: 23px;
     color: #D1D1D1;
@@ -109,6 +109,7 @@ h3 {
     text-align: left;
     padding-left: 21px;
     padding-top: 14px;
+    margin-bottom: 45px;
 }
 
 
@@ -129,7 +130,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .date-font {
     margin: 0;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -165,25 +166,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border: none;
 }
 
-.h3-urgent-font {
-    padding-top: 14px;
-    padding-left: 6px;
-    padding-bottom: 14px;
-    padding-right: 22px;
-    font-family: Open Sans;
-    font-size: 19px;
-    font-weight: 400;
-    line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-}
 
-.arrow-red-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
 
 textarea {
     height: 103px;
@@ -203,7 +186,7 @@ textarea::placeholder {
     width: 170px;
     left: 21px;
     top: 18px;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -260,7 +243,7 @@ textarea::placeholder {
 
 
 .subtask1 {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -269,7 +252,7 @@ textarea::placeholder {
 }
 
 .clear {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 23px;
     font-weight: 400;
     line-height: 28px;
@@ -300,7 +283,7 @@ textarea::placeholder {
 }
 
 .createTask {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 23px;
     font-weight: 400;
     line-height: 28px;
@@ -313,29 +296,6 @@ textarea::placeholder {
     width: 160px;
 }
 
-.arrow-red1 {
-    position: relative;
-    top: 0px;
-    right: 7px;
-}
-
-.arrow-red2 {
-    position: relative;
-    top: -5px;
-    right: 7px;
-}
-
-.arrow-yellow1 {
-    position: relative;
-    top: -2px;
-    right: 11px;
-}
-
-.arrow-yellow2 {
-    position: relative;
-    top: 0px;
-    right: 11px;
-}
 
 .slash-container {
     position: relative;
@@ -373,12 +333,12 @@ textarea::placeholder {
     border-bottom: 1px solid #D1D1D1;
     appearance: none;
     background-repeat: no-repeat;
-    background-image: url(../img/arrow-down.png);
+    background-image: url(../img/drop-down-icon.svg);
     background-position: right 0.7rem top 70%;
     background-size: 16px;
     color: #000000;
     position: relative;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -396,4 +356,145 @@ select:focus {
 
 button:hover {
     cursor: pointer;
+}
+
+.priority {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.btn-priority1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
+    width: 136px;
+    left: 0px;
+    top: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 18px 10px 18px 10px;
+    box-shadow: 0px 0px 4px 0px #00000029;
+    background: #FFFFFF;
+    border: none;
+}
+
+.btn-priority1:hover {
+    background: #FFFFFF;
+    border-bottom: 2px solid #FF3D00;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    flex: none;
+
+}
+
+.btn-priority2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
+    width: 136px;
+    left: 0px;
+    top: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 18px 10px 18px 10px;
+    box-shadow: 0px 0px 4px 0px #00000029;
+    background: #FFFFFF;
+    border: none;
+}
+
+.btn-priority2:hover {
+    background: #FFFFFF;
+    border-bottom: 2px solid #FFA800;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    flex: none;
+ 
+}
+
+.btn-priority3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 51px;
+    width: 136px;
+    left: 0px;
+    top: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 18px 10px 18px 10px;
+    box-shadow: 0px 0px 4px 0px #00000029;
+    background: #FFFFFF;
+    border: none;
+}
+
+.btn-priority3:hover {
+    background: #FFFFFF;
+    border-bottom: 2px solid #7AE229;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    flex: none;
+}
+
+.p-arrow-red {
+    position: relative;
+    right: 10px;
+    height: 23px;
+    width: 62px;
+    font-family: "Open Sans";
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+}
+
+.p-arrow-yellow {
+    position: relative;
+    right: 10px;
+    height: 23px;
+    width: 62px;
+    font-family: "Open Sans";
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+}
+
+.p-arrow-green {
+    height: 23px;
+    width: 62px;
+    font-family: "Open Sans";
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+}
+
+
+.arrow-red {
+    position: relative;
+    top: 0px;
+    right: -10px;
+    width: 20px;
+}
+
+.arrow-yellow {
+    position: relative;
+    top: 0px;
+    right: -12px;
+    width: 20px;
+}
+
+.arrow-green {
+    position: relative;
+    top: 0px;
+    right: 12px;
+    width: 20px;
 }

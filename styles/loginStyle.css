@@ -47,6 +47,15 @@ h1{
     left: 35%
 }
 
+.register{
+    position: absolute;
+    top: 67px;
+    right: 86px;
+    gap: 35px;
+    display: flex;
+    align-items: center;
+}
+
 .login-panel{
     display: flex;
     flex-direction: column;
@@ -109,6 +118,8 @@ h1{
     color: white;
     font-size: 23px;
     line-height: 27.6px;
+    transition: all 100ms ease-in-out;
+
 }
 
 .guest-button{
@@ -118,8 +129,24 @@ h1{
     font-size: 23px;
     line-height: 27.6px;
     border-radius: 8px;
+    transition: all 100ms ease-in-out;
+    background-color: white;
 }
 
+.guest-button:hover{
+    cursor: pointer;
+    border: 1px solid var(--main-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 100ms ease-in-out;
+    color: var(--main-color);
+}
+
+.login-button:hover{
+    cursor: pointer;
+    background-color: var(--light-blue);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 100ms ease-in-out;
+}
 
   
   @keyframes mymove {

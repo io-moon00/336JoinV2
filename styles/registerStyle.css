@@ -1,0 +1,34 @@
+body{
+    background-color: var(--main-color);
+}
+
+.logo-white{
+    position: absolute;
+    top: 80px; 
+    left: 77px; 
+    width: 100px;
+}
+
+.wrapper{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-panel{
+    z-index: 2;
+    background-color: white;
+    position: relative;
+}
+
+.back-arrow{
+    position: absolute;
+    top: 41px;
+    left: 37px;
+}
+
+.back-arrow:hover{
+    cursor: pointer;
+}

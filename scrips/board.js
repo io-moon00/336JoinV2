@@ -4,7 +4,8 @@ let toDoTasks = [];
 let progressTasks = [];
 let feedbackTasks = [];
 let doneTasks = [];
-
+let tasks = [];
+setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 /**
  * The function inits the board page. First the header and the sidebar will be included.
@@ -14,6 +15,8 @@ let doneTasks = [];
 async function init(){
     await includeHTML();
     markActivePage('board');
+    await downloadFromServer();
+    tasks = backend.getItem('tasks') || [];
     setAllTaskArrays();
     renderAllTasks();
 }
