@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 .display-center {
     display: flex;
     justify-content: center;
@@ -8,20 +11,25 @@
     justify-content: flex-start;
     align-items: center;
 }
+.display-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+ 
 .mail-name {
     display: flex;
     flex-direction: column;
 }
 .contact-container {
     display: flex;
-    height: 100vh;
+    justify-content: space-evenly;
     margin-top: 92px;
-    margin-left: 234px;
-    padding: 74px 70px;
-    box-shadow: 0 15px 15px 0px rgb(0 0 0 / 30%);
 }
 .headline {
     margin-bottom: 20px;
+    margin-top: 15px;
     width: 300px;
     height: 30px;
     border-bottom: 1px solid #D1D1D1;
@@ -31,12 +39,10 @@
     justify-content: flex-end;
     align-items: flex-end;
     position: sticky;
-    padding-bottom: 20px;
-    padding-right: 30px;
-    
+    margin: 20px 20px 20px 20px;
 }
 .new-contact-btn:hover {
-    background-color: #f86600;
+    background-color: blue;
     transition: all 225ms ease-in-out;
     cursor: pointer;
 }
@@ -55,19 +61,109 @@
     margin-left: 15px;
 }
 .contact-name-container {
-    padding-bottom: 30px;
+    padding: 15px 15px 15px 15px;
+    
 }
 .contact-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin-left: 15px;
 }
 .contact-name-container:hover {
-    background-color: #4589FF;
+    background-color: #005DFF;
     transition: all 225ms ease-in-out;
     border-radius: 15px;
-    display: inline-flex;
-    padding: 15px 15px 15px 15px;
     cursor: pointer;
+    display: inline-flex;
 }
-.new-contact {
- 
+.contact-summary {
+    border-right: 2px solid #D1D1D1;
+    scrollbar-color: red;
 }
+.right-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.kontakt-circle-big {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+    font-size: 30px;
+    font-weight: 500;
+}
+.contact-name-contact{
+    margin-left: 15px;
+    font-size: 40px;
+    font-weight: 700;
+}
+.pencil {
+    color: white;
+    width: 24px;
+    height: 24px;
+    margin-left: 30px;
+}
+.contact-view {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+}
+.add-task {
+    font-size: 12px;
+    margin-left: 8px;
+}
+.edit-contact {
+    font-size: 14px;
+}
+.margin-top {
+    margin-top: 15px;
+}
+.show-overlay-contact {
+    transform: translateX(0);
+    transition: all 225ms ease-in-out;
+}
+.overlay-contact {
+    position: absolute;
+    right: 0px;
+    top: 92px;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 100vh;
+    background-color: white;
+    border-left: 1px solid black;
+    transform: translateX(501px);
+    transition: all 225ms ease-in-out;
+}
+
+        /* Designing for scroll-bar */
+        .contact-container::-webkit-scrollbar {
+            width: 6px;
+        }
+     
+        /* Track */
+        .contact-container::-webkit-scrollbar-track {
+            background: gainsboro;
+            border-radius: 5px;
+        }
+     
+        /* Handle */
+        .contact-container::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 5px;
+        }
+     
+        /* Handle on hover */
+        .contact-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
