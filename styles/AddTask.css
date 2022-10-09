@@ -32,7 +32,7 @@
 }
 
 .input[type="text"] {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 40px;
     font-weight: 400;
     line-height: 48px;
@@ -69,7 +69,7 @@ h2 {
 
 
 h3 {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -96,7 +96,7 @@ h3 {
     border-bottom: 1px solid #D1D1D1;
     appearance: none;
     background-repeat: no-repeat;
-    background-image: url(../img/date.png);
+    background-image: url(../img/calendar-icon.svg);
     background-position: right 0.7rem top 70%;
     background-size: 23px;
     color: #D1D1D1;
@@ -186,7 +186,7 @@ textarea::placeholder {
     width: 170px;
     left: 21px;
     top: 18px;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -243,7 +243,7 @@ textarea::placeholder {
 
 
 .subtask1 {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -252,7 +252,7 @@ textarea::placeholder {
 }
 
 .clear {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 23px;
     font-weight: 400;
     line-height: 28px;
@@ -283,7 +283,7 @@ textarea::placeholder {
 }
 
 .createTask {
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 23px;
     font-weight: 400;
     line-height: 28px;
@@ -333,12 +333,12 @@ textarea::placeholder {
     border-bottom: 1px solid #D1D1D1;
     appearance: none;
     background-repeat: no-repeat;
-    background-image: url(../img/arrow-down.png);
+    background-image: url(../img/drop-down-icon.svg);
     background-position: right 0.7rem top 70%;
     background-size: 16px;
     color: #000000;
     position: relative;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -442,7 +442,7 @@ button:hover {
     right: 10px;
     height: 23px;
     width: 62px;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -456,7 +456,7 @@ button:hover {
     right: 10px;
     height: 23px;
     width: 62px;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
@@ -468,7 +468,7 @@ button:hover {
 .p-arrow-green {
     height: 23px;
     width: 62px;
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 19px;
     font-weight: 400;
     line-height: 23px;
