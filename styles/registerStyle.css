@@ -28,3 +28,7 @@ body{
     top: 41px;
     left: 37px;
 }
+
+.back-arrow:hover{
+    cursor: pointer;
+}
