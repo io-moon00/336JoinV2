@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,13 @@
     <link rel="stylesheet" href="../templates/headerStyle.css">
     <link rel="stylesheet" href="../styles/fonts.css">
     <link rel="stylesheet" href="../styles/colorStyle.css">
-    <link rel="stylesheet" href="../styles/contacts.css">    
+    <link rel="stylesheet" href="../styles/contacts.css">
     <title>Contacts</title>
     <script src="../scrips/script.js"></script>
     <script src="../scrips/contacts.js"></script>
     <script src="../scrips/mini_backend.js"></script>
 </head>
+
 <body onload="init()">
     <header w3-include-html="../templates/header.html">
 
@@ -25,139 +27,70 @@
         <!--Hier Arbeiten --->
         <div class="contact-container">
             <div id="postContactContainer" class="contact-summary">
-            <div>
-                <div class="headline">A</div>
-            </div>
-            <div>
-                <div class="contact-name-container display-start" onclick="showContact()" onclick="returnShowContact()" >
-                    <span class="kontakt-circle" style="background-color: #4589FF;">AM</span>
-                    <div class="mail-name">
-                        <span class="contact-name">Anton Mayer</span>
-                        <span class="contact-name" style="color:#4589FF">anton@gmail.com</span>
-                    </div>
+                <div>
+                    <div class="headline">A</div>
+                    <div id="A"></div>
                 </div>
                 <div>
-                    <div class="contact-name-container display-start" >
-                        <span class="kontakt-circle" style="background-color: blue;">AM</span>
-                        <div class="mail-name">
-                            <span class="contact-name">Anton Mayer</span>
-                            <span class="contact-name" style="color:#4589FF">anton@gmail.com</span>
-                        </div>
-                    </div>
+                    <div class="headline">B</div>
+                    <div id="B"></div>
+                </div>
+                <div>
+                    <div class="headline">C</div>
+                    <div id="C"></div>
+                </div>
+                <div>
+                    <div class="headline">D</div>
+                    <div id="D"></div>
+                </div>
+                <div>
+                    <div class="headline">E</div>
+                    <div id="E"></div>
+                </div>
+                <div>
+                    <div class="headline">E</div>
+                    <div id="M"></div>
                 </div>
             </div>
-            <div>
-                <div class="headline">B</div>
-            </div>
-            <div>
-                <div class="contact-name-container display-start" >
-                    <span class="kontakt-circle" style="background-color: blue;">AM</span>
-                    <div class="mail-name">
-                        <span class="contact-name">Anton Mayer</span>
-                        <span class="contact-name" style="color:#4589FF">anton@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="headline">C</div>
-            </div>
-            <div>
-                <div class="contact-name-container display-start" >
-                    <span class="kontakt-circle" style="background-color: blue;">AM</span>
-                    <div class="mail-name">
-                        <span class="contact-name">Anton Mayer</span>
-                        <span class="contact-name" style="color:blue">anton@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="headline">D</div>
-            </div>
-            <div>
-                <div class="contact-name-container display-start" >
-                    <span class="kontakt-circle" style="background-color: blue;">AM</span>
-                    <div class="mail-name">
-                        <span class="contact-name">Anton Mayer</span>
-                        <span class="contact-name" style="color:blue">anton@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="headline">E</div>
-            </div>
-            <div>
-                <div class="contact-name-container display-start" >
-                    <span class="kontakt-circle" style="background-color: blue;">AM</span>
-                    <div class="mail-name">
-                        <span class="contact-name">Anton Mayer</span>
-                        <span class="contact-name" style="color:blue">anton@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="headline">F</div>
-            </div>
-            <div>
-                <div class="contact-name-container display-start" >
-                    <span class="kontakt-circle" style="background-color: blue;">AM</span>
-                    <div class="mail-name">
-                        <span class="contact-name">Anton Mayer</span>
-                        <span class="contact-name" style="color:blue">anton@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="headline">G</div>
-            </div>
-            <div>
-                <div class="contact-name-container display-start" >
-                    <span class="kontakt-circle" style="background-color: blue;">AM</span>
-                    <div class="mail-name">
-                        <span class="contact-name">Anton Mayer</span>
-                        <span class="contact-name" style="color:blue">anton@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-<!--Contact Information-->
-        <div id="contact" class="overlay-contact">
-            <div class="display-column">
-                <div class="display-center">
-                    <span class="kontakt-circle-big" style="background-color: blue;">AM</span>
-                    <div class="mail-name">
-                        <span class="contact-name-contact">Anton Mayer</span>
-                        <div class="contact-name" style="color:#4589FF">
-                            <img src="../img/plus.png"> 
-                            <span class="add-task">Add Task</span>
+            <!--Contact Information-->
+            <div id="contact" class="overlay-contact">
+                <div class="display-column">
+                    <div class="display-center">
+                        <span class="kontakt-circle-big" style="background-color: blue;">AM</span>
+                        <div class="mail-name">
+                            <span class="contact-name-contact">Anton Mayer</span>
+                            <div class="contact-name" style="color:#4589FF">
+                                <img src="../img/plus.png">
+                                <span class="add-task">Add Task</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="contact-view">
-                        <span class=""><b>Contact Information</b></span>
-                        <div class="">
-                            <img class="pencil" src="../img/pencil.png">
-                            <span class="edit-contact" >Edit Contact</span>
-                        </div>
-                    </div>
-                    <div class="margin-top">
-                        <span>Email</span>
-                    </div>
-                    <div class="margin-top">
-                        <span" style="color:#4589FF">antom@gmail.com</span>
-                    </div>
-                    <div class="margin-top">
-                        <span>Mobil:</span>
                     </div>
                     <div>
-                        <span>+ 49 1111 111 11 1</span>
+                        <div class="contact-view">
+                            <span class=""><b>Contact Information</b></span>
+                            <div class="">
+                                <img class="pencil" src="../img/pencil.png">
+                                <span class="edit-contact">Edit Contact</span>
+                            </div>
+                        </div>
+                        <div class="margin-top">
+                            <span>Email</span>
+                        </div>
+                        <div class="margin-top">
+                            <span" style="color:#4589FF">antom@gmail.com</span>
+                        </div>
+                        <div class="margin-top">
+                            <span>Mobil:</span>
+                        </div>
+                        <div>
+                            <span>+ 49 1111 111 11 1</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-<!--Btn bottom-->
+            <!--Btn bottom-->
             <div class="btn-container">
                 <div class="new-contact-btn" onclick="newContact()">
                     <div class="display-center">
@@ -170,4 +103,5 @@
     </div>
     </div>
 </body>
+
 </html>
