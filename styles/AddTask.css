@@ -533,16 +533,11 @@ button:hover {
     left: 77px;
     top: 15.5px;
     border-radius: 0px;
-
     box-sizing: border-box;
-
     width: 20px;
     height: 20px;
-
     background: #FC71FF;
-
     border: 2px solid #FFFFFF;
-
     flex: none;
     order: 1;
     flex-grow: 0;

@@ -1,5 +1,5 @@
 body{
-  /*  overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 .display-center {
     display: flex;
@@ -78,6 +78,8 @@ body{
     display: inline-flex;
 }
 .contact-summary {
+    height: calc(100vh - 92px);
+    overflow: auto;
     border-right: 2px solid #D1D1D1;
     scrollbar-color: red;
 }
@@ -147,23 +149,23 @@ body{
 }
 
         /* Designing for scroll-bar */
-        .contact-container::-webkit-scrollbar {
+        .contact-summary::-webkit-scrollbar {
             width: 6px;
         }
      
         /* Track */
-        .contact-container::-webkit-scrollbar-track {
+        .contact-summary::-webkit-scrollbar-track {
             background: gainsboro;
             border-radius: 5px;
         }
      
         /* Handle */
-        .contact-container::-webkit-scrollbar-thumb {
+        .contact-summary::-webkit-scrollbar-thumb {
             background: black;
             border-radius: 5px;
         }
      
         /* Handle on hover */
-        .contact-container::-webkit-scrollbar-thumb:hover {
+        .contact-summary::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
