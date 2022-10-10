@@ -1,4 +1,4 @@
-header{
+header {
     background-color: var(--main-color);
     height: 92px;
     position: fixed;
@@ -12,18 +12,18 @@ header{
     box-sizing: border-box;
 }
 
-.logo{
+.logo {
     width: 47px;
     height: 57px;
 }
 
-.right-header-section{
+.right-header-section {
     display: flex;
     align-items: center;
     gap: 26px;
 }
 
-.user-profile-img{
+.user-profile-img {
     width: 49px;
     height: 49px;
     border-radius: 50%;
