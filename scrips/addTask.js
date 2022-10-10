@@ -11,8 +11,8 @@ async function init(){
 
 
 function getTitle () {
-   let title = document.getElementById('tasktitle').value;
-   return title; 
+   let title = document.getElementById('tasktitle').value;  
+   return title;                                                // mit rerurn wird das Ergebnis zurückgegeben
 }
 
 
