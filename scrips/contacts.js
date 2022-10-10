@@ -88,7 +88,7 @@ let colors = {
 };
 
 function renderallcontact() {
-    let postContactContainer = dokument. getElementById('postContactContainer')
+    let postContactContainer = dokument.getElementById('postContactContainer');
     postContactContainer.innerHTML = ``;
 
     for (let i = 0; i < contacts.length; i++) {
