@@ -1,5 +1,6 @@
 let tasks = [];
 let task;
+let contacts = [];
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 async function init(){
@@ -7,6 +8,7 @@ async function init(){
     markActivePage('addTask');
     await downloadFromServer();
     tasks = backend.getItem('tasks') || [];
+    contacts = backend.getItem('contacts') || [];
 }
 
 
