@@ -27,36 +27,50 @@
 
         <div class="addTask-container">
             <div class="title-container">
-                <input type="text" class="input" id="tasktitle" required="" placeholder="Enter a title">
+                <input type="text" class="input" id="tasktitle" required="" placeholder="Enter a title"  style="font-family: open Sans;">
             </div>
 
-            <select class="select-categorie" style="margin-bottom: 25px;" id="assignedTo">
-                <option>Select contacts to assign</option>
-            </select>
+            <div class="select-categorie" style="margin-bottom: 25px;" id="assignedTo">
+                <span class="select-categorie-span">Select contacts to assign</span>
+            </div>
 
             <div>
                 <h2>Due Date</h2>
             </div>
             <input class="date-container" id="dueDate" type="date" name="effective-date" minlength="1" maxlength="64"
-                placeholder=" " autocomplete="nope" required="required"></input>
+                placeholder=" " autocomplete="nope" required="required"  style="font-family: open Sans;"></input>
             <div>
                 <h2>Category</h2>
             </div>
-            <label>
 
-
-                <div class="select-categorie" id="category"
-                    style="margin-bottom: 45px; background-image: url(../img/Vector\ 2.svg);">
-                    <div class="d-none">
-                        <div value="design">Design</div>
-                        <div value="sales">Sales</div>
-                        <div value="backoffice">Backoffice </div>
-                        <div value="marketing">Marketing</div>
-                        <div value="media">Media</div>
-                    </div>
-                </div>
-
-            </label>
+            <button class="select-categorie" id="category" onclick="btnCategory()" style="background-color: #ffffff;">
+                <span class="select-categorie-span">Select contacts to assign</span>
+            </button>
+<div class="d-none" id="optionContainer">
+            <div class="options" value="design">
+                <span class="option-span">New category</span>
+            </div>
+            <div class="options" value="design">
+                <span class="option-span">Design</span>
+                <div class="circle"><img src="../img/circle-sales.svg"></div>
+            </div>
+            <div class="options" value="sales">
+                <span class="option-span">Sales</span>
+                <div class="circle"><img src="../img/circle-design.svg"></div>
+            </div>
+            <div class="options" value="backoffice">
+                <span class="option-span">Backoffice</span>
+                <div class="circle"><img src="../img/circle-backoffice.svg"></div>
+            </div>
+            <div class="options" value="marketing">
+                <span class="option-span">Marketing</span>
+                <div class="circle"><img src="../img/circle-media.svg"></div>
+            </div>
+            <div class="options" value="media">
+                <span class="option-span">Media</span>
+                <div class="circle"><img src="../img/circle-marketing.svg"></div>
+            </div>
+        </div>
 
 
             <div class="priority" id="priority">
@@ -80,7 +94,7 @@
                 <h2>Description</h2>
             </div>
 
-            <textarea class="description-container" id="desc" placeholder="Enter a Discription"></textarea>
+            <textarea class="description-container" id="desc" placeholder="Enter a Discription" style="font-family: open Sans;"></textarea>
 
 
             <div>
@@ -90,7 +104,7 @@
                 <option disabled selected>Add new subtask</option>
             </select>
             <div class="footer-container">
-                <div class="subtask-container">
+                <div class="flex">
                     <div class="square"></div>
                     <span class="subtask1">Subtask 1</span>
                 </div>

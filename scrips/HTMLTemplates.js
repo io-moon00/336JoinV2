@@ -1,5 +1,5 @@
 function loadTaskCardHTML(i){
-    return `<div id="card-${tasks[i].id}" draggable="true" ondragstart="startDragging(${tasks[i].id})" onmousedown="showAllPlaceholderBorders('${tasks[i].status}')" onmouseup="hideAllPlaceholderBorders()" class="task-card pointer">
+    return `<div onclick="showDetailContent(${i})" id="card-${tasks[i].id}" draggable="true" ondragstart="startDragging(${tasks[i].id})" onmousedown="showAllPlaceholderBorders('${tasks[i].status}')" onmouseup="hideAllPlaceholderBorders()" class="task-card pointer">
         <div class="category-tag ${tasks[i].category}">${tasks[i].category}</div>
         <h3 class="task-title">${tasks[i].title}</h3>
         <span class="task-description">${tasks[i].description}</span>
@@ -16,4 +16,8 @@ function loadTaskCardHTML(i){
             <img src="../img/priority-${tasks[i].priority}.svg" class="task-priority">
         </div>
     </div>`;
+}
+
+function placeholderHTML(container){
+    return `<div id= "${container}-empty" class = "empty-task-card"></div>`;
 }

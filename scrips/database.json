@@ -61,7 +61,7 @@
     "users": "[{\"name\":\"Severin Wenger\",\"email\":\"sevi97.wenger@gmail.com\",\"password\":\"halloSeverin\"},{\"name\":\"test nr\",\"email\":\"sdfa@test\",\"password\":\"asdqea\"}]"
 }
 
-{ 
+{
     "contacts": [
         {
             "name": "Anton Mayer",
