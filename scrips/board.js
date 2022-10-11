@@ -238,17 +238,35 @@ function removeHighlight(id){
 }
 
 
+/**
+ * This function displays the detail view container. It is executed on click on a task
+ * @param {Integer} i -Task id in tasks array which will be shown in the detail view
+ */
 function showDetailContent(i){
+    let task = tasks[i];
+    setDetailViewInnerHTML(task);
+    setDetailViewStyle(task);
+    showPriorityOnDetailView(i);
+}
+
+
+/**
+ * It sets and shows the title, the category and the priority of the task on the detail view container
+ * @param {*} task -task is the task in the tasks array which is shown in the view container
+ */
+function setDetailViewInnerHTML(task){
+    document.getElementById('detail-view-category').innerHTML = task.category;
+    document.getElementById('detail-view-task-title').innerHTML = task.title;
+    document.getElementById('detail-view-description').innerHTML = task.description;
+}
+
+
+function setDetailViewStyle(task){
     document.getElementById('task-details').classList.remove('d-none');
     document.getElementById('detail-view-category').classList.add('category-tag');
-    document.getElementById('detail-view-category').innerHTML = tasks[i].category;
-    document.getElementById('detail-view-category').classList.add(tasks[i].category);
-    document.getElementById('detail-view-task-title').innerHTML = tasks[i].title;
-    document.getElementById('detail-view-description').innerHTML = tasks[i].description;
+    document.getElementById('detail-view-category').classList.add(task.category);
     document.getElementById('task-container').classList.add('hide-content');
     document.getElementById('priority-tag-detail-view').classList.add('priority-tag-detail-view');
-    showPrioriyOnDetailView(i);
-    
 }
 
 
@@ -260,7 +278,7 @@ function closeDetailView(){
 }
 
 
-function showPrioriyOnDetailView(i){
+function showPriorityOnDetailView(i){
     let priority = tasks[i].priority;
     document.getElementById('priority-tag-detail-view').classList.add('bg-'+priority);
     if(priority === 'high'){
