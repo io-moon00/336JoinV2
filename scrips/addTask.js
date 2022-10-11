@@ -1,6 +1,7 @@
 let tasks = [];
 let task;
 let contacts = [];
+let options = false;
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 async function init(){
@@ -86,11 +87,23 @@ function clearTaskForm () {
     document.getElementById('contact').value = '';
 }
 
-
-function btnCategory() {
-  document.getElementById('optionContainer').classList.remove('d-none');
+function btnCategory(){
+   let toggleOptions = options;
+   if (!toggleOptions) {
+       document.getElementById(`optionContainer`).classList.remove('d-none');
+       options = true;
+   } else {
+       document.getElementById(`optionContainer`).classList.add('d-none');
+       options = false;
+   }
 }
 
+
+
+/*function optionSales() {
+   let commentInput = document.getElementById('category');
+   commentInput.innerHTML += document.getElementById('sales');
+}*/
 
 
 
