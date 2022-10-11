@@ -87,6 +87,10 @@ function clearTaskForm () {
 }
 
 
+function btnCategory() {
+  document.getElementById('optionContainer').classList.remove('d-none');
+}
+
 
 
 

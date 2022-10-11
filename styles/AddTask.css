@@ -7,16 +7,12 @@
     width: 561px;
     left: 320px;
     top: 137px;
-    border-radius: 0px;
-    padding: 0px;
-    gap: 8px;
 }
 
 .title-container {
     margin-bottom: 25px;
     width: 422px;
     height: 74px;
-    gap: 10px;
     border-bottom: 1px solid #D1D1D1;
 }
 
@@ -26,53 +22,34 @@
     width: 215px;
     left: 21px;
     top: 13px;
-    background-color: transparent;
-    border: 0px solid;
-
+    border: none;
 }
 
 .input[type="text"] {
-    font-family: "Open Sans";
     font-size: 40px;
-    font-weight: 400;
     line-height: 48px;
-    letter-spacing: 0em;
-    text-align: left;
 }
 
 .input::placeholder {
     color: #D1D1D1;
 }
 
-
 .content {
     display: flex;
 }
-
 
 h2 {
     margin: 0;
     height: 23px;
     width: 88px;
-    border-radius: nullpx;
-    font-family: Open Sans;
     font-size: 19px;
     font-weight: 700;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-
-
 }
 
-
 h3 {
-    font-family: "Open Sans";
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
     padding-top: 13px;
     padding-left: 21px;
     padding-bottom: 13px;
@@ -97,41 +74,23 @@ h3 {
     background-size: 23px;
     color: #D1D1D1;
     position: relative;
-    font-family: Open Sans;
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
     padding-left: 21px;
     padding-top: 14px;
     margin-bottom: 45px;
 }
 
-
-
-
 input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
-    bottom: 0;
-    color: transparent;
     cursor: pointer;
-    height: auto;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: auto;
+    border: none;
 }
 
 .date-font {
     margin: 0;
-    font-family: "Open Sans";
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
     padding-top: 13px;
     padding-left: 21px;
     padding-bottom: 13px;
@@ -139,39 +98,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #D1D1D1;
 }
 
-
-
-.arrow-container {
-    display: flex;
-    margin-bottom: 25px;
-}
-
-.urgent-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 51px;
-    width: 136px;
-    margin-right: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 4px 0px #00000029;
-    background: #FFFFFF;
-    padding: 18px 10px 18px 10px;
-    border: none;
-}
-
-
-
 textarea {
     height: 103px;
     width: 422px;
-    left: 0px;
-    top: 31px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 1px solid #D1D1D1;
     margin-bottom: 45px;
+    margin-top: 8px;
 }
 
 textarea::placeholder {
@@ -180,16 +115,10 @@ textarea::placeholder {
     width: 170px;
     left: 21px;
     top: 18px;
-    font-family: "Open Sans";
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
     color: #D1D1D1;
-
 }
-
 
 .square {
     margin-right: 20px;
@@ -197,10 +126,6 @@ textarea::placeholder {
     width: 16px;
     border-radius: 3px;
     border: 2px solid #4589FF
-}
-
-.subtask-container {
-    display: flex;
 }
 
 .footer-container {
@@ -227,27 +152,16 @@ textarea::placeholder {
     margin-right: 25px;
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
         linear-gradient(0deg, #647188, #647188);
-
 }
 
-
-
 .subtask1 {
-    font-family: "Open Sans";
     font-size: 16px;
-    font-weight: 400;
     line-height: 19px;
-    letter-spacing: 0em;
-    text-align: left;
 }
 
 .clear {
-    font-family: "Open Sans";
     font-size: 23px;
-    font-weight: 400;
     line-height: 28px;
-    letter-spacing: 0em;
-    text-align: left;
     padding-right: 16px;
     color: #647188;
 }
@@ -273,51 +187,13 @@ textarea::placeholder {
 }
 
 .createTask {
-    font-family: "Open Sans";
     font-size: 23px;
-    font-weight: 400;
     line-height: 28px;
-    letter-spacing: 0em;
-    text-align: left;
     color: #FFFFFF;
     padding-left: 2px;
     padding-right: 4px;
     margin: 0;
     width: 160px;
-}
-
-
-.slash-container {
-    position: relative;
-    top: 78px;
-    height: 18.9px;
-    width: 18.9px;
-}
-
-.slash-small {
-    position: relative;
-    top: 80px;
-    left: 240px
-}
-
-.slash-middle {
-    position: relative;
-    top: 80px;
-    left: 221px
-}
-
-.slash-big {
-    position: relative;
-    top: 80px;
-    left: 198px
-}
-
-
-
-textarea:focus,
-input:focus,
-select:focus {
-    outline: none;
 }
 
 button:hover {
@@ -327,6 +203,7 @@ button:hover {
 .priority {
     display: flex;
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .btn-priority1 {
@@ -349,7 +226,6 @@ button:hover {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
     border-radius: 10px;
     flex: none;
-
 }
 
 .btn-priority2 {
@@ -372,7 +248,6 @@ button:hover {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
     border-radius: 10px;
     flex: none;
-
 }
 
 .btn-priority3 {
@@ -402,12 +277,8 @@ button:hover {
     right: 10px;
     height: 23px;
     width: 62px;
-    font-family: "Open Sans";
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
     margin: 0;
 }
 
@@ -416,27 +287,20 @@ button:hover {
     right: 10px;
     height: 23px;
     width: 62px;
-    font-family: "Open Sans";
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
     margin: 0;
 }
 
 .p-arrow-green {
+    position: relative;
+    right: 10px;
     height: 23px;
     width: 62px;
-    font-family: "Open Sans";
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
     margin: 0;
 }
-
 
 .arrow-red {
     position: relative;
@@ -456,10 +320,6 @@ button:hover {
     width: 20px;
 }
 
-
-.options-container {}
-
-
 .options {
     display: flex;
     height: 51px;
@@ -472,27 +332,21 @@ button:hover {
 .options:hover {
     cursor: pointer;
     background: #D2E3FF;
-
 }
 
 .option-span {
     position: relative;
     height: 23px;
-    width: 121px;
     left: 21px;
     top: 14px;
-    border-radius: nullpx;
-    font-family: Open Sans;
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-
 }
 
 .select-categorie {
-    width: 422px;
+    display: flex;
+    align-items: center;
+    width: 395px;
     height: 52px;
     border-top: none;
     border-left: none;
@@ -505,12 +359,8 @@ button:hover {
     background-size: 16px;
     color: #000000;
     position: relative;
-    font-family: "Open Sans";
     font-size: 19px;
-    font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
     padding-left: 21px;
     padding-top: 14px;
     margin: 0;
@@ -523,22 +373,12 @@ button:hover {
     width: 225px;
     left: 21px;
     top: 14px;
-
 }
 
 .circle {
     position: relative;
     height: 20px;
     width: 20px;
-    left: 77px;
+    left: 27px;
     top: 15.5px;
-    border-radius: 0px;
-    box-sizing: border-box;
-    width: 20px;
-    height: 20px;
-    background: #FC71FF;
-    border: 2px solid #FFFFFF;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
