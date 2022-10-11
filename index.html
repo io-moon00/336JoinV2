@@ -13,6 +13,7 @@
     <title>Join</title>
     <script src="/scrips/mini_backend.js"></script>
     <script src="/scrips/login.js"></script>
+    <script src="/scrips/script.js"></script>
 </head>
 
 <body onload="init()">
@@ -34,8 +35,9 @@
         </div>
         <div class="login-panel">
             <h1>Log in</h1>
+            <form onsubmit="logIn()">
             <div class="login-input">
-                <input id="email" type="email" required placeholder="Email">
+                <input id="email" type="email" required placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                 <img src="/img/eMail-icon.svg">
             </div>
             <div class="login-input">
@@ -50,10 +52,12 @@
                   </label>
                 <span class="pw-reset">Forgot my password</span>
             </div>
+        </form>
             <div class="login-buttons">
-                <button onclick="logIn()" class="login-button">Log in</button>
+                <button type="submit" class="login-button">Log in</button>
                 <button onclick="guestLogin()" class="guest-button">Guest log in</button>
             </div>
+        
         </div>
     </div>
 

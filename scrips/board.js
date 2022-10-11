@@ -123,10 +123,10 @@ function renderDoneTasks(){
  * The function adds a placeholder to each end of the status columns. This placeholders then can be highlighted on start dragging
  */
 function addPlaceholder(){
-    document.getElementById('toDo-tasks').innerHTML += `<div id= "toDo-tasks-empty" class = "empty-task-card"></div>`;
-    document.getElementById('progress-tasks').innerHTML += `<div id= "progress-tasks-empty" class = "empty-task-card"></div>`;
-    document.getElementById('feedback-tasks').innerHTML += `<div id= "feedback-tasks-empty"  class = "empty-task-card"></div>`;
-    document.getElementById('done-tasks').innerHTML += `<div id= "done-tasks-empty"  class = "empty-task-card"></div>`;
+    document.getElementById('toDo-tasks').innerHTML += placeholderHTML('toDo-tasks');
+    document.getElementById('progress-tasks').innerHTML += placeholderHTML('progress-tasks');
+    document.getElementById('feedback-tasks').innerHTML += placeholderHTML('feedback-tasks');
+    document.getElementById('done-tasks').innerHTML += placeholderHTML('done-tasks');
 }
 
 

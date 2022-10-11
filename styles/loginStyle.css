@@ -40,7 +40,7 @@ h1{
 
 .logo {
     width: 265px;
-    animation: mymove 500ms;
+    animation: move 500ms;
     animation-fill-mode: forwards;
     position: absolute;
     top: 30%;
@@ -149,7 +149,7 @@ h1{
 }
 
   
-  @keyframes mymove {
+  @keyframes move {
     to {top: 80px; left: 77px; width: 100px;}
   }
 

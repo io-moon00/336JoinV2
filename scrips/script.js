@@ -1,3 +1,6 @@
+let userName;
+
+
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -14,4 +17,9 @@ async function includeHTML() {
 
 function markActivePage(page){
     document.getElementById(page + '-link').classList.add('activ-element');
+}
+
+
+function setUserName(name){
+    userName = name;
 }

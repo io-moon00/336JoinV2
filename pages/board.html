@@ -25,7 +25,7 @@
     <header w3-include-html="../templates/header.html">
 
     </header>
-    <div class="content">
+    <div id = "task-container" class="content">
         <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
         <div class="tasks">
             <div>
@@ -64,14 +64,9 @@
                     <div class="task-column">
                         <div class="category-top">
                             <span class="category-title">Await feedback</span>
-                            <svg viewBox="0 0 30 30" class="pointer add-svg">
-                                <path class="path-fill" d="M15 7.5V22.5"/>
-                                <path class="path-fill" d="M22.5 15.1416L7.5 15.1416"/>
-                                <rect class="path-fill" x="1" y="1" width="28" height="28" rx="9"/>
-                            </svg>
+                            <img src="../img/plus button.svg" alt="plus button" class="add-svg pointer">
                         </div>
                         <div id="feedback-tasks" ondrop="moveTo('feedback')" ondragover="allowDrop(event); highlight('feedback-tasks-empty')" ondragleave="removeHighlight('feedback-tasks-empty')">
-
                         </div>
                     </div>
 
@@ -89,67 +84,14 @@
         </div>
     </div>
 
-    <div class="addTaskForm">
-        <img class="close-cross" src="../img/close-cross.svg" alt="close cross">
+    <div class="addTaskForm d-none">
+        <img onclick="closeAddTaskForm()" class="close-cross" src="../img/close-cross.svg" alt="close cross">
         <div class="addTaskHeader">
             <h2 class="title-add-task">Add Task</h2>
             <button class="create-container">
             <span class="createTask">Create Task</span>
             <img src="../img/checkmark.svg">
             </button>  
-        </div>
-
-        <div class="title-container">
-            <input type="text" class="input" id="tasktitle" required="" placeholder="Enter a title">
-        </div>
-        <select class="select-categorie" style="margin-bottom: 25px;" id="assignedTo">
-            <option>Select contacts to assign</option>
-        </select>
-        <div>
-            <h2>Due Date</h2>
-        </div>
-        <input class="date-container" id="dueDate" type="date" name="effective-date" minlength="1" maxlength="64"
-            placeholder=" " autocomplete="nope" required="required"></input>
-        <div>
-            <h2>Category</h2>
-        </div>
-        <select class="select-categorie" id="category" style="margin-bottom: 45px; background-image: url(../img/Vector\ 2.svg);">
-            <option disabled selected>Select task category</option>
-            <option value="design">Design</option>
-            <option value="sales">Sales</option>
-            <option value="backoffice">Backoffice </option>
-            <option value="marketing">Marketing</option>
-            <option value="media">Media</option>
-        </select>
-        <div class="priority" id="priority">
-            <button class="btn-priority1">
-                <span class="p-arrow-red">Urgent</span>
-                <img class="arrow-red" src="../img/priority-high.svg">
-            </button>
-            <button class="btn-priority2">
-                <span class="p-arrow-yellow">Medium</span>
-                <img class="arrow-yellow" src="../img/priority-medium.svg">
-            </button>
-            <button class="btn-priority3">
-                <span class="p-arrow-green">Low</span>
-                <img class="arrow-green" src="../img/priority-low.svg">
-            </button>
-        </div>
-        <div>
-            <h2>Description</h2>
-        </div>
-        <textarea class="description-container" id="desc" placeholder="Enter a Discription"></textarea>
-        <div>
-            <h2>Subtasks</h2>
-        </div>
-        <select class="select-categorie" style="background-image: url(../img/plus.png); color: #d1d1d1; ">
-            <option disabled selected>Add new subtask</option>
-        </select>
-        <div class="footer-container">
-            <div class="subtask-container">
-                <div class="square"></div>
-                <span class="subtask1">Subtask 1</span>
-            </div>
         </div>
     </div>
 </body>
