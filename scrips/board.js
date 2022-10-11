@@ -245,6 +245,9 @@ function showDetailContent(i){
     document.getElementById('detail-view-category').classList.add(tasks[i].category);
     document.getElementById('detail-view-task-title').innerHTML = tasks[i].title;
     document.getElementById('detail-view-description').innerHTML = tasks[i].description;
+    document.getElementById('task-container').classList.add('hide-content');
+    document.getElementById('priority-tag-detail-view').classList.add('priority-tag-detail-view');
+    showPrioriyOnDetailView(i);
     
 }
 
@@ -252,4 +255,19 @@ function showDetailContent(i){
 function closeDetailView(){
     document.getElementById('task-details').classList.add('d-none');
     document.getElementById('detail-view-category').className = ''; 
+    document.getElementById('task-container').classList.remove('hide-content');
+    document.getElementById('priority-tag-detail-view').className = '';
+}
+
+
+function showPrioriyOnDetailView(i){
+    let priority = tasks[i].priority;
+    document.getElementById('priority-tag-detail-view').classList.add('bg-'+priority);
+    if(priority === 'high'){
+        document.getElementById('priority-detail-view').innerHTML = 'Urgent';
+    }
+    else{
+        document.getElementById('priority-detail-view').innerHTML = priority;
+    }
+    document.getElementById('priority-detail-view-img').src = '../img/priority-'+priority+'.svg';
 }
