@@ -236,3 +236,20 @@ function highlight(id){
 function removeHighlight(id){
     document.getElementById(id).classList.remove('drag-area-border');
 }
+
+
+function showDetailContent(i){
+    document.getElementById('task-details').classList.remove('d-none');
+    document.getElementById('detail-view-category').classList.add('category-tag');
+    document.getElementById('detail-view-category').innerHTML = tasks[i].category;
+    document.getElementById('detail-view-category').classList.add(tasks[i].category);
+    document.getElementById('detail-view-task-title').innerHTML = tasks[i].title;
+    document.getElementById('detail-view-description').innerHTML = tasks[i].description;
+    
+}
+
+
+function closeDetailView(){
+    document.getElementById('task-details').classList.add('d-none');
+    document.getElementById('detail-view-category').className = ''; 
+}
