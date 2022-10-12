@@ -27,16 +27,16 @@
         <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
 
         <div class="addTask-container">
+            
             <div class="title-container">
-                <input type="text" class="input" id="tasktitle" required="" placeholder="Enter a title"  style="font-family: open Sans;">
+                <input class="input" type="text" placeholder="Enter a title">
             </div>
-
-            <div class="select-categorie" style="margin-bottom: 25px;" id="assignedTo">
+            <button class="select-categorie" onclick="btnContacts()" style="background-color: #ffffff;"  style="font-family: open Sans;">
                 <span class="select-categorie-span">Select contacts to assign</span>
-            </div>
+            </button>
 
             <div>
-                <h2>Due Date</h2>
+                <h2 style="margin-top: 25px;">Due Date</h2>
             </div>
             <input class="date-container" id="dueDate" type="date" name="effective-date" minlength="1" maxlength="64"
                 placeholder=" " autocomplete="nope" required="required"  style="font-family: open Sans;"></input>
@@ -47,22 +47,44 @@
             <button class="select-categorie" id="category" onclick="btnCategory()" style="background-color: #ffffff;">
                 <span id="selected-category" class="select-categorie-span">Select contacts to assign</span>
             </button>
-        <div class="d-none" id="optionContainer">
-            
+<div class="d-none" id="optionContainer">
+            <div class="options" value="design">
+                <span class="option-span">New category</span>
+            </div>
+            <div class="options" value="design">
+                <span class="option-span">Design</span>
+                <div class="circle"><img src="../img/circle-sales.svg"></div>
+            </div>
+            <div class="options" value="sales">
+                <span class="option-span">Sales</span>
+                <div class="circle"><img src="../img/circle-design.svg"></div>
+            </div>
+            <div class="options" value="backoffice">
+                <span class="option-span">Backoffice</span>
+                <div class="circle"><img src="../img/circle-backoffice.svg"></div>
+            </div>
+            <div class="options" value="marketing">
+                <span class="option-span">Marketing</span>
+                <div class="circle"><img src="../img/circle-media.svg"></div>
+            </div>
+            <div class="options" value="media">
+                <span class="option-span">Media</span>
+                <div class="circle"><img src="../img/circle-marketing.svg"></div>
+            </div>
         </div>
 
 
             <div class="priority" id="priority">
-                <button class="btn-priority1">
-                    <span class="p-arrow-red">Urgent</span>
-                    <img class="arrow-red" src="../img/priority-high.svg">
+                <button class="btn-priority1" onclick="btnPriority1(this)">
+                    <span id="spanwhite1" class="p-arrow-red">Urgent</span>
+                    <img id="imgWhiteHigh1"class="arrow-red" src="../img/priority-high.svg">
                 </button>
-                <button class="btn-priority2">
-                    <span class="p-arrow-yellow">Medium</span>
+                <button class="btn-priority2" onclick="btnPriority2(this)">
+                    <span id="spanwhite2" class="p-arrow-yellow">Medium</span>
                     <img class="arrow-yellow" src="../img/priority-medium.svg">
                 </button>
-                <button class="btn-priority3">
-                    <span class="p-arrow-green">Low</span>
+                <button class="btn-priority3" onclick="btnPriority3(this)">
+                    <span id="spanwhite3" class="p-arrow-green">Low</span>
                     <img class="arrow-green" src="../img/priority-low.svg">
                 </button>
             </div>
