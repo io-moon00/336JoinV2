@@ -182,7 +182,7 @@ function allowDrop(ev) {
  * @param {string} status -is the new status of the task. It is determined by the location where the task was dropped
  */
 function moveTo(status){
-    pushTaskToArray(status, currentDraggedTask) 
+    pushTaskToArray(status, currentDraggedTask); 
     removeTaskFromArray();
     tasks[currentDraggedTask].status = status;
     renderAllTasks();
@@ -221,7 +221,7 @@ function removeTaskFromArray(){
 function highlight(id){
     let idOfDraggedElement = statOfCurrentDraggedTask +'-tasks-empty';
     if(id != idOfDraggedElement){
-        hideAllPlaceholderBorders()
+        hideAllPlaceholderBorders();
         document.getElementById(id).classList.add('drag-area-border');
     }
     
