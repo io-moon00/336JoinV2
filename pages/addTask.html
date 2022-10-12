@@ -27,7 +27,10 @@
 
         <div class="addTask-container">
             
-            <button class="select-categorie" id="category" onclick="btnContacts()" style="background-color: #ffffff;"  style="font-family: open Sans;">
+            <div class="title-container">
+                <input class="input" type="text" placeholder="Enter a title">
+            </div>
+            <button class="select-categorie" onclick="btnContacts()" style="background-color: #ffffff;"  style="font-family: open Sans;">
                 <span class="select-categorie-span">Select contacts to assign</span>
             </button>
 
@@ -44,26 +47,26 @@
                 <span class="select-categorie-span">Select task category</span>
             </button>
 <div class="d-none" id="optionContainer">
-            <div class="options" value="design" >
+            <div class="options" id="newCategory" onclick="optionNewCategory()">
                 <span class="option-span">New category</span>
             </div>
-            <div class="options" value="design" id="sales" onclick="optionSales()">
+            <div class="options" id="sales" onclick="optionSales()">
                 <span class="option-span">Sales</span>
                 <div class="circle"><img src="../img/circle-sales.svg"></div>
             </div>
-            <div class="options" value="sales">
+            <div class="options" id="design" onclick="optionDesign()">
                 <span class="option-span">Design</span>
                 <div class="circle"><img src="../img/circle-design.svg"></div>
             </div>
-            <div class="options" value="backoffice">
+            <div class="options" id="backoffice" onclick="optionBackoffice()">
                 <span class="option-span">Backoffice</span>
                 <div class="circle"><img src="../img/circle-backoffice.svg"></div>
             </div>
-            <div class="options" value="marketing">
+            <div class="options" id="marketing" onclick="optionMarketing()">
                 <span class="option-span">Marketing</span>
                 <div class="circle"><img src="../img/circle-media.svg"></div>
             </div>
-            <div class="options" value="media">
+            <div class="options" id="media" onclick="optionMedia()">
                 <span class="option-span">Media</span>
                 <div class="circle"><img src="../img/circle-marketing.svg"></div>
             </div>
@@ -71,16 +74,16 @@
 
 
             <div class="priority" id="priority">
-                <button class="btn-priority1">
-                    <span class="p-arrow-red">Urgent</span>
-                    <img class="arrow-red" src="../img/priority-high.svg">
+                <button class="btn-priority1" onclick="btnPriority1(this)">
+                    <span id="spanwhite1" class="p-arrow-red">Urgent</span>
+                    <img id="imgWhiteHigh1"class="arrow-red" src="../img/priority-high.svg">
                 </button>
-                <button class="btn-priority2">
-                    <span class="p-arrow-yellow">Medium</span>
+                <button class="btn-priority2" onclick="btnPriority2(this)">
+                    <span id="spanwhite2" class="p-arrow-yellow">Medium</span>
                     <img class="arrow-yellow" src="../img/priority-medium.svg">
                 </button>
-                <button class="btn-priority3">
-                    <span class="p-arrow-green">Low</span>
+                <button class="btn-priority3" onclick="btnPriority3(this)">
+                    <span id="spanwhite3" class="p-arrow-green">Low</span>
                     <img class="arrow-green" src="../img/priority-low.svg">
                 </button>
             </div>

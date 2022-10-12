@@ -17,3 +17,7 @@ function loadTaskCardHTML(i){
         </div>
     </div>`;
 }
+
+function placeholderHTML(container){
+    return `<div id= "${container}-empty" class = "empty-task-card"></div>`;
+}

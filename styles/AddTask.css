@@ -30,6 +30,7 @@
 }
 
 .input[type="text"] {
+    top: 15px;
     font-size: 40px;
     line-height: 48px;
 }
@@ -370,6 +371,9 @@ button:hover {
     margin: 0;
 }
 
+.d-none-imp {
+    display: none !important;
+}
 .select-categorie-span {
     display: flex;
     align-items: center;
