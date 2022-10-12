@@ -16,6 +16,7 @@
     <script src="../scrips/mini_backend.js"></script>
     <script src="../scrips/script.js"></script>
     <script src="../scrips/addTask.js"></script>
+    <script src="../scrips/HTMLTemplates.js"></script>
 </head>
 
 <body onload="init()">
@@ -44,32 +45,10 @@
             </div>
 
             <button class="select-categorie" id="category" onclick="btnCategory()" style="background-color: #ffffff;">
-                <span class="select-categorie-span">Select contacts to assign</span>
+                <span id="selected-category" class="select-categorie-span">Select contacts to assign</span>
             </button>
-<div class="d-none" id="optionContainer">
-            <div class="options" value="design">
-                <span class="option-span">New category</span>
-            </div>
-            <div class="options" value="design">
-                <span class="option-span">Design</span>
-                <div class="circle"><img src="../img/circle-sales.svg"></div>
-            </div>
-            <div class="options" value="sales">
-                <span class="option-span">Sales</span>
-                <div class="circle"><img src="../img/circle-design.svg"></div>
-            </div>
-            <div class="options" value="backoffice">
-                <span class="option-span">Backoffice</span>
-                <div class="circle"><img src="../img/circle-backoffice.svg"></div>
-            </div>
-            <div class="options" value="marketing">
-                <span class="option-span">Marketing</span>
-                <div class="circle"><img src="../img/circle-media.svg"></div>
-            </div>
-            <div class="options" value="media">
-                <span class="option-span">Media</span>
-                <div class="circle"><img src="../img/circle-marketing.svg"></div>
-            </div>
+        <div class="d-none" id="optionContainer">
+            
         </div>
 
 

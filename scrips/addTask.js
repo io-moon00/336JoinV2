@@ -89,6 +89,22 @@ function clearTaskForm () {
 
 function btnCategory() {
   document.getElementById('optionContainer').classList.remove('d-none');
+  renderCategories();
+}
+
+function showCategory(category){
+      document.getElementById('category').classList.remove('d-none'); // show Button
+      document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category); // set inne rHMTL of Butron
+      document.getElementById('optionContainer').classList.add('d-none'); // Verstecke option container
+}
+
+let categories = ['sales', 'design', 'backoffice', 'marketing', 'media'];
+
+function renderCategories(){
+   document.getElementById('optionContainer').innerHTML = `new`;// new Category div
+   for(let i = 0; i < categories.length; i++){
+      document.getElementById('optionContainer').innerHTML += createCategoryHTML(categories[i]);
+   }
 }
 
 

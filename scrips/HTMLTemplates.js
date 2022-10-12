@@ -21,3 +21,19 @@ function loadTaskCardHTML(i){
 function placeholderHTML(container){
     return `<div id= "${container}-empty" class = "empty-task-card"></div>`;
 }
+
+function createCategoryHTML(category){
+    return `<div class="options" value="${category}">
+    <span onclick="showCategory('${category}')" class="option-span">${category}</span>
+    <div class="circle"><img src="../img/circle-${category}.svg"></div>
+    </div>`
+}
+
+function createCategoryHTMLForButton(category){
+    return `
+    <span onclick="showcategory('${category}')" class="option-span">${category}</span>
+    <div class="circle"><img src="../img/circle-${category}.svg"></div>`
+}
+
+
+

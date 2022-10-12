@@ -58,10 +58,18 @@
             ]
         }
     ],
-    "users": "[{\"name\":\"Severin Wenger\",\"email\":\"sevi97.wenger@gmail.com\",\"password\":\"halloSeverin\"},{\"name\":\"test nr\",\"email\":\"sdfa@test\",\"password\":\"asdqea\"}]"
-}
+    "users": [ 
+        {
+            "name":"Severin Wenger",
+            "email":"sevi97.wenger@gmail.com",
+            "password":"halloSeverin"
+        },
+        {
+            "name":"test nr",
+            "email":"sdfa@test",
+            "password":"asdqea"
+        }],
 
-{
     "contacts": [
         {
             "name": "Anton Mayer",
@@ -126,5 +134,5 @@
             "mobil" : "+49 1111 111 11 11",
             "color" : "#FF7A002"
         }
-    ],
+    ]
 }
