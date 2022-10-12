@@ -34,8 +34,8 @@ body{
 }
 .btn-container{
     position: absolute;
-    top: 850px;
-    left: 1200px;
+    top: 500px;
+    left: 800px;
 }
 .new-contact-btn:hover {
     background-color: blue;
@@ -71,6 +71,10 @@ body{
     border-radius: 15px;
     cursor: pointer;
     display: inline-flex;
+}
+
+.contact-name-container:hover .hover-button {
+    background-color: black;
 }
 .contact-summary {
     position: absolute;
@@ -117,11 +121,11 @@ body{
     margin-top: 30px;
 }
 .add-task {
-    font-size: 12px;
+    font-size: 16px;
     margin-left: 8px;
 }
 .edit-contact {
-    font-size: 14px;
+    font-size: 16px;
 }
 .margin-top {
     margin-top: 15px;
@@ -133,9 +137,7 @@ body{
 .overlay-contact {
     position: absolute;
     left: 500px;
-
     z-index: -1;
-    height: 100vh;
     background-color: white;
     transform: translateX(+2001px);
     transition: all 225ms ease-in-out;
