@@ -1,6 +1,11 @@
-h3{
+.tasks h3{
     margin-block-start: 0;
     margin-block-end: 0;
+    padding: 0 !important;
+}
+
+input:focus{
+    outline: none;
 }
 
 .content {

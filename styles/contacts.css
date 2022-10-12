@@ -23,23 +23,19 @@ body{
     flex-direction: column;
 }
 .contact-container {
-    display: flex;
-    justify-content: space-evenly;
+    height: 100vh - 92px;
     margin-top: 92px;
 }
 .headline {
     margin-bottom: 20px;
     margin-top: 15px;
-    width: 300px;
     height: 30px;
     border-bottom: 1px solid #D1D1D1;
 }
 .btn-container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    position: sticky;
-    margin: 20px 20px 20px 20px;
+    position: absolute;
+    top: 850px;
+    left: 1200px;
 }
 .new-contact-btn:hover {
     background-color: blue;
@@ -61,8 +57,7 @@ body{
     margin-left: 15px;
 }
 .contact-name-container {
-    padding: 15px 15px 15px 15px;
-    
+    padding: 15px 15px 15px 15px; 
 }
 .contact-name {
     display: flex;
@@ -78,6 +73,8 @@ body{
     display: inline-flex;
 }
 .contact-summary {
+    position: absolute;
+    left: 250px;
     height: calc(100vh - 92px);
     overflow: auto;
     border-right: 2px solid #D1D1D1;
@@ -130,21 +127,17 @@ body{
     margin-top: 15px;
 }
 .show-overlay-contact {
-    transform: translateX(0);
+    transform: translateX(600px);
     transition: all 225ms ease-in-out;
 }
 .overlay-contact {
     position: absolute;
-    right: 0px;
-    top: 92px;
+    left: 500px;
+
     z-index: -1;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
     height: 100vh;
     background-color: white;
-    border-left: 1px solid black;
-    transform: translateX(501px);
+    transform: translateX(+2001px);
     transition: all 225ms ease-in-out;
 }
 

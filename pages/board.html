@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../templates/sideBarStyle.css">
     <link rel="stylesheet" href="../templates/headerStyle.css">
     <link rel="stylesheet" href="/styles/AddTask.css">
+    <link rel="stylesheet" href="/styles/taskFocus.css">
     <link rel="icon" href="../img/favicon.ico">
     <title>Board</title>
     <script src="../scrips/mini_backend.js"></script>
@@ -92,6 +93,37 @@
             <span class="createTask">Create Task</span>
             <img src="../img/checkmark.svg">
             </button>  
+        </div>
+    </div>
+
+
+    <div id="task-details" class="task-details d-none">
+        <img onclick="closeDetailView()" class="close-cross" src="/img/close-cross.svg" alt="close cross">
+        <div id="detail-view-category" class="sales category-tag"></div>
+        <h2 id="detail-view-task-title"></h2>
+        <div id="detail-view-description"></div>
+        <div class="date-detail-view">
+            <span class="font-weight-700 font-family-inter">Due date:</span>
+            <span>05-08-2022</span>
+        </div>
+        <div class="priority-container-detail-view">
+            <span class="font-weight-700 font-family-inter">Priority:</span>
+            <div id="priority-tag-detail-view" class="priority-tag-detail-view">
+                <span id="priority-detail-view" class="priority-detail-view"></span>
+                <img id="priority-detail-view-img" src="" alt="priority icon">
+            </div>
+        </div>
+        <div>
+            <span class="font-weight-700 font-family-inter">Assigned To:</span>
+            <div>
+                
+            </div>
+        </div>
+        <div  class="edit-icon">
+            <svg width="21" height="31" viewBox="0 0 21 31" fill="none">
+                <path d="M2.94497 22.5156L7.7643 25.4405L20.4075 4.60842C20.694 4.13628 20.5436 3.52125 20.0714 3.23471L16.9618 1.34748C16.4897 1.06094 15.8747 1.21139 15.5881 1.68353L2.94497 22.5156Z" fill="white"/>
+                <path d="M2.3599 23.4794L7.17923 26.4043L2.45061 28.6892L2.3599 23.4794Z" fill="white"/>
+            </svg>
         </div>
     </div>
 </body>

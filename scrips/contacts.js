@@ -5,7 +5,7 @@ async function init(){
     await includeHTML();
     markActivePage('contacts');
     await downloadFromServer();
-    contacts= backend.getItem('contacts') || [];
+    contacts = backend.getItem('contacts') || [];
     renderallcontact();
 }
 

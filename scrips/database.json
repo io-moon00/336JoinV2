@@ -58,69 +58,73 @@
             ]
         }
     ],
-    "users": "[{\"name\":\"Severin Wenger\",\"email\":\"sevi97.wenger@gmail.com\",\"password\":\"halloSeverin\"},{\"name\":\"test nr\",\"email\":\"sdfa@test\",\"password\":\"asdqea\"}]",
-    "contacts":[{
-        "name": "Anton Mayer",
-        'shortName' : 'AM',
-        'email' : 'anton@gmail.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#FF7A00'
-    },
-    {
-        'name': 'Anja Schulz',
-        'shortName' : 'AS',
-        'email' : 'schulz@hotmail.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#9327FF'
-    },
-    {
-        'name': 'Benedikt Ziegler',
-        'shortName' : 'BZ',
-        'email' : 'Benedikt@gmail.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#29ABE2'
-    },
-    {
-        'name': 'David Eisenberg',
-        'shortName' : 'DE',
-        'email' : 'davidberg@gmail.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#FC71FF'
-    },
-    {
-        'name': 'Eva Fischer',
-        'shortName' : 'DE',
-        'email' : 'eva@gmail.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#02CF2F'
-    },
-    {
-        'name': 'Emmanuel Mauer',
-        'shortName' : 'EM',
-        'email' : 'emmanuelMa@gmail.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#AF1616'
-    },
-    {
-        'name': 'Marcel Bauer',
-        'shortName' : 'MB',
-        'email' : 'bauer@gmail.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#462F8A'
-    },
-    {
-        'name': 'Nina Molberg',
-        'shortName' : 'NM',
-        'email' : 'molberg@gmx.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#FF4646'
-    },
-    {
-        'name': 'Olaf Schuhmacher',
-        'shortName' : 'OS',
-        'email' : 'olaf.schuhmacher@gmx.com',
-        'mobil' : '+49 1111 111 11 11',
-        'color' : '#FF7A00'
-    }
-    ]
+    "users": "[{\"name\":\"Severin Wenger\",\"email\":\"sevi97.wenger@gmail.com\",\"password\":\"halloSeverin\"},{\"name\":\"test nr\",\"email\":\"sdfa@test\",\"password\":\"asdqea\"}]"
+}
+
+{
+    "contacts": [
+        {
+            "name": "Anton Mayer",
+            "shortName": "AM",
+            "email": "anton@gmail.com",
+            "mobil": "+49 1111 111 11 11",
+            "color": "#FF7A00"
+        },
+        {
+            "name": "Anja Schulz",
+            "shortName": "AS",
+            "email": "schulz@hotmail.com",
+            "mobil": "+49 1111 111 11 11",
+            "color": "#9327FF"
+        },
+        {
+            "name": "Benedikt Ziegler",
+            "shortName": "BZ",
+            "email": "Benedikt@gmail.com",
+            "mobil": "+49 1111 111 11 11",
+            "color": "#29ABE2"
+        },
+        {
+            "name": "David Eisenberg",
+            "shortName": "DE",
+            "email": "davidberg@gmail.com",
+            "mobil": "+49 1111 111 11 11",
+            "color": "#FC71FF"
+        },
+        {
+            "name": "Eva Fischer",
+            "shortName" : "DE",
+            "email": "eva@gmail.com",
+            "mobil": "+49 1111 111 11 11",
+            "color": "#02CF2F"
+        },
+        {
+            "name": "Emmanuel Mauer",
+            "shortName": "EM",
+            "email": "emmanuelMa@gmail.com",
+            "mobil": "+49 1111 111 11 11",
+            "color" : "#AF1616"
+        },
+        {
+            "name": "Marcel Bauer",
+            "shortName": "MB",
+            "email": "bauer@gmail.com",
+            "mobil": "+49 1111 111 11 11",
+            "color": "#462F8A"
+        },
+        {
+            "name": "Nina Molberg",
+            "shortName": "NM",
+            "email": "molberg@gmx.com",
+            "mobil": "+49 1111 111 11 11",
+            "color": "#FF4646"
+        },
+        {
+            "name": "Olaf Schuhmacher",
+            "shortName" : "OS",
+            "email" : "olaf.schuhmacher@gmx.com",
+            "mobil" : "+49 1111 111 11 11",
+            "color" : "#FF7A002"
+        }
+    ],
 }

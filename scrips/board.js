@@ -236,3 +236,56 @@ function highlight(id){
 function removeHighlight(id){
     document.getElementById(id).classList.remove('drag-area-border');
 }
+
+
+/**
+ * This function displays the detail view container. It is executed on click on a task
+ * @param {Integer} i -Task id in tasks array which will be shown in the detail view
+ */
+function showDetailContent(i){
+    let task = tasks[i];
+    setDetailViewInnerHTML(task);
+    setDetailViewStyle(task);
+    showPriorityOnDetailView(i);
+}
+
+
+/**
+ * It sets and shows the title, the category and the priority of the task on the detail view container
+ * @param {*} task -task is the task in the tasks array which is shown in the view container
+ */
+function setDetailViewInnerHTML(task){
+    document.getElementById('detail-view-category').innerHTML = task.category;
+    document.getElementById('detail-view-task-title').innerHTML = task.title;
+    document.getElementById('detail-view-description').innerHTML = task.description;
+}
+
+
+function setDetailViewStyle(task){
+    document.getElementById('task-details').classList.remove('d-none');
+    document.getElementById('detail-view-category').classList.add('category-tag');
+    document.getElementById('detail-view-category').classList.add(task.category);
+    document.getElementById('task-container').classList.add('hide-content');
+    document.getElementById('priority-tag-detail-view').classList.add('priority-tag-detail-view');
+}
+
+
+function closeDetailView(){
+    document.getElementById('task-details').classList.add('d-none');
+    document.getElementById('detail-view-category').className = ''; 
+    document.getElementById('task-container').classList.remove('hide-content');
+    document.getElementById('priority-tag-detail-view').className = '';
+}
+
+
+function showPriorityOnDetailView(i){
+    let priority = tasks[i].priority;
+    document.getElementById('priority-tag-detail-view').classList.add('bg-'+priority);
+    if(priority === 'high'){
+        document.getElementById('priority-detail-view').innerHTML = 'Urgent';
+    }
+    else{
+        document.getElementById('priority-detail-view').innerHTML = priority;
+    }
+    document.getElementById('priority-detail-view-img').src = '../img/priority-'+priority+'.svg';
+}
