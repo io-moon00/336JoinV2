@@ -23,15 +23,15 @@ function placeholderHTML(container){
 }
 
 function createCategoryHTML(category){
-    return `<div class="options" value="${category}">
-    <span onclick="showCategory('${category}')" class="option-span">${category}</span>
+    return `<div onclick="showCategory('${category}')" class="options" value="${category}">
+    <span class="option-span">${category}</span>
     <div class="circle"><img src="../img/circle-${category}.svg"></div>
     </div>`
 }
 
 function createCategoryHTMLForButton(category){
     return `
-    <span onclick="showcategory('${category}')" class="option-span">${category}</span>
+    <span class="option-span">${category}</span>
     <div class="circle"><img src="../img/circle-${category}.svg"></div>`
 }
 

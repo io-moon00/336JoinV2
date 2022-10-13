@@ -94,7 +94,7 @@ function btnCategory() {
 
 function showCategory(category){
       document.getElementById('category').classList.remove('d-none'); // show Button
-      document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category); // set inne rHMTL of Butron
+      document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category); // set innerHMTL of Butron
       document.getElementById('optionContainer').classList.add('d-none'); // Verstecke option container
 }
 
@@ -107,61 +107,6 @@ function renderCategories(){
    }
 }
 
-function optionNewCategory() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
-   
-
-}
-
-function optionSales() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
-}
-
-function optionDesign() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
-}
-
-function optionBackoffice() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
-}
-
-function optionMarketing() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
-}
-
-function optionMedia() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-}
 
 function btnPriority1(el) {
    el.style.backgroundColor = "#FF3D00";
