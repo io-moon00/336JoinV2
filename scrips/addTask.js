@@ -105,8 +105,6 @@ function optionNewCategory() {
    document.getElementById('backoffice').classList.add('d-none-imp');
    document.getElementById('marketing').classList.add('d-none-imp');
    document.getElementById('media').classList.add('d-none-imp');
-   
-
 }
 
 function optionSales() {
@@ -171,3 +169,18 @@ function btnPriority1(el) {
    document.getElementById('spanwhite3').style.color = "#FFFFFF";
    document.getElementById('imgWhiteHigh3').src = "../"
  }
+
+function renderContacts () {
+   document.getElementById('contacts').innerHTML ='';
+   for (let i = 0; i < contacts.length; i++) {
+      const contact = contacts[i];
+      document.getElementById('contacts').innerHTML+= `<div>${contact.name} </div>`;
+   }
+}
+
+function btnContacts() {
+   document.getElementById('contacts').classList.remove('d-none-imp');
+   renderContacts ();
+}
+
+
