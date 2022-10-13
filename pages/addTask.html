@@ -27,14 +27,15 @@
         <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
 
         <div class="addTask-container">
-            
+
             <div class="title-container">
                 <input class="input" type="text" placeholder="Enter a title">
             </div>
-            <button class="select-categorie" onclick="btnContacts()" style="background-color: #ffffff;"  style="font-family: open Sans;">
-                <span class="select-categorie-span">Select contacts to assign</span>
-            </button>
-            <div id="contacts" class="d-none-imp">
+            <div class="select-categorie" id="contactsDIV" onclick="btnContacts()" style="background-color: #ffffff;"
+                style="font-family: open Sans;">
+                <div class="select-categorie-span" id="selectedContacts">Select contacts to assign</div>
+            </div>
+            <div id="contacts" class="d-none big-div-contacts">
 
             </div>
 
@@ -42,13 +43,13 @@
                 <h2 style="margin-top: 25px;">Due Date</h2>
             </div>
             <input class="date-container" id="dueDate" type="date" name="effective-date" minlength="1" maxlength="64"
-                placeholder=" " autocomplete="nope" required="required"  style="font-family: open Sans;"></input>
+                placeholder=" " autocomplete="nope" required="required" style="font-family: open Sans;"></input>
             <div>
                 <h2>Category</h2>
             </div>
 
             <div class="select-categorie" id="category" onclick="btnCategory()" style="background-color: #ffffff;">
-                <div id="selected-category" class="select-categorie-span">Select contacts to assign</div>
+                <div id="selected-category" class="select-categorie-span">Select task category</div>
             </div>
             <div class="d-none" id="optionContainer">
 
@@ -58,15 +59,15 @@
             <div class="priority" id="priority">
                 <button class="btn-priority1" onclick="btnPriority1(this)">
                     <span id="spanwhite1" class="p-arrow-red">Urgent</span>
-                    <img id="imgWhiteHigh1"class="arrow-red" src="../img/priority-high.svg">
+                    <img id="imgWhiteHigh1" class="arrow-red" src="../img/priority-high.svg">
                 </button>
                 <button class="btn-priority2" onclick="btnPriority2(this)">
                     <span id="spanwhite2" class="p-arrow-yellow">Medium</span>
-                    <img class="arrow-yellow" src="../img/priority-medium.svg">
+                    <img id="imgWhiteHigh2" src="../img/priority-medium.svg">
                 </button>
                 <button class="btn-priority3" onclick="btnPriority3(this)">
                     <span id="spanwhite3" class="p-arrow-green">Low</span>
-                    <img class="arrow-green" src="../img/priority-low.svg">
+                    <img id="imgWhiteHigh3" src="../img/priority-low.svg">
                 </button>
             </div>
 
@@ -76,7 +77,8 @@
                 <h2>Description</h2>
             </div>
 
-            <textarea class="description-container" id="desc" placeholder="Enter a Discription" style="font-family: open Sans;"></textarea>
+            <textarea class="description-container" id="desc" placeholder="Enter a Discription"
+                style="font-family: open Sans;"></textarea>
 
 
             <div>
