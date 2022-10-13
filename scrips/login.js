@@ -25,7 +25,7 @@ function goToLogin(){
     window.location.href = '../index.html'
 }
 function openRegisterPage(){
-    window.location.href ='/pages/register.html'
+    window.location.href ='/pages/register.html?name='
 }
 
 function addUser(){

@@ -88,16 +88,11 @@ function clearTaskForm() {
 }
 
 function btnCategory() {
-   let toggleOptions = options;
-   if (!toggleOptions) {
-      document.getElementById(`optionContainer`).classList.remove('d-none');
-      options = true;
-   } else {
-      document.getElementById(`optionContainer`).classList.add('d-none');
-      options = false;
-   }
+  document.getElementById('optionContainer').classList.remove('d-none');
+  renderCategories();
 }
 
+<<<<<<< HEAD
 function optionNewCategory() {
    document.getElementById('category').classList.add('d-none-imp');
    document.getElementById('sales').classList.add('d-none-imp');
@@ -105,52 +100,23 @@ function optionNewCategory() {
    document.getElementById('backoffice').classList.add('d-none-imp');
    document.getElementById('marketing').classList.add('d-none-imp');
    document.getElementById('media').classList.add('d-none-imp');
+=======
+function showCategory(category){
+      document.getElementById('category').classList.remove('d-none'); // show Button
+      document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category); // set innerHMTL of Butron
+      document.getElementById('optionContainer').classList.add('d-none'); // Verstecke option container
+>>>>>>> c9654b02b4abf5a2bda2e56c6bc1d5b364c64441
 }
 
-function optionSales() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
+let categories = ['sales', 'design', 'backoffice', 'marketing', 'media'];
+
+function renderCategories(){
+   document.getElementById('optionContainer').innerHTML = `new`;// new Category div
+   for(let i = 0; i < categories.length; i++){
+      document.getElementById('optionContainer').innerHTML += createCategoryHTML(categories[i]);
+   }
 }
 
-function optionDesign() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
-}
-
-function optionBackoffice() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
-}
-
-function optionMarketing() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
-}
-
-function optionMedia() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('newCategory').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-}
 
 function btnPriority1(el) {
    el.style.backgroundColor = "#FF3D00";
