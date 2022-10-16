@@ -1,6 +1,6 @@
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 let users = [];
-
+let user;
 
 async function init(){
     await downloadFromServer();
@@ -11,9 +11,10 @@ async function init(){
 function logIn(){
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
-    let user = users.find(u => u.email == email && u.password == password);
+    user = users.find(u => u.email == email && u.password == password);
     if (user){
-        window.location.href = '/pages/summary.html?name=${user.name}';
+        setUserName(user.name);
+        window.location.href = '/pages/summary.html';
     }
     else{
         alert('kein User mit dem Login gefunden. Bitte erneut versuchen.');
@@ -22,12 +23,12 @@ function logIn(){
 
 
 function goToLogin(){
-    window.location.href = '../index.html'
+    window.location.href = '../index.html';
 }
 
 
 function openRegisterPage(){
-    window.location.href ='/pages/register.html'
+    window.location.href ='/pages/register.html';
 }
 
 
