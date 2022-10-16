@@ -1,6 +1,7 @@
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 let users = [];
 
+
 async function init(){
     await downloadFromServer();
     users = backend.getItem('users') || [];
@@ -12,8 +13,7 @@ function logIn(){
     let password = document.getElementById('password').value;
     let user = users.find(u => u.email == email && u.password == password);
     if (user){
-        setUserName(user.name);
-        window.location.href = '/pages/summary.html';
+        window.location.href = '/pages/summary.html?name=${user.name}';
     }
     else{
         alert('kein User mit dem Login gefunden. Bitte erneut versuchen.');
@@ -24,9 +24,12 @@ function logIn(){
 function goToLogin(){
     window.location.href = '../index.html'
 }
+
+
 function openRegisterPage(){
-    window.location.href ='/pages/register.html?name='
+    window.location.href ='/pages/register.html'
 }
+
 
 function addUser(){
     let name = document.getElementById('name').value;
@@ -36,6 +39,7 @@ function addUser(){
         clearRegisterPanel();
         users.push({name: name, email: email, password: password});
         backend.setItem('users', JSON.stringify(users));
+        setUserName(user.name);
         window.location.href = '/pages/summary.html';
     }
     catch(e){
@@ -44,13 +48,22 @@ function addUser(){
 
 }
 
+
 function clearRegisterPanel(){
     document.getElementById('name').innerHTML='';
     document.getElementById('email').innerHTML='';
     document.getElementById('password').innerHTML='';
 }
 
+
 function guestLogin(){
-    setUserName('Guest');
+    setUserName('Guest')
     window.location.href = '/pages/summary.html';
 }
+
+
+function setUserName(item){
+    localStorage.setItem('userName', JSON.stringify(item));
+}
+
+
