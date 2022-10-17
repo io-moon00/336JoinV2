@@ -92,7 +92,6 @@ function btnCategory() {
   renderCategories();
 }
 
-<<<<<<< HEAD
 function optionNewCategory() {
    document.getElementById('category').classList.add('d-none-imp');
    document.getElementById('sales').classList.add('d-none-imp');
@@ -100,12 +99,12 @@ function optionNewCategory() {
    document.getElementById('backoffice').classList.add('d-none-imp');
    document.getElementById('marketing').classList.add('d-none-imp');
    document.getElementById('media').classList.add('d-none-imp');
-=======
+}
+
 function showCategory(category){
       document.getElementById('category').classList.remove('d-none'); // show Button
       document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category); // set innerHMTL of Butron
       document.getElementById('optionContainer').classList.add('d-none'); // Verstecke option container
->>>>>>> c9654b02b4abf5a2bda2e56c6bc1d5b364c64441
 }
 
 let categories = ['sales', 'design', 'backoffice', 'marketing', 'media'];
