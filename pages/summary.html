@@ -15,10 +15,11 @@
     <title>Summary</title>
     <script src="../scrips/mini_backend.js"></script>
     <script src="../scrips/script.js"></script>
+    <script src="../scrips/categorizeTasks.js"></script>
     <script src="../scrips/summary.js"></script>
 </head>
 
-<body onload="init()">
+<body onload="initSummary()">
     <header w3-include-html="../templates/header.html">
 
     </header>
@@ -48,7 +49,7 @@
                     <div class="to-do-task-summary">
                         <div class="to-do-top">
                             <img class="summary-task-icon" src="../img/board-summary-icon.svg">
-                            <span class="tasks-amount">1</span>
+                            <span id="tasks-to-do-summary" class="tasks-amount"></span>
                         </div>
                         <span class="to-do-text">Tasks To-do</span>
                     </div>
@@ -57,28 +58,28 @@
                     <div class="taskInBoard">
                         <div class="to-do-top">
                             <img class="summary-task-icon" src="../img/board-summary-icon.svg">
-                            <span id="tasks-to-do-summary" class="tasks-amount"></span>
+                            <span id="tasks-summary" class="tasks-amount"></span>
                         </div>
                         <span class="to-do-text">Task in Board</span>
                     </div>
                     <div class="taskInBoard">
                         <div class="to-do-top">
                             <img class="summary-task-icon"  src="../img/summary-board-progress-icon.svg">
-                            <span class="tasks-amount">5</span>
+                            <span id="task-in-progress-summary" class="tasks-amount"></span>
                         </div>
                         <span class="to-do-text">Task in Progress</span>
                     </div>
                     <div class="taskInBoard">
                         <div class="to-do-top">
                             <img class="summary-task-icon"  src="../img/awaiting-feedback-icon.svg">
-                            <span class="tasks-amount">5</span>
+                            <span id="task-awaiting-feedback-summary" class="tasks-amount"></span>
                         </div>
                         <span class="to-do-text">Awaiting Feedback</span>
                     </div>
                     <div class="taskInBoard">
                         <div class="to-do-top">
                             <img class="summary-task-icon"  src="../img/done-icon.svg">
-                            <span class="tasks-amount">5</span>
+                            <span id="task-done-summary" class="tasks-amount"></span>
                         </div>
                         <span class="to-do-text">Task Done</span>
                     </div>

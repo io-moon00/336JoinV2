@@ -3,6 +3,9 @@ let users = [];
 let user;
 
 async function init(){
+    if(getRememberStatus()){
+        window.location.href = '/pages/summary.html';
+    }
     await downloadFromServer();
     users = backend.getItem('users') || [];
 }
@@ -14,6 +17,7 @@ function logIn(){
     user = users.find(u => u.email == email && u.password == password);
     if (user){
         setUserName(user.name);
+        setRememberStatusToLocalStorage();
         window.location.href = '/pages/summary.html';
     }
     else{
@@ -46,7 +50,6 @@ function addUser(){
     catch(e){
         console.log(e);
     }
-
 }
 
 
@@ -66,5 +69,27 @@ function guestLogin(){
 function setUserName(item){
     localStorage.setItem('userName', JSON.stringify(item));
 }
+
+
+function rememberMe(){
+    return document.getElementById('checkBox-remember-me');
+}
+
+
+function setRememberStatusToLocalStorage(){
+    if(rememberMe){
+        localStorage.setItem('remember', 'true');
+    }
+    else{
+        localStorage.setItem('remember', 'false');
+    }
+}
+
+
+function getRememberStatus(){
+    return JSON.parse(localStorage.getItem('remember'));
+}
+
+
 
 

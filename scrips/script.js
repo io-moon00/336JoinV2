@@ -15,3 +15,8 @@ async function includeHTML() {
 function markActivePage(page){
     document.getElementById(page + '-link').classList.add('activ-element');
 }
+
+
+function logOut(){
+    window.location.href = '../index.html';
+}
