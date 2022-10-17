@@ -134,13 +134,12 @@
 
             </div>
             <!--New Contact-->
-            <div class="new-contact-container">
+            <div class="new-contact-container d-none" id="newContact">
                 <div>
                     <div class="close-new-cotact">
-                        <img src="../img/close-cross-white.svg">
+                        <img onclick="returnNewContact()" src="../img/close-cross-white.svg">
                     </div>
                     <div class="new-contact-header">
-
                         <img src="../img/logo-white.svg">
                         <h2>Add contact</h2>
                         <span>Tasks are better with a team!</span>
@@ -149,20 +148,20 @@
                 <div class="new-contact-list">
                     <div class="kontakt-circle-add" style="background-color: #D1D1D1;"><img src="../img/user_head.svg"></div>
                     <div class="new-contact-list-colum">
-                        <input class="input-title-user" type="text" placeholder="Name" id="title">
+                        <input id="contactName" class="input-title-user" type="text" placeholder="Name">
                         <img src="../img/User.svg">
                     </div>
                     <div class="new-contact-list-colum">
-                        <input class="input-title-user" type="text" placeholder="Email" id="title">
+                        <input id="contactEmail" class="input-title-user" type="text" placeholder="Email">
                         <img src="../img/eMail-icon.svg">
                     </div>
                     <div class="new-contact-list-colum">
-                        <input class="input-title-user" type="text" placeholder="Phone" id="title">
+                        <input id="contactPhone" class="input-title-user" type="text" placeholder="Phone">
                         <img src="../img/phone.svg">
                     </div>
-                    <div class="margin-bottom">
-                        <button class="btn-cancel">Cancel X</button>
-                        <button class="btn-create-contact">Create contact <img src="../img/checkmark.svg"></button>
+                    <div class="btn-conect-btn">
+                        <button class="btn-cancel" onclick="cancelList()">Cancel X</button>
+                        <button class="btn-create-contact" onclick="addNewContact()">Create contact <img src="../img/checkmark.svg"></button>
                     </div>
                 </div>
             </div>
@@ -170,6 +169,38 @@
             <!--Contact Information-->
             <div id="contact" class="overlay-contact">
                 <div class="display-column" id="detailContact">
+                    <div class="display-center margin-top">
+                        <span class="kontakt-circle-big" style="background-color: ${contacts[i].color};>${contacts[i].shortName}</span>
+                        <div class="mail-name">
+                            <span id="contactNameShowDetail"class="contact-name-contact"></span>
+                            <div class="contact-name" style="color:#4589FF">
+                                <img src="../img/plus.png">
+                                <span class="add-task">Add Task</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="contact-view">
+                            <span class=""><b>Contact Information</b></span>
+                            <div class="">
+                            <img class="pencil" src="../img/pencil.png">
+                            <span class="edit-contact">Edit Contact</span>
+                            </div>
+                        </div>
+                        <div class="margin-top">
+                            <span><b>Email</b></span>
+                        </div>
+                        <div>
+                            <span" style="color:#4589FF">${contacts[i].email}</span>
+                        </div>
+                        <div class="margin-top">
+                            <span><b>Mobil:</b></span>
+                        </div>
+                        <div>
+                            <span>${contacts[i].mobile}</span>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 
