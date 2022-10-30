@@ -21,7 +21,8 @@ function logIn(){
         window.location.href = '/pages/summary.html';
     }
     else{
-        alert('kein User mit dem Login gefunden. Bitte erneut versuchen.');
+        document.getElementById('wrong-password').classList.remove('d-none');
+        document.getElementById('password').placeholder = 'Ups. Try again';
     }
 }
 
@@ -90,6 +91,27 @@ function getRememberStatus(){
     return JSON.parse(localStorage.getItem('remember'));
 }
 
+let passwordVisible = false;
+function showEyeIcon(){
 
+    if(!passwordVisible){
+        document.getElementById('password-icon').src = '/img/eye.svg';
+        document.getElementById('password-icon').onclick = showPassword();
+        passwordVisible = true;
+    }
+    else{
+        document.getElementById('password-icon').src = '/img/notEye.svg';
+        document.getElementById('password-icon').onclick = hidePassword();
+        passwordVisible = false;
+    }
 
+}
+
+function showPassword(){
+    document.getElementById('password').classList.remove('security-text');
+}
+
+function hidePassword(){
+    document.getElementById('password').classList.add('security-text');
+}
 

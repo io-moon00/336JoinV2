@@ -1,7 +1,6 @@
 let tasks = [];
 let task;
 let contacts = [];
-let options = false;
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 async function init() {
@@ -9,10 +8,14 @@ async function init() {
    markActivePage('addTask');
    await downloadFromServer();
    tasks = backend.getItem('tasks') || [];
-   contacts = backend.getItem('contacts') || [];
+   contacts = JSON.parse(backend.getItem('contacts')) || [];
+   renderSubtasks();
 }
 
-
+/**
+ * the function returns the entered title
+ * @returns
+ */
 function getTitle() {
    let title = document.getElementById('tasktitle').value;
    return title;                                                // mit rerurn wird das Ergebnis zurückgegeben
@@ -87,65 +90,68 @@ function clearTaskForm() {
    document.getElementById('contact').value = '';
 }
 
-function btnCategory() {
-  document.getElementById('optionContainer').classList.remove('d-none');
-  renderCategories();
-}
-
-function optionNewCategory() {
-   document.getElementById('category').classList.add('d-none-imp');
-   document.getElementById('sales').classList.add('d-none-imp');
-   document.getElementById('design').classList.add('d-none-imp');
-   document.getElementById('backoffice').classList.add('d-none-imp');
-   document.getElementById('marketing').classList.add('d-none-imp');
-   document.getElementById('media').classList.add('d-none-imp');
+let categoriesVisible;
+function selectCategory() {
+   if(categoriesVisible){
+      document.getElementById('category-container').innerHTML = '';
+      categoriesVisible = false;
+   }
+   else{
+      renderCategories();
+      categoriesVisible = true;
+   }
 }
 
 function showCategory(category){
-      document.getElementById('category').classList.remove('d-none'); // show Button
-      document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category); // set innerHMTL of Butron
-      document.getElementById('optionContainer').classList.add('d-none'); // Verstecke option container
+   document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category);
+   document.getElementById('selected-category').classList.add('capitalize');
+   document.getElementById('category-container').innerHTML = '';
 }
 
 let categories = ['sales', 'design', 'backoffice', 'marketing', 'media'];
 
 function renderCategories(){
-   document.getElementById('optionContainer').innerHTML = `new`;// new Category div
+   document.getElementById('category-container').innerHTML = '';
+   document.getElementById('category-container').innerHTML = `<div onclick="createCategory()" class="options"><span class="option-span">new category</span></div>`;
    for(let i = 0; i < categories.length; i++){
-      document.getElementById('optionContainer').innerHTML += createCategoryHTML(categories[i]);
+      document.getElementById('category-container').innerHTML += createCategoryHTML(categories[i]);
    }
 }
 
 
-function btnPriority1(el) {
-   el.style.backgroundColor = "#FF3D00";
-   document.getElementById('spanwhite1').style.color = "#FFFFFF";
-   document.getElementById('imgWhiteHigh1').src = "../"
- }
-
- function btnPriority2(el) {
-   el.style.backgroundColor = "#FFA800";
-   document.getElementById('spanwhite2').style.color = "#FFFFFF";
-   document.getElementById('imgWhiteHigh2').src = "../"
- }
-
- function btnPriority3(el) {
-   el.style.backgroundColor = "#7AE229";
-   document.getElementById('spanwhite3').style.color = "#FFFFFF";
-   document.getElementById('imgWhiteHigh3').src = "../"
- }
-
-function renderContacts () {
-   document.getElementById('contacts').innerHTML ='';
-   for (let i = 0; i < contacts.length; i++) {
-      const contact = contacts[i];
-      document.getElementById('contacts').innerHTML+= `<div>${contact.name} </div>`;
+let contactVisible;
+function assignContacts(){
+   if(contactVisible){
+      document.getElementById('contacts').innerHTML = '';
+      contactVisible = false;
+   }
+   else{
+      renderContacts();
+      contactVisible = true;
    }
 }
 
-function btnContacts() {
-   document.getElementById('contacts').classList.remove('d-none-imp');
-   renderContacts ();
+function renderContacts(){
+   document.getElementById('contacts').innerHTML = '';
+   for (let i = 0; i< contacts.length; i++){
+      console.log();
+      document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name);
+   } 
 }
 
 
+let subtasks = ['Subtask 1', 'Subtask 2'];
+function renderSubtasks(){
+   document.getElementById('subtasks').innerHTML = '';
+   for(let i = 0; i<subtasks.length; i ++){
+      document.getElementById('subtasks').innerHTML += subtaskHTML(subtasks[i]);
+   }
+}
+
+
+function addSubtask(){
+   let newSubtask = document.getElementById('subtask-input').value;
+   subtasks.push(newSubtask);
+   document.getElementById('subtask-input').value = '';
+   renderSubtasks();
+}

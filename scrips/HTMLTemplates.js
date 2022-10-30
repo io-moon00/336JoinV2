@@ -25,15 +25,33 @@ function placeholderHTML(container){
 function createCategoryHTML(category){
     return `<div onclick="showCategory('${category}')" class="options" value="${category}">
     <span class="option-span">${category}</span>
-    <div class="circle"><img src="../img/circle-${category}.svg"></div>
+    <div class="circle ${category}"></div>
     </div>`
 }
 
 function createCategoryHTMLForButton(category){
     return `
     <span class="option-span">${category}</span>
-    <div class="circle"><img src="../img/circle-${category}.svg"></div>`
+    <div class="circle ${category}"></div>
+    `
 }
 
+function contactLabelHTML(name){
+    return `
+    <label class="contact-label">
+       <span class="contact-name">${name}</span>
+       <input class="checkbox" type="checkbox" id="" value="yes">
+    </label>
+ `
+ }
 
+ 
+function subtaskHTML(subtask){
+    return `
+    <label class="subtask-label">
+       <input class="checkbox" type="checkbox" id="" value="yes">
+       <span>${subtask}</span>
+    </label>
+    `
+ }
 
