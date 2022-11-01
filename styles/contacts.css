@@ -11,13 +11,18 @@ body{
     justify-content: flex-start;
     align-items: center;
 }
+.display-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 .display-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
- 
+
 .mail-name {
     display: flex;
     flex-direction: column;
@@ -43,10 +48,11 @@ body{
     cursor: pointer;
 }
 .new-contact-btn {
-    background-color:#4589FF; 
+    background-color:white; 
     border: none;
     border-radius: 15px;
-    color: white;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px 2px;
+    color:#4589FF;
     padding: 5px 15px 5px 15px;
     text-align: center;
     text-decoration: none;
@@ -72,7 +78,6 @@ body{
     cursor: pointer;
     display: inline-flex;
 }
-
 .contact-name-container:hover .hover-button {
     background-color: black;
 }
@@ -130,6 +135,9 @@ body{
 .margin-top {
     margin-top: 15px;
 }
+.margin-bottom {
+    margin-bottom: 40px;
+}
 .show-overlay-contact {
     transform: translateX(600px);
     transition: all 225ms ease-in-out;
@@ -142,25 +150,109 @@ body{
     transform: translateX(+2001px);
     transition: all 225ms ease-in-out;
 }
-
-        /* Designing for scroll-bar */
-        .contact-summary::-webkit-scrollbar {
-            width: 6px;
-        }
-     
-        /* Track */
-        .contact-summary::-webkit-scrollbar-track {
-            background: gainsboro;
-            border-radius: 5px;
-        }
-     
-        /* Handle */
-        .contact-summary::-webkit-scrollbar-thumb {
-            background: black;
-            border-radius: 5px;
-        }
-     
-        /* Handle on hover */
-        .contact-summary::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
+/* Designing for scroll-bar */
+.contact-summary::-webkit-scrollbar {
+    width: 6px;
+}  
+/* Track */
+.contact-summary::-webkit-scrollbar-track {
+    background: gainsboro;
+    border-radius: 5px;
+}   
+/* Handle */
+.contact-summary::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 5px;
+}  
+/* Handle on hover */
+.contact-summary::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.new-contact-container{
+    position: absolute;
+    height: 100vh;
+    width: 500px;
+    top: 0;
+    left: 0px;
+    z-index: 5;
+    background-color: white;
+    border: 1px solid #D1D1D1;
+    border-top-right-radius: 20px;
+    transform: translateX(0);
+    transition: all 225ms ease-in-out;
+}
+.new-contact-header {
+    background-color:  #4589FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 33vh;
+    color:white;
+}
+.new-contact-header img {
+    width: 65px;
+    height: auto;
+}
+.new-contact-header h2 {
+    font-size: 48px;
+    margin-bottom: 0;
+}
+.new-contact-header span {
+    font-size: 27px;
+}
+.new-contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.new-contact-list-colum {
+    border-bottom: 1px solid #D1D1D1;
+}
+.kontakt-circle-add {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #ffff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+.btn-cancel {
+    border: 2px solid #4589FF;
+    border-radius: 5px;
+    color: #4589FF ;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 0px 0px;
+}
+.btn-create-contact {
+    background-color: #4589FF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.close-new-cotact {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #4589FF;
+    padding: 20px;
+    border-top-right-radius: 20px;
+}
+.close-new-cotact img {
+    width: 20px;
+    height: auto;
+}
+.new-contact-list-colum {
+}
+.new-contact-list-colum span {
+    color: #D1D1D1;
+}
+.input-title-user {
+    margin-top: 55px;
+    margin-right: 150px;
+    border: 0;
+    color: #D1D1D1;
+    
+}
