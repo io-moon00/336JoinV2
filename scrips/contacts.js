@@ -46,6 +46,7 @@ function showContact(i) {
         document.getElementById('contact').classList.remove('overlay-contact');
         clicked = true;
     }
+    detailContact(i);
 }
 function returnShowContact() {
     document.getElementById('contact').classList.remove('show-overlay-contact');
@@ -79,12 +80,50 @@ function addNewContact() {
     let email = document.getElementById('contactEmail').value;
     let mobile = document.getElementById('contactPhone').value;
     
-    if(name && email && mobile) {
+/*    if(name && email && mobile) {
         contacts.push({name: name, email: email, mobile: mobile, color: "dfagad" });
         backend.setItem('contacts', JSON.stringify(contacts));
         cancelList();
         console.log("Kontakt erfolgreich hinzugefügt");
     } else {
         alert('Bitte füge einen Name, die Email-Adresse und Telefon hinzu');
-    }
+    }*/
+}
+
+function detailContact(i) {
+    document. getElementById('contact').innerHTML +=`
+    <div class="display-column" id="detailContact">
+        <div class="display-center margin-top">
+            <span class="kontakt-circle-big" style="background-color: ${contacts[i].color};>${contacts[i].shortName}</span>
+            <div class="mail-name">
+                <span id="contactNameShowDetail"class="contact-name-contact"></span>
+                <div class="contact-name" style="color:#4589FF">
+                    <img src="../img/plus.png">
+                    <span class="add-task">Add Task</span>
+                </div>
+            </div>
+    </div>
+        <div>
+            <div class="contact-view">
+                <span class=""><b>Contact Information</b></span>
+                <div class="">
+                    <img class="pencil" src="../img/pencil.png">
+                    <span class="edit-contact">Edit Contact</span>
+                </div>
+            </div>
+                <div class="margin-top">
+                    <span><b>Email</b></span>
+                </div>
+                <div>
+                    <span" style="color:#4589FF">${contacts[i].email}</span>
+                </div>
+                <div class="margin-top">
+                    <span><b>Mobil:</b></span>
+                </div>
+                <div>
+                    <span>${contacts[i].mobile}</span>
+                </div>
+        </div>
+    `
+    ;
 }
