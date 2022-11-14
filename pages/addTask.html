@@ -20,98 +20,80 @@
 </head>
 
 <body onload="init()">
-    <header w3-include-html="../templates/header.html">
+    <header w3-include-html="../templates/header.html"> </header>
 
-    </header>
     <div class="content">
         <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
 
         <div class="addTask-container">
-
             <div class="title-container">
                 <input class="input" type="text" placeholder="Enter a title">
             </div>
-            <div class="select-categorie" id="contactsDIV" onclick="btnContacts()" style="background-color: #ffffff;"
-                style="font-family: open Sans;">
-                <div class="select-categorie-span" id="selectedContacts">Select contacts to assign</div>
+            <div class="select" onclick="assignContacts()">
+                <div>Select contacts to assign</div>
+                <img src="/img/drop-down-icon.svg" alt="drop down icon">
             </div>
-            <div id="contacts" class="d-none big-div-contacts">
+            <div id="contacts" class="contacts">
 
             </div>
-
             <div>
-                <h2 style="margin-top: 25px;">Due Date</h2>
+                <h2>Due Date</h2>
             </div>
-            <input class="date-container" id="dueDate" type="date" name="effective-date" minlength="1" maxlength="64"
-                placeholder=" " autocomplete="nope" required="required" style="font-family: open Sans;"></input>
-            <div>
-                <h2>Category</h2>
-            </div>
-
-            <div class="select-categorie" id="category" onclick="btnCategory()" style="background-color: #ffffff;">
-                <div id="selected-category" class="select-categorie-span">Select task category</div>
-            </div>
-            <div class="d-none" id="optionContainer">
-
+            <div class="date-container">
+                <input class="date-input" id="dueDate" type="text" placeholder="dd/mm/yyyy"></input>
+                <img src="../img/calendar-icon.svg" alt="calendar icon">
             </div>
 
+            <h2>Category</h2>
+            <div class="select" id="category" onclick="selectCategory()">
+                <div class="" id="selected-category">Select taks category</div>
+                <img src="/img/drop-down-icon.svg" alt="drop down icon">
+            </div>
+            <div class="option-container" id="category-container">
 
+            </div>
             <div class="priority" id="priority">
-                <button class="btn-priority1" onclick="btnPriority1(this)">
-                    <span id="spanwhite1" class="p-arrow-red">Urgent</span>
-                    <img id="imgWhiteHigh1" class="arrow-red" src="../img/priority-high.svg">
+                <button class="btn-priority red" onclick="">
+                    <span id="spanwhite1">Urgent</span>
+                    <img id="imgWhiteHigh1" src="../img/priority-high.svg">
                 </button>
-                <button class="btn-priority2" onclick="btnPriority2(this)">
-                    <span id="spanwhite2" class="p-arrow-yellow">Medium</span>
-                    <img id="imgWhiteHigh2" src="../img/priority-medium.svg">
+                <button class="btn-priority orange" onclick="">
+                    <span id="spanwhite2">Medium</span>
+                    <img src="../img/priority-medium.svg">
                 </button>
-                <button class="btn-priority3" onclick="btnPriority3(this)">
-                    <span id="spanwhite3" class="p-arrow-green">Low</span>
-                    <img id="imgWhiteHigh3" src="../img/priority-low.svg">
+                <button class="btn-priority green" onclick="">
+                    <span id="spanwhite3">Low</span>
+                    <img src="../img/priority-low.svg">
                 </button>
             </div>
-
-
-
             <div>
                 <h2>Description</h2>
             </div>
-
-            <textarea class="description-container" id="desc" placeholder="Enter a Discription"
-                style="font-family: open Sans;"></textarea>
-
-
+            <textarea class="description-container" id="desc" placeholder="Enter a Discription"></textarea>
             <div>
                 <h2>Subtasks</h2>
             </div>
-            <select class="select-categorie" style="background-image: url(../img/plus.png); color: #d1d1d1; ">
-                <option disabled selected>Add new subtask</option>
-            </select>
-            <div class="footer-container">
-                <div class="flex">
-                    <div class="square"></div>
-                    <span class="subtask1">Subtask 1</span>
-                </div>
+            <div class="select">
+                <input id="subtask-input" placeholder="Add new subtask">
+                <img onclick="addSubtask()" src="/img/plus-blue.svg" alt="plus icon">
+            </div>
+            <div id="subtasks" class="subtasks">
+
+            </div>
                 <div class="clear-create">
-
-                    <button class="clear-container">
-                        <span class="clear">Clear</span>
-                        <img src="../img/close-cross.svg">
+                    <button class="secondary-button button">
+                        <span>Clear</span>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none">
+                            <path class="cross" d="M7.00106 6.50008L12.2441 11.7431M1.75806 11.7431L7.00106 6.50008L1.75806 11.7431ZM12.2441 1.25708L7.00006 6.50008L12.2441 1.25708ZM7.00006 6.50008L1.75806 1.25708L7.00006 6.50008Z" stroke="#647188" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </button>
-
-                    <button class="create-container">
-                        <span class="createTask">Create Task</span>
+                    <button class="primary-button button">
+                        <span>Create Task</span>
                         <img src="../img/checkmark.svg">
                     </button>
                 </div>
-
-            </div>
         </div>
-
     </div>
-
-
-
 </body>
 
 </html>

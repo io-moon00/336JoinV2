@@ -1,6 +1,3 @@
-let userName;
-
-
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -20,6 +17,6 @@ function markActivePage(page){
 }
 
 
-function setUserName(name){
-    userName = name;
+function logOut(){
+    window.location.href = '../index.html';
 }

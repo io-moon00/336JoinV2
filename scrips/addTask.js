@@ -1,7 +1,6 @@
 let tasks = [];
 let task;
 let contacts = [];
-let options = false;
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 async function init() {
@@ -9,10 +8,14 @@ async function init() {
    markActivePage('addTask');
    await downloadFromServer();
    tasks = backend.getItem('tasks') || [];
-   contacts = backend.getItem('contacts') || [];
+   contacts = JSON.parse(backend.getItem('contacts')) || [];
+   renderSubtasks();
 }
 
-
+/**
+ * the function returns the entered title
+ * @returns
+ */
 function getTitle() {
    let title = document.getElementById('tasktitle').value;
    return title;                                                // mit rerurn wird das Ergebnis zurückgegeben
@@ -87,66 +90,68 @@ function clearTaskForm() {
    document.getElementById('contact').value = '';
 }
 
-function btnCategory() {
-  document.getElementById('optionContainer').classList.remove('d-none');
-  renderCategories();
+let categoriesVisible;
+function selectCategory() {
+   if(categoriesVisible){
+      document.getElementById('category-container').innerHTML = '';
+      categoriesVisible = false;
+   }
+   else{
+      renderCategories();
+      categoriesVisible = true;
+   }
 }
 
-
 function showCategory(category){
-      document.getElementById('category').classList.remove('d-none'); // show Button
-      document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category); // set innerHMTL of Butron
-      document.getElementById('optionContainer').classList.add('d-none'); // Verstecke option container
+   document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category);
+   document.getElementById('selected-category').classList.add('capitalize');
+   document.getElementById('category-container').innerHTML = '';
 }
 
 let categories = ['sales', 'design', 'backoffice', 'marketing', 'media'];
 
 function renderCategories(){
-   document.getElementById('optionContainer').innerHTML = `<div onclick="showCategory('${category}')" class="options" value="${category}">
-   <div class="option-span">New Category</div>
-   </div>`;// new Category div
+   document.getElementById('category-container').innerHTML = '';
+   document.getElementById('category-container').innerHTML = `<div onclick="createCategory()" class="options"><span class="option-span">new category</span></div>`;
    for(let i = 0; i < categories.length; i++){
-      document.getElementById('optionContainer').innerHTML += createCategoryHTML(categories[i]);
+      document.getElementById('category-container').innerHTML += createCategoryHTML(categories[i]);
    }
 }
 
-function showContacts(category){
-   document.getElementById('contactsDIV').classList.remove('d-none'); // show Button
-   document.getElementById('selectedContacts').innerHTML = createCategoryHTMLForButton(category); // set innerHMTL of Butron
-   document.getElementById('contacts').classList.add('d-none'); // Verstecke option container
-}
 
-function renderContacts () {
-   document.getElementById('contacts').innerHTML ='';
-   for (let i = 0; i < contacts.length; i++) {
-      const contact = contacts[i];
-      document.getElementById('contacts').innerHTML+= `
-      <div class="flex contacts-div">
-      <div class="option-span">${contact.name}</div>
-      <div class="quadrat"><img src="../img/quardrat.svg"></div>
-      </div>`;
+let contactVisible;
+function assignContacts(){
+   if(contactVisible){
+      document.getElementById('contacts').innerHTML = '';
+      contactVisible = false;
+   }
+   else{
+      renderContacts();
+      contactVisible = true;
    }
 }
 
-function btnContacts() {
-   document.getElementById('contacts').classList.remove('d-none');
-   renderContacts ();
+function renderContacts(){
+   document.getElementById('contacts').innerHTML = '';
+   for (let i = 0; i< contacts.length; i++){
+      console.log();
+      document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name);
+   } 
 }
 
-function btnPriority1(el) {
-   el.style.backgroundColor = "#FF3D00";
-   document.getElementById('spanwhite1').style.color = "#FFFFFF";
-   document.getElementById('imgWhiteHigh1').src = "../img/priority-high-white.svg"
- }
 
- function btnPriority2(el) {
-   el.style.backgroundColor = "#FFA800";
-   document.getElementById('spanwhite2').style.color = "#FFFFFF";
-   document.getElementById('imgWhiteHigh2').src = "../img/priority-medium-white.svg"
- }
+let subtasks = ['Subtask 1', 'Subtask 2'];
+function renderSubtasks(){
+   document.getElementById('subtasks').innerHTML = '';
+   for(let i = 0; i<subtasks.length; i ++){
+      document.getElementById('subtasks').innerHTML += subtaskHTML(subtasks[i]);
+   }
+}
 
- function btnPriority3(el) {
-   el.style.backgroundColor = "#7AE229";
-   document.getElementById('spanwhite3').style.color = "#FFFFFF";
-   document.getElementById('imgWhiteHigh3').src = "../img/priority-low-white.svg"
- }
+
+function addSubtask(){
+   let newSubtask = document.getElementById('subtask-input').value;
+   subtasks.push(newSubtask);
+   document.getElementById('subtask-input').value = '';
+   renderSubtasks();
+}
