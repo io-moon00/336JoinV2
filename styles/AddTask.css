@@ -185,26 +185,57 @@ input:focus{
     border-radius: 10px;
     flex: none;
     background: #FFFFFF;
+    cursor: pointer;
 }
 
 .red:hover {
     border-bottom: 2px solid #FF3D00;
-    transition: all 175ms ease-in-out;
+    transition: border 175ms ease-in-out;
 }
 
 .orange:hover {
     border-bottom: 2px solid #FFA800;
-    transition: all 175ms ease-in-out;
+    transition: border 175ms ease-in-out;
 }
 
 .green:hover {
     border-bottom: 2px solid #7AE229;
-    transition: all 175ms ease-in-out;
+    transition: border 175ms ease-in-out;
 }
 
 .priority span{
     font-size: 19px;
     line-height: 23px;
+}
+
+.high {
+ background-color: var(--urgent-color) !important;
+ color: white !important;
+ border-color: transparent !important;
+}
+
+.high path{
+    fill: white;
+}
+
+.medium {
+    background-color: var(--medium-color) !important;
+    color: white !important;
+    border-color: transparent !important;
+   }
+
+.medium path{
+    fill: white;
+  } 
+
+.low {
+    background-color: var(--low-color) !important;
+    color: white !important;
+    border-color: transparent !important;
+   }
+
+.low path{
+    fill: white;
 }
 
 /* select category section*/

@@ -169,4 +169,10 @@ function addSubtask(){
 
 function setPriority(selectedPriority){
    priority = selectedPriority;
+
+   document.getElementById('high').classList.remove('high');
+   document.getElementById('medium').classList.remove('medium');
+   document.getElementById('low').classList.remove('low');
+
+   document.getElementById(priority).classList.add(priority);
 }
