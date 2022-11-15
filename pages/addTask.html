@@ -27,7 +27,7 @@
 
         <div class="addTask-container">
             <div class="title-container">
-                <input class="input" type="text" placeholder="Enter a title">
+                <input id="task-title" class="input" type="text" placeholder="Enter a title">
             </div>
             <div class="select" onclick="assignContacts()">
                 <div>Select contacts to assign</div>
@@ -40,7 +40,7 @@
                 <h2>Due Date</h2>
             </div>
             <div class="date-container">
-                <input class="date-input" id="dueDate" type="text" placeholder="dd/mm/yyyy"></input>
+                <input class="date-input" id="due-date" type="text" placeholder="dd/mm/yyyy"></input>
                 <img src="../img/calendar-icon.svg" alt="calendar icon">
             </div>
 
@@ -53,23 +53,23 @@
 
             </div>
             <div class="priority" id="priority">
-                <button class="btn-priority red" onclick="">
-                    <span id="spanwhite1">Urgent</span>
-                    <img id="imgWhiteHigh1" src="../img/priority-high.svg">
+                <button class="btn-priority red" onclick="setPriority('high')">
+                    <span>Urgent</span>
+                    <img src="../img/priority-high.svg">
                 </button>
-                <button class="btn-priority orange" onclick="">
-                    <span id="spanwhite2">Medium</span>
+                <button class="btn-priority orange" onclick="setPriority('medium')">
+                    <span>Medium</span>
                     <img src="../img/priority-medium.svg">
                 </button>
-                <button class="btn-priority green" onclick="">
-                    <span id="spanwhite3">Low</span>
+                <button class="btn-priority green" onclick="setPriority('low')">
+                    <span>Low</span>
                     <img src="../img/priority-low.svg">
                 </button>
             </div>
             <div>
                 <h2>Description</h2>
             </div>
-            <textarea class="description-container" id="desc" placeholder="Enter a Discription"></textarea>
+            <textarea class="description-container" id="description" placeholder="Enter a Discription"></textarea>
             <div>
                 <h2>Subtasks</h2>
             </div>
@@ -87,7 +87,7 @@
                             <path class="cross" d="M7.00106 6.50008L12.2441 11.7431M1.75806 11.7431L7.00106 6.50008L1.75806 11.7431ZM12.2441 1.25708L7.00006 6.50008L12.2441 1.25708ZM7.00006 6.50008L1.75806 1.25708L7.00006 6.50008Z" stroke="#647188" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <button class="primary-button button">
+                    <button onclick="addTask()" class="primary-button button">
                         <span>Create Task</span>
                         <img src="../img/checkmark.svg">
                     </button>
