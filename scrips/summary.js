@@ -6,7 +6,7 @@ async function initSummary(){
     await includeHTML();
     markActivePage('summary');
     await downloadFromServer();
-    tasks = backend.getItem('tasks') || [];
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
     showUserName();
     setDate();
     setAllTaskArrays();
