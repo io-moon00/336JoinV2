@@ -182,10 +182,10 @@ function detailContact(i) {
     </div>
         <div>
             <div class="contact-view">
-                <span class=""><b>Contact Information</b></span>
+                <span><b>Contact Information</b></span>
                 <div onclick="editContact(${i})" class="editContact">
-                    <img class="pencil" src="../img/pencil_1.svg">
-                    <span class="edit-contact">Edit Contact</span>
+                    <img class="pencil" src="../img/pencil_layout.svg">
+                    <span>Edit Contact</span>
                 </div>
             </div>
                 <div class="margin-top">

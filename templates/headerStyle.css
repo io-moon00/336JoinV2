@@ -30,3 +30,16 @@ header {
     border-radius: 50%;
     background-color: white;
 }
+@media (max-width: 500px) {
+    .right-header-section img {
+        display: none;
+    }
+}
+@media (max-width: 420px) {
+    .right-header-section span {
+        display: none;
+    }
+    .navbar {
+        display: none;
+    } 
+}

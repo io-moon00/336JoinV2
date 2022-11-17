@@ -115,7 +115,7 @@ body{
 .pencil {
     width: 16px;
     height: 16px;
-    margin-left: 20px;
+    margin-right: 10px;
 }
 .contact-view {
     display: flex;
@@ -127,10 +127,6 @@ body{
     font-size: 16px;
     margin-left: 8px;
     cursor: pointer;
-    
-}
-.edit-contact {
-    font-size: 16px;
 }
 .margin-top {
     margin-top: 15px;
@@ -181,7 +177,7 @@ body{
     transition: all 225ms ease-in-out;
 }
 .new-contact-header {
-    background-color:  #4589FF;
+    background-color: #4589FF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -293,11 +289,15 @@ body{
     color: black;
 }
 .editContact {
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px 5px 5px;
 }
 .editContact:hover { 
     transition: all 225ms ease-in-out;
-    box-shadow: rgb(0 0 0 / 20%) 0px 4px 0px 0px;
+    border-radius: 10px;
+    box-shadow: #4589FF 2px 2px 5px 5px;
     cursor: pointer;
 }
 .edit-contact-container {
@@ -333,4 +333,51 @@ body{
     background-color: #4589FF;
     color: white ;
     margin-right: 10px;
+}
+.contact-view span {
+    margin-right: 20px;
+}
+@media (max-width: 1250px) {
+    .btn-container {
+        display: none;
+    }
+}
+@media (max-width: 908px) {
+    .show-overlay-contact {
+        display: none;
+    }
+}
+@media (max-width: 555px) {
+        .contact-summary {
+            left: 50px;
+        }
+        .new-contact-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            height: 60vh;
+            background-color: white;
+            border-right: 1px solid rgb(0 0 0 / 15%);
+        }
+        .new-contact-header {
+            background-color: #4589FF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 33vh;
+            width: 400px;
+            color:white;
+        }
+        .close-new-cotact {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #4589FF;
+            padding: 20px;
+            width: 360px;
+            border-top-right-radius: 20px;
+        }
+        
+
 }
