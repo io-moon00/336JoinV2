@@ -19,15 +19,14 @@
     
 </head>
 
-<body onload="init()">
-    <header w3-include-html="../templates/header.html">
+<body onload="renderAllContact()">
+    <header w3-include-html="../templates/header.html"> </header>
 
-    </header>
     <div class="content">
         <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
         <!--Hier Arbeiten --->
         <div class="contact-container">
-            <div id="postContactContainer" class="contact-summary">
+            <div id="generalContactPost" class="contact-summary">
                 <div>
                     <div class="headline">A</div>
                     <div id="A"></div>
@@ -128,7 +127,7 @@
                     <div class="headline">Z</div>
                     <div id="Z"></div>
                 </div>
-                </div>
+            </div>
 
             </div>
 
@@ -165,7 +164,10 @@
                     </div>
                 </form>
             </div>
+            <!--Edit Contact-->
+            <div class="edit-contact-container d-none" id="editContact">
 
+            </div>
             <!--Contact Information-->
             <div id="contact" class="overlay-contact">
             </div>

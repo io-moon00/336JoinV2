@@ -1,13 +1,15 @@
 let tasks = [];
 let task;
 let contacts = [];
+let category;
+let priority;
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 async function init() {
    await includeHTML();
    markActivePage('addTask');
    await downloadFromServer();
-   tasks = backend.getItem('tasks') || [];
+   tasks = JSON.parse(backend.getItem('tasks')) || [];
    contacts = JSON.parse(backend.getItem('contacts')) || [];
    renderSubtasks();
 }
@@ -17,38 +19,39 @@ async function init() {
  * @returns
  */
 function getTitle() {
-   let title = document.getElementById('tasktitle').value;
-   return title;                                                // mit rerurn wird das Ergebnis zurückgegeben
+   let title = document.getElementById('task-title').value;
+   return title;                                               
 }
 
+function getContacts () {
+   let selectedContacts = [];
+   for(let i = 0; i<contacts.length; i++){
+      let contact = document.getElementById('contact-' + i);
+      if(contact.checked == true){
+         selectedContacts.push(contacts[i].name);
+      }
+   }
+   return selectedContacts;
+}
 
-/*function getContacts () {
-    let contacts = document.getElementById('contacts').value;
-    return contacts;
- }
-*/
-
+function getSubtasks(){
+   let selectedSubtasks = [];
+   for(let i = 0; i<subtasks.length; i++){
+      let subtask = document.getElementById('subtask-' + i);
+      if(subtask.checked == true){
+         selectedSubtasks.push(subtasks[i]);
+      }
+   }
+   return selectedSubtasks;
+}
 
 function getDueDate() {
-   let dueDate = document.getElementById('dueDate').value;
+   let dueDate = document.getElementById('due-date').value;
    return dueDate;
 }
 
-
-function getCategorie() {
-   let category = document.getElementById('category').value;
-   return category;
-}
-
-
-function getPriority() {
-   let priority = document.getElementById('priority').value;
-   return priority;
-}
-
-
 function getDescription() {
-   let description = document.getElementById('desc').value;
+   let description = document.getElementById('description').value;
    return description;
 }
 
@@ -63,21 +66,21 @@ function setID() {
 function setTask() {
    task = {
       id: setID(),
-      category: getCategorie(),
+      category: category,
       title: getTitle(),
       description: getDescription(),
       status: 'toDo',
-      priority: getPriority(),
+      priority: priority,
       dueDate: getDueDate(),
    }
 }
+
 
 async function addTask() {
    setTask();
    tasks.push(task);
    await backend.setItem('tasks', JSON.stringify(tasks));
-   clearTaskForm();
-   window.location.href = '/board.html';
+   window.location.href = '/pages/board.html';
 }
 
 
@@ -89,6 +92,7 @@ function clearTaskForm() {
    document.getElementById('dueDate').value = '';
    document.getElementById('contact').value = '';
 }
+
 
 let categoriesVisible;
 function selectCategory() {
@@ -102,13 +106,18 @@ function selectCategory() {
    }
 }
 
-function showCategory(category){
-   document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(category);
+
+function setCategory(selectedCategory){
+   category = selectedCategory;
+   document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(selectedCategory);
    document.getElementById('selected-category').classList.add('capitalize');
    document.getElementById('category-container').innerHTML = '';
+   categoriesVisible = false;
 }
 
+
 let categories = ['sales', 'design', 'backoffice', 'marketing', 'media'];
+
 
 function renderCategories(){
    document.getElementById('category-container').innerHTML = '';
@@ -131,11 +140,12 @@ function assignContacts(){
    }
 }
 
+
 function renderContacts(){
    document.getElementById('contacts').innerHTML = '';
    for (let i = 0; i< contacts.length; i++){
       console.log();
-      document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name);
+      document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name, i);
    } 
 }
 
@@ -144,7 +154,7 @@ let subtasks = ['Subtask 1', 'Subtask 2'];
 function renderSubtasks(){
    document.getElementById('subtasks').innerHTML = '';
    for(let i = 0; i<subtasks.length; i ++){
-      document.getElementById('subtasks').innerHTML += subtaskHTML(subtasks[i]);
+      document.getElementById('subtasks').innerHTML += subtaskHTML(subtasks[i], i);
    }
 }
 
@@ -154,4 +164,15 @@ function addSubtask(){
    subtasks.push(newSubtask);
    document.getElementById('subtask-input').value = '';
    renderSubtasks();
+}
+
+
+function setPriority(selectedPriority){
+   priority = selectedPriority;
+
+   document.getElementById('high').classList.remove('high');
+   document.getElementById('medium').classList.remove('medium');
+   document.getElementById('low').classList.remove('low');
+
+   document.getElementById(priority).classList.add(priority);
 }

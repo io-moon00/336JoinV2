@@ -12,7 +12,7 @@ async function init(){
     await includeHTML();
     markActivePage('board');
     await downloadFromServer();
-    tasks = backend.getItem('tasks') || [];
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
     setAllTaskArrays();
     renderAllTasks();
 }
