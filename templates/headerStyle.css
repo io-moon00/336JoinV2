@@ -35,11 +35,16 @@ header {
         display: none;
     }
 }
-@media (max-width: 420px) {
+@media (max-width: 530px) {
     .right-header-section span {
         display: none;
     }
     .navbar {
         display: none;
     } 
+}
+@media (max-width: 395px) {
+    header { 
+        width: 390px;
+    }
 }

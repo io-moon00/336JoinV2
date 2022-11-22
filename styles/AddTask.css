@@ -347,6 +347,47 @@ textarea:focus {
     right: 100px;
     gap: 25px;
 }
+<<<<<<< HEAD
+
+
+<<<<<<< HEAD
+@media (min-width: 100px) and (max-width: 1150px) {
+    .clear-create {
+        left: 100px;
+        top: 835px;
+    }
+
+}
+
+
+
+=======
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 4e58d1ae3296123369c07710d96da3f9c75a0bd5
+=======
+>>>>>>> 05174eaf67f2dfaec5ed19d357c5f42069af67f5
+
+@media (max-width: 770px) {
+    .content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 428px) {
+    .right-header-section {
+        display: none;
+    }
+}
+
 
 @media (max-width: 770px) {
     .content {

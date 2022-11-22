@@ -65,7 +65,7 @@
     height: 18px;
     margin-right: 26px;
 }
-@media (max-width: 770px) {
+@media (max-width: 780px) {
 
     .sideBar {
         background-color: white;
@@ -78,8 +78,8 @@
         align-items: center;
         box-sizing: border-box;
         position: fixed;
-        top: auto;
-        height: 20px;
+        top: auto !important;
+        height: 20px ;
         left: 0 !important;
         right: 0 !important;
     }
@@ -97,6 +97,7 @@
         flex-direction: row !important;
         justify-content: center;
         align-items: center;
+        gap: 0;
         flex-shrink: 0;
     }
     .navbar a {
@@ -130,10 +131,5 @@
         height: 25px;
         margin-bottom: 15px;
         margin-right: 4px;
-    }
-}
-@media (max-width: 455px) {
-    .navbar {
-        gap: 0;
     }
 }
