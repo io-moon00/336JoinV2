@@ -65,7 +65,7 @@
     height: 18px;
     margin-right: 26px;
 }
-@media (max-width: 555px) {
+@media (max-width: 770px) {
 
     .sideBar {
         background-color: white;
