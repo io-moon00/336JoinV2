@@ -13,7 +13,7 @@ input:focus{
 }
 
 .tasks{
-    padding: 74px 70px;
+    padding: 105px 15px 5px 250px;
     width: 100%;
 }
 
@@ -240,13 +240,56 @@ input{
 .title-container{
     width: 400px;
 }
-
 .close-cross{
     position: absolute;
     top: 24px;
     right: 30px;
 }
-
 .close-cross:hover{
     cursor: pointer;
+}
+.header-section-respons {
+    margin-bottom: 32px;
+    margin-top: 32px;
+    color: var(--main-color);
+    font-weight: 700;
+}
+@media (max-width: 1295px) {
+    
+    .category-top {
+        width: 230px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .flex-none {
+        flex-direction: column;
+    }
+    .task-column {
+        align-items: flex-start;
+    }
+}
+@media (max-width: 730px) {
+    .add-task-button {
+        display: none;
+    }
+}
+@media (max-width: 530px) {
+    .add-task-button {
+        display: none;
+    }
+    .tasks{
+        padding: 105px 15px 0px 30px;
+        width: 100%;
+    }
+    .task-column {
+        align-items: flex-start;
+    }
+    .category-top {
+        width: 320px;
+    }
+    .search-field {
+        width: 235px;
+        padding: 0px 10px;
+    }
+
 }
