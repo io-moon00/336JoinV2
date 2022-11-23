@@ -141,6 +141,11 @@ input:focus {
     justify-content: space-between;
 }
 
+.date-container img {
+    width: 24px;
+    height: 51px;
+}
+
 .date-input {
     font-size: 19px;
     line-height: 23px;
