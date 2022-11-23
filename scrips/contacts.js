@@ -1,54 +1,5 @@
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
-let contacts = [
-{
-    "name": "Anton Mayer",
-    "shortName": "AM",
-    "email": "antonMayer@gmail.com",
-    "phone": "+49 123456789",
-},
-{
-    "name": "Anja Schulz",
-    "shortName": "AS",
-    "email": "anjaSchulz@hotmail.com",
-    "phone": "+49 123456789",
-},
-{
-    "name": "Benedikt Ziegler",
-    "shortName": "BZ",
-    "email": "benediktZiegler@yahoo.com",
-    "phone": "+49 123456789",
-},
-{
-    "name": "David Eisenberg",
-    "shortName": "DE",
-    "email": "davidEisenberg@gmail.com",
-    "phone": "+49 123456789",
-},
-{
-    "name": "Eva Fischer",
-    "shortName": "EF",
-    "email": "eva@gmail.com",
-    "phone": "+49 123456789",
-},
-{
-    "name": "Emmanuel Mauer",
-    "shortName": "EM",
-    "email": "emmanuelMa@gmail.com",
-    "phone": "+49 123456789",
-},
-{
-    "name": "Marcel Bauer",
-    "shortName": "MB",
-    "email": "bauer@gmail.com",
-    "phone": "+49 123456789",
-},
-{
-    "name": "Tajana Wolf",
-    "shortName": "TW",
-    "email": "wolf@gmail.com",
-    "phone": "+49 123456789",
-},
-];//backend geladen werden
+let contacts = [];//backend geladen werden
 
 let colors = ['#FF7A00', '#9327FF', '#29ABE2', '#FC71FF', '#02CF2F', '#AF1616', '#462F8A', '#FF4646', 'orange', 'deeppink'];
 function save() {
