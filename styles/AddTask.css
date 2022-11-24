@@ -65,7 +65,7 @@ input:focus {
 
 /*title section*/
 .title-container {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     width: 422px;
     height: 74px;
     border-bottom: 1px solid #D1D1D1;
@@ -83,6 +83,11 @@ input:focus {
 
 .input::placeholder {
     color: #D1D1D1;
+}
+
+.task-alert {
+font-size: 13px;
+color: rgba(255, 0, 0, 0.65);
 }
 
 /* select contacts to assign section*/
@@ -360,46 +365,7 @@ textarea:focus {
     right: 100px;
     gap: 25px;
 }
-<<<<<<< HEAD
 
-
-<<<<<<< HEAD
-@media (min-width: 100px) and (max-width: 1150px) {
-    .clear-create {
-        left: 100px;
-        top: 835px;
-    }
-
-}
-
-
-
-=======
-
-
-
-
-
-
-
-
-
-
->>>>>>> 4e58d1ae3296123369c07710d96da3f9c75a0bd5
-=======
->>>>>>> 05174eaf67f2dfaec5ed19d357c5f42069af67f5
-
-@media (max-width: 770px) {
-    .content {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 428px) {
-    .right-header-section {
-        display: none;
-    }
-}
 
 
 @media (max-width: 770px) {
@@ -412,5 +378,27 @@ textarea:focus {
     .right-header-section {
         display: none;
     }
+
+    .addTask-container {
+        padding:10px 0px 0px 30px;
+        width: 363px;
+    }
+
+    .title-container {
+        margin-bottom: 10px;
+        width: 363px;
+    }
+    
+    .input[type="text"] {
+        font-size: 32px;
+    } 
+    .priority {
+        padding-top: 10px;
+    }
+    .addTask-container h2 {
+        margin: 10px 0 10px;
+    }
+    
 }
+
 

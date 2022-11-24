@@ -20,25 +20,25 @@ async function init() {
  */
 function getTitle() {
    let title = document.getElementById('task-title').value;
-   return title;                                               
+   return title;
 }
 
-function getContacts () {
+function getContacts() {
    let selectedContacts = [];
-   for(let i = 0; i<contacts.length; i++){
+   for (let i = 0; i < contacts.length; i++) {
       let contact = document.getElementById('contact-' + i);
-      if(contact.checked == true){
+      if (contact.checked == true) {
          selectedContacts.push(contacts[i].name);
       }
    }
    return selectedContacts;
 }
 
-function getSubtasks(){
+function getSubtasks() {
    let selectedSubtasks = [];
-   for(let i = 0; i<subtasks.length; i++){
+   for (let i = 0; i < subtasks.length; i++) {
       let subtask = document.getElementById('subtask-' + i);
-      if(subtask.checked == true){
+      if (subtask.checked == true) {
          selectedSubtasks.push(subtasks[i]);
       }
    }
@@ -51,7 +51,7 @@ function getDueDate() {
 }
 
 function getDescription() {
-   let description = document.getElementById('description').value;
+   let description = document.getElementById('desc').value;
    return description;
 }
 
@@ -64,6 +64,7 @@ function setID() {
 
 
 function setTask() {
+
    task = {
       id: setID(),
       category: category,
@@ -76,11 +77,14 @@ function setTask() {
 }
 
 
+
 async function addTask() {
-   setTask();
-   tasks.push(task);
-   await backend.setItem('tasks', JSON.stringify(tasks));
-   window.location.href = '/pages/board.html';
+   if (checkingEmptyValues() == true) {
+      setTask();
+      tasks.push(task);
+      await backend.setItem('tasks', JSON.stringify(tasks));
+      window.location.href = '/pages/board.html';
+   }
 }
 
 
@@ -96,18 +100,18 @@ function clearTaskForm() {
 
 let categoriesVisible = true;
 function selectCategory() {
-   if(categoriesVisible){
+   if (categoriesVisible) {
       document.getElementById('category-container').innerHTML = '';
       categoriesVisible = false;
    }
-   else{
+   else {
       renderCategories();
       categoriesVisible = true;
    }
 }
 
 
-function setCategory(selectedCategory){
+function setCategory(selectedCategory) {
    category = selectedCategory;
    document.getElementById('selected-category').innerHTML = createCategoryHTMLForButton(selectedCategory);
    document.getElementById('selected-category').classList.add('capitalize');
@@ -119,47 +123,47 @@ function setCategory(selectedCategory){
 let categories = ['sales', 'design', 'backoffice', 'marketing', 'media'];
 
 
-function renderCategories(){
+function renderCategories() {
    document.getElementById('category-container').innerHTML = '';
    document.getElementById('category-container').innerHTML = `<div onclick="createCategory()" class="options"><span class="option-span">new category</span></div>`;
-   for(let i = 0; i < categories.length; i++){
+   for (let i = 0; i < categories.length; i++) {
       document.getElementById('category-container').innerHTML += createCategoryHTML(categories[i]);
    }
 }
 
 
 let contactVisible;
-function assignContacts(){
-   if(contactVisible){
+function assignContacts() {
+   if (contactVisible) {
       document.getElementById('contacts').innerHTML = '';
       contactVisible = false;
    }
-   else{
+   else {
       renderContacts();
       contactVisible = true;
    }
 }
 
 
-function renderContacts(){
+function renderContacts() {
    document.getElementById('contacts').innerHTML = '';
-   for (let i = 0; i< contacts.length; i++){
+   for (let i = 0; i < contacts.length; i++) {
       console.log();
       document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name, i);
-   } 
+   }
 }
 
 
 let subtasks = ['Subtask 1', 'Subtask 2'];
-function renderSubtasks(){
+function renderSubtasks() {
    document.getElementById('subtasks').innerHTML = '';
-   for(let i = 0; i<subtasks.length; i ++){
+   for (let i = 0; i < subtasks.length; i++) {
       document.getElementById('subtasks').innerHTML += subtaskHTML(subtasks[i], i);
    }
 }
 
 
-function addSubtask(){
+function addSubtask() {
    let newSubtask = document.getElementById('subtask-input').value;
    subtasks.push(newSubtask);
    document.getElementById('subtask-input').value = '';
@@ -167,7 +171,7 @@ function addSubtask(){
 }
 
 
-function setPriority(selectedPriority){
+function setPriority(selectedPriority) {
    priority = selectedPriority;
 
    document.getElementById('high').classList.remove('high');
@@ -175,4 +179,20 @@ function setPriority(selectedPriority){
    document.getElementById('low').classList.remove('low');
 
    document.getElementById(priority).classList.add(priority);
+}
+
+
+function checkingEmptyValues() {
+   if (document.getElementById("task-title").value == false) {
+      document.getElementById('input-alert').innerHTML = `This field is required!`;
+      return false;
+   }
+   if (document.getElementById("due-date").value == false) {
+      document.getElementById('date-alert').innerHTML = `Please select a date!`;
+      return false;
+   }
+   if (document.getElementById("desc").value == false) {
+      document.getElementById('desc-alert').innerHTML = `Please give it a description!`;
+      return false;
+   }
 }
