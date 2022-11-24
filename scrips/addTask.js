@@ -94,7 +94,7 @@ function clearTaskForm() {
 }
 
 
-let categoriesVisible;
+let categoriesVisible = true;
 function selectCategory() {
    if(categoriesVisible){
       document.getElementById('category-container').innerHTML = '';

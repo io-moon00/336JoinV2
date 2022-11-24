@@ -150,11 +150,19 @@ input:focus {
     font-size: 19px;
     line-height: 23px;
     padding-left: 18px;
-    width: 80%;
+    width: 150%;
 }
+
+
 
 .date-input::placeholder {
     color: var(--style);
+}
+
+.date-input::-webkit-calendar-picker-indicator{
+    background-image: url(../img/calendar-icon.svg);
+    width: 22px;
+    height: 22px;
 }
 
 /* select priority section*/
