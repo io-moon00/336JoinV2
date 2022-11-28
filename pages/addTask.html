@@ -20,9 +20,10 @@
 </head>
 
 <body onload="init()">
-    <header w3-include-html="../templates/header.html"> </header>
-
+    <header w3-include-html="../templates/header.html" class="d-none-for-mobile"> </header>
+    <div id="headerMobileAddtask" class="headerMobileAddtask d-none"> <img src="../img/joinlogoBlue.png" alt="LogoBlue"></div>
     <div class="content">
+
         <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
         <div class="addTask-container">
 
@@ -46,9 +47,9 @@
             <span class="task-alert" id="date-alert"></span>
 
             <h2>Category</h2>
-            <div class="select" id="category" onclick="selectCategory()">
+            <div class="select" id="category">
                 <div class="" id="selected-category">Select taks category</div>
-                <img src="/img/drop-down-icon.svg" alt="drop down icon">
+                <img src="/img/drop-down-icon.svg" alt="drop down icon"  onclick="selectCategory()">
             </div>
             <div class="option-container" id="category-container">
 
@@ -106,7 +107,7 @@
 
             </div>
             <div class="clear-create">
-                <button class="secondary-button button">
+                <button class="secondary-button button" onclick="taskClear()">
                     <span>Clear</span>
                     <svg width="14" height="13" viewBox="0 0 14 13" fill="none">
                         <path class="cross"
@@ -120,9 +121,10 @@
                 </button>
 
             </div>
-
         </div>
+        <img id="add-to-board" class="add-to-board" src="../img/added-to-board.png">
     </div>
+
 </body>
 
 </html>

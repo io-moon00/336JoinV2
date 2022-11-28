@@ -41,11 +41,12 @@ input:focus {
     font-weight: 700;
     line-height: 23px;
     color: #42526E;
-    margin: 25px 0 5px;
+    margin: 10px 0 5px;
 }
 
 /*style for all containers mit select options*/
 .select {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -65,9 +66,9 @@ input:focus {
 
 /*title section*/
 .title-container {
-    margin-bottom: 10px;
+    margin-top: 20px;
     width: 422px;
-    height: 74px;
+    height: 65px;
     border-bottom: 1px solid #D1D1D1;
     border-left: none;
     border-right: none;
@@ -86,30 +87,33 @@ input:focus {
 }
 
 .task-alert {
-font-size: 13px;
-color: rgba(255, 0, 0, 0.65);
+    font-size: 13px;
+    color: rgba(255, 0, 0, 0.65);
 }
 
 /* select contacts to assign section*/
 .contacts {
     width: 100%;
-    max-height: 300px;
+    max-height: 150px;
     overflow: auto;
 }
 
 .contacts::-webkit-scrollbar {
     width: 6px;
-}  
+}
+
 /* Track */
 .contacts::-webkit-scrollbar-track {
     background: rgb(233, 233, 233);
     border-radius: 5px;
-}   
+}
+
 /* Handle */
 .contacts::-webkit-scrollbar-thumb {
     background: var(--icon);
     border-radius: 5px;
-}  
+}
+
 /* Handle on hover */
 .contacts::-webkit-scrollbar-thumb:hover {
     background: rgb(117, 117, 117);
@@ -144,11 +148,14 @@ color: rgba(255, 0, 0, 0.65);
     border-bottom: 1px solid #D1D1D1;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
+
 }
 
 .date-container img {
     width: 24px;
     height: 51px;
+    cursor: pointer;
 }
 
 .date-input {
@@ -164,7 +171,7 @@ color: rgba(255, 0, 0, 0.65);
     color: var(--style);
 }
 
-.date-input::-webkit-calendar-picker-indicator{
+.date-input::-webkit-calendar-picker-indicator {
     background-image: url(../img/calendar-icon.svg);
     width: 22px;
     height: 22px;
@@ -173,7 +180,7 @@ color: rgba(255, 0, 0, 0.65);
 /* select priority section*/
 .priority {
     display: flex;
-    padding: 20px 0;
+    padding: 30px 0;
     width: 100%;
     justify-content: space-between;
 }
@@ -228,13 +235,13 @@ color: rgba(255, 0, 0, 0.65);
 }
 
 .high {
- background-color: var(--urgent-color) !important;
- color: white !important;
- border-color: transparent !important;
- box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    background-color: var(--urgent-color) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
 }
 
-.high path{
+.high path {
     fill: white;
 }
 
@@ -243,26 +250,48 @@ color: rgba(255, 0, 0, 0.65);
     color: white !important;
     border-color: transparent !important;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
-   }
+}
 
-.medium path{
+.medium path {
     fill: white;
-  } 
+}
 
 .low {
     background-color: var(--low-color) !important;
     color: white !important;
     border-color: transparent !important;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
-   }
+}
 
-.low path{
+.low path {
     fill: white;
 }
 
 /* select category section*/
 .option-container {
     width: 100%;
+    max-height: 200px;
+    overflow: auto;
+}
+.option-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+.option-container::-webkit-scrollbar-track {
+    background: rgb(233, 233, 233);
+    border-radius: 5px;
+}
+
+/* Handle */
+.option-container::-webkit-scrollbar-thumb {
+    background: var(--icon);
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.option-container::-webkit-scrollbar-thumb:hover {
+    background: rgb(117, 117, 117);
 }
 
 .categorie-selections {
@@ -282,7 +311,7 @@ color: rgba(255, 0, 0, 0.65);
 
 .options {
     display: flex;
-    width: 100%;
+    width: 85%;
     gap: 10px;
     padding: 18px 21px;
     text-transform: capitalize;
@@ -366,6 +395,72 @@ textarea:focus {
     gap: 25px;
 }
 
+/* add to board animation section */
+.add-to-board {
+    width: 326px;
+    height: 76px;
+    position: absolute;
+    top: 35vh;
+    left: 35vw;
+    transition: ease-in-out 225ms;
+    transform: translateY(100vh);
+    z-index: 2;
+}
+
+.new-category-buttons {
+    width: 66px;
+    height: 31px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.clear-color {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.cancel-category {
+    height: 24px;
+    width: 24px;
+    border-radius: 5px;
+}
+
+.cancel-category:hover {
+    transition: 225ms;
+    background: #D2E3FF;
+}
+
+.tilde {
+    height: 31px;
+}
+.select-Categorie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.category-color {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FFFFFF;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.dropdown-wrapper {
+    position: relative;
+}
+.choose-color {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 21px;
+    margin-left: 20px;
+    padding: 5px;
+}
 
 
 @media (max-width: 770px) {
@@ -379,26 +474,73 @@ textarea:focus {
         display: none;
     }
 
+    .content {
+        overflow: auto;
+        padding-top: 100px;
+        position: absolute;
+        top: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .select {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     .addTask-container {
-        padding:10px 0px 0px 30px;
+        padding: 10px 0px 0px 30px;
         width: 363px;
     }
 
     .title-container {
-        margin-bottom: 10px;
+        height: 50px;
+        margin: 0px;
         width: 363px;
     }
-    
+
     .input[type="text"] {
         font-size: 32px;
-    } 
+    }
+
     .priority {
         padding-top: 10px;
     }
+
     .addTask-container h2 {
-        margin: 10px 0 10px;
+        margin: 0px 0px 0px;
     }
     
+    textarea {
+        max-width: 350px;
+        max-height: 100px;
+    }
+
+    .clear-create {
+        bottom: unset;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+    }
+
+    .secondary-button {
+        display: none;
+    }
+
+    .d-none-for-mobile {
+        display: none;
+    }
+
+    .headerMobileAddtask {
+        display: block !important;
+    }
+
+    .headerMobileAddtask img {
+        width: 40px;
+        margin: 20px;
+    }
+    .add-to-board {
+        display: none;
+    }
+
 }
-
-
