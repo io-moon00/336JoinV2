@@ -34,7 +34,7 @@ function getFirstCharacter(i) {
 function generalContactPost(i) {
     return`
     <div class="contact-name-container display-start" onclick="showContact(${i})">
-        <span class="kontakt-circle" style="background-color:${colors[i]};">${contacts[i]['shortName']}</span>
+        <span class="kontakt-circle" style="background-color:${colors[i]};">${contacts[i].shortName}</span>
         <div class="mail-name">
             <span class="contact-name">${contacts[i]['name']}</span>
             <span class="contact-name" style="color:#4589FF">${contacts[i]['email']}</span>
@@ -61,23 +61,65 @@ function showContact(i) {
     detailContact(i);
 }
 
-
 function returnShowContact() {
     document.getElementById('contact').classList.remove('show-overlay-contact');
     document.getElementById('contact').classList.add('overlay-contact');
 }
 
+function addNewContact() {
+    let firstName = document.getElementById('contactfirstName');
+    let secondName = document.getElementById('contactsecondName');
+    let email = document.getElementById('contactEmail');
+    let mobile = document.getElementById('contactPhone');
 
-function addContact() {
-    contacts.push({ name: "Severin Wenger", email: "asdfas@ksjfa.de", mobile: "2314235123521", color: "dfagad" });
+    let contactInfo = {
+        "firstName": firstName.value,
+        "secondName": secondName.value,
+        "email": email.value,
+        "phone": mobile.value,
+        "shortName": (firstName.value.charAt(0) + secondName.value.charAt(0)).toUpperCase(),
+        };
+
+        contacts.push(contactInfo);
+
+        save();
+
+        firstName.value = '';
+        secondName.value = '';
+        email.value = '';
+        mobile.value = '';
+
+        generalContactPost();
+
+
+
+
     //backend.setItem('contacts', JSON.stringify(contacts));
     // clear contacact Form
     // generate Msg
 }
-function removeContact(i) {
-    contacts-splice(i, 1);
-    generalContactPost()
 
+// Name für Küzel aufteilen//
+/*function getshortName() {
+    let names = string.split(contacts[i].name);
+    let shortName = contacts[i]['shortName'];
+    names = names[0].substring(0, 1).toUpperCase();
+
+    if (names.length > 1) {
+        shortName += names[names.length - 1].substring(0, 1).toUpperCase();
+    }
+    return shortName;
+}*/
+
+function getColorForName(shortName) {
+    let number = (shortName.charCodeAt(0) + shortName.charCodeAt(1)) % colors.length;
+    return colors[number];
+}
+
+function removeContact(i) {
+    cancelList();
+    contacts-splice(i, 1);
+    generalContactPost();
 }
 
 function newContact(i) {
@@ -96,20 +138,6 @@ function cancelList() {
     document.getElementById('contactName').value = '';
     document.getElementById('contactEmail').value = '';
     document.getElementById('contactPhone').value = '';
-}
-function addNewContact() {
-    let name = document.getElementById('contactName').value;
-    let email = document.getElementById('contactEmail').value;
-    let mobile = document.getElementById('contactPhone').value;
-    
-/*    if(name && email && mobile) {
-        contacts.push({name: name, email: email, mobile: mobile, color: "dfagad" });
-        backend.setItem('contacts', JSON.stringify(contacts));
-        cancelList();
-        console.log("Kontakt erfolgreich hinzugefügt");
-    } else {
-        alert('Bitte füge einen Name, die Email-Adresse und Telefon hinzu');
-    }*/
 }
 
 function addTaskContact() {
@@ -187,7 +215,7 @@ function showEditContact(i) {
         </div>
     </div>
     <form class="new-contact-list">
-        <div class="kontakt-circle-add" style="background-color:${colors[i]};">${contacts[i]['shortName']}</div>
+        <div class="kontakt-circle-add" style="background-color:${colors[i]};">${contacts[i]}</div>
         <div class="new-contact-list-colum">
             <input id="editContactName" pattern="[A-Za-z]+" required minlength="2" class="input-title-user" type="text" placeholder="Name">
             <img src="../img/User.svg">
