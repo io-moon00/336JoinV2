@@ -54,3 +54,20 @@ function subtaskHTML(subtask, i){
     </label>
     `
  }
+
+ function newCategoryInputHTML(){
+ return`
+ 
+    <div class="select-Categorie">
+       <input class="input-new-category" type="text" placeholder="New category name" id="new-cat-name" required>
+       <div class="new-category-buttons">
+          <div class="clear-color" onclick="returnToList(); renderCategoryList()">
+             <img class="cancel-category" src="../img/cancel-blue.png">
+          </div>
+             <img class="tilde" src="../img/tilde.png">
+          <div class="clear-color" onclick="addNewCategory()">
+             <img class="cancel-category" src="../img/check-blue.png">
+          </div>
+       </div>
+    `;
+ }

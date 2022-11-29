@@ -82,7 +82,9 @@ async function addTask() {
    if (checkingEmptyValues() == true) {
       setTask();
       tasks.push(task);
+      showAnim();
       await backend.setItem('tasks', JSON.stringify(tasks));
+
       window.location.href = '/pages/board.html';
    }
 }
@@ -181,7 +183,10 @@ function setPriority(selectedPriority) {
    document.getElementById(priority).classList.add(priority);
 }
 
-
+/**
+ * the function checking are die values ampt or not
+ * @returns
+ */
 function checkingEmptyValues() {
    if (document.getElementById("task-title").value == false) {
       document.getElementById('input-alert').innerHTML = `This field is required!`;
@@ -195,4 +200,91 @@ function checkingEmptyValues() {
       document.getElementById('desc-alert').innerHTML = `Please give it a description!`;
       return false;
    }
+   else {
+      return true;
+   }
 }
+
+/**
+ * the function animate add to board
+ * @returns
+ */
+
+function showAnim() {
+   document.getElementById('add-to-board').style = `transform: translateY(0vh);`;
+   setTimeout(function () { hideAnim() }, 1000);
+}
+
+
+function hideAnim() {
+   document.getElementById('add-to-board').style = `transform: translateY(100vh);`;
+}
+
+/**
+ * Clear the input / selectors
+ */
+function taskClear() {
+   document.getElementById("task-title").value = ``;
+   document.getElementById("due-date").value = ``;
+   document.getElementById("desc").value = ``;
+   document.getElementById("subtask-input").value = ``;
+   assignContacts();
+   selectCategory();
+   window.location.reload();
+}
+
+function createCategory() {
+   newCategoryInput();
+   newCategoryColors();
+   renderCatColors();
+}
+
+function newCategoryInput() {
+   let selectedContainer = document.getElementById('category');
+   selectedContainer.innerHTML = '';
+   selectedContainer.innerHTML += newCategoryInputHTML();
+}
+
+function newCategoryColors() {
+   let categoryContainer = document.getElementById('category-container');
+   categoryContainer.innerHTML = '';
+   categoryContainer.innerHTML += `
+<div class="choose-color" id="cat-colors">
+</div>`;
+}
+
+
+let colors = ["8AA4FF", "FF0000", "2AD300", "FF7A00", "E200BE", "0038FF"];
+
+function renderCatColors() {
+   let colorbar = document.getElementById('cat-colors');
+   let ID = -1;
+
+   for (let i = 0; i < colors.length; i++) {
+      const color = colors[i];
+      ID++;
+      colorbar.innerHTML += `<div id="color${ID}" class="category-color" style="background: #${color}" onclick="addColor('${color}')"></div>`;
+   }
+}
+
+function validate(category) {
+   if (categoryToTask.length <= 0) {
+     categoryToTask.push(category);
+     resetList(category);
+   } else {
+     categoryToTask = [];
+     categoryToTask.push(category);
+     resetList(category);
+   }
+ }
+
+ function addColor(value) {
+  let newCatNameColor = document.getElementById('new-cat-name');
+      newCatNameColor.value = '';
+      newCatNameColor.value += `<div class="category-color" style="background: #${value}"></div>`;
+
+ }
+
+
+
+
