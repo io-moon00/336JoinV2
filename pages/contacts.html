@@ -143,14 +143,10 @@
                         <span>Tasks are better with a team!</span>
                     </div>
                 </div>
-                <form class="new-contact-list">
+                <form class="new-contact-list" onsubmit="addNewContact(event);" action="#">
                     <div class="kontakt-circle-add" style="background-color: #D1D1D1;"><img src="../img/user_head.svg"></div>
                     <div class="new-contact-list-colum">
-                        <input id="contactfirstName" pattern="[A-Za-z]+" required minlength="2" class="input-title-user" type="text" placeholder="Firstname">
-                        <img src="../img/User.svg">
-                    </div>
-                    <div class="new-contact-list-colum">
-                        <input id="contactSecondName" pattern="[A-Za-z]+" required minlength="2" class="input-title-user" type="text" placeholder="Secondname">
+                        <input id="contactName" required class="input-title-user" type="text" placeholder="Name">
                         <img src="../img/User.svg">
                     </div>
                     <div class="new-contact-list-colum">
@@ -158,12 +154,12 @@
                         <img src="../img/eMail-icon.svg">
                     </div>
                     <div class="new-contact-list-colum">
-                        <input id="contactPhone" class="input-title-user" type="number" min="10" placeholder="Phone">
+                        <input id="contactPhone" class="input-title-user" type="number" min="8" placeholder="Phone">
                         <img src="../img/phone.svg">
                     </div>
                     <div class="btn-conect-btn">
-                        <button class="btn-cancel" onclick="cancelList()">Cancel X</button>
-                        <button class="btn-create-contact" onclick="addNewContact()">Create contact <img src="../img/checkmark.svg"></button>
+                        <button class="btn-cancel" type="reset">Cancel X</button>
+                        <button class="btn-create-contact" type="submit" >Create contact <img src="../img/checkmark.svg"></button>
                     </div>
                 </form>
             </div>

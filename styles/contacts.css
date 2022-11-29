@@ -38,8 +38,8 @@ body{
 }
 .btn-container{
     position: absolute;
-    top: 850px;
-    left: 1100px;
+    top: 700px;
+    left: 900px;
 }
 .new-contact-btn:hover {
     background-color: blue;
@@ -52,11 +52,11 @@ body{
     border-radius: 15px;
     box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px 2px;
     color:#4589FF;
-    padding: 5px 15px 5px 15px;
+    padding: 10px 15px 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 28px;
 }
 .new-contact-btn img {
     margin-left: 15px;
@@ -71,6 +71,19 @@ body{
     margin-left: 15px;
 }
 .contact-name-container:hover {
+    background-color: #005DFF;
+    transition: all 225ms ease-in-out;
+    border-radius: 15px;
+    cursor: pointer;
+    display: inline-flex;
+}
+.contact-name-h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-left: 10px;
+    padding: 10px; 
+}
+.contact-name-h2:hover {
     background-color: #005DFF;
     transition: all 225ms ease-in-out;
     border-radius: 15px;
@@ -338,12 +351,12 @@ body{
     margin-right: 20px;
 }
 @media (max-width: 1250px) {
-    .btn-container {
-        display: none;
-    }
     .overlay-contact {
         display: none;  
     }
+
+}
+@media (max-width: 1070px) {
     .btn-container {
         display: none; 
     }
@@ -351,6 +364,9 @@ body{
 @media (max-width: 908px) {
     .show-overlay-contact {
         display: none;
+    }
+    .btn-container {
+        display: none; 
     }
 }
 @media (max-width: 555px) {
