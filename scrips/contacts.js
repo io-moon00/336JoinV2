@@ -17,16 +17,11 @@ async function init() {
     renderAllContact();
 }
 async function renderAllContact() {
-    await includeHTML();
     for (let i = 0; i < contacts.length; i++) {
         let letter = getFirstCharacter(i);
         console.log(letter);
-        document.getElementById(letter).innerHTML += generalContactPost(i);
-        generalContactPost(i);
-        showEditContact(i);
-        detailContact(i);
-        newContact(i);
-        getRandomColor(i);
+        document.getElementById(letter).innerHTML += generalContactPostHTML(i);
+        generalContactPostHTML(i);
     }
 }
 function getFirstCharacter(i) {
@@ -35,7 +30,7 @@ function getFirstCharacter(i) {
     return letter;
 }
 
-function generalContactPost(i) {
+function generalContactPostHTML(i) {
     return`
     <div class="contact-name-container display-start" onclick="showContact(${i})">
         <span class="kontakt-circle" style="background-color:${colors[i]};">${contacts[i]['shortName']}</span>
@@ -117,7 +112,7 @@ function addNewContact(event) {
         mobile = '';
  
         renderAllContact();
-
+        generalContactPostHTML();
 }
 
 async function saveContactsToServer() {
@@ -138,7 +133,7 @@ function getshortName() {
 
 function removeContact(i) {
     contacts.splice(i, 1);
-    generalContactPost()
+    generalContactPostHTML()
 }
 
 function getColorForName(shortName) {
@@ -149,7 +144,7 @@ function getColorForName(shortName) {
 function removeContact(i) {
     cancelList();
     contacts-splice(i, 1);
-    generalContactPost();
+    generalContactPostHTML();
 }
 
 function newContact(i) {
@@ -192,7 +187,7 @@ function detailContact(i) {
         <div>
             <div class="contact-view">
                 <span><b>Contact Information</b></span>
-                <div onclick="editContact(${i})" class="editContact">
+                <div onclick="showEditContactHTML(${i})" class="editContact">
                     <img class="pencil" src="../img/pencil_layout.svg">
                     <span>Edit Contact</span>
                 </div>
@@ -213,29 +208,22 @@ function detailContact(i) {
     `;
 }
 
-function editContact(i) {
-    if (clicked) {
-        returnEditContact();
-        clicked = false;
-    } else {
-        document.getElementById('editContact').classList.remove('d-none');
-        clicked = true;
-    }
-}
-function returnEditContact() {
-    document.getElementById('editContact').classList.add('d-none');
-}
-
 function saveEditContact() {
     contacts.push({ name: "Severin Wenger", email: "asdfas@ksjfa.de", mobile: "2314235123521"});
     save();
 }
 
-function showEditContact(i) {
+function closeEditContact() {
+    document.getElementById('editContact').innerHTML = '';
+    document.getElementById('editContact').classList.add('d-none');
+}
+
+function showEditContactHTML(i) {
+    document.getElementById('editContact').classList.remove('d-none');
     document.getElementById('editContact').innerHTML = `
     <div>
         <div class="close-new-cotact">
-            <img onclick="returnEditContact(${i})" src="../img/close-cross-white.svg">
+            <img onclick="closeEditContact()" src="../img/close-cross-white.svg">
         </div>
         <div class="new-contact-header">
             <img src="../img/logo-white.svg">
