@@ -1,10 +1,9 @@
 let contacts = [];//backend geladen werden
-let currentUser = [];
 
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 
-let colors = ['#FF7A00', '#9327FF', '#29ABE2', '#FC71FF', '#02CF2F', '#AF1616', '#462F8A', '#FF4646', 'orange', 'deeppink'];
+
 function save() {
     let contactsAsText = JSON.stringify(contacts);
     localStorage.setItem('contacts',contactsAsText);
@@ -24,6 +23,11 @@ async function renderAllContact() {
         generalContactPostHTML(i);
     }
 }
+function renderContact() {
+    for (let i = 0; i < generalContact.length; i++) {
+        generalContactPostHTML(i)
+    }
+}
 function getFirstCharacter(i) {
     let letter = contacts[i].name.charAt(0);
     letter = letter.toUpperCase();
@@ -33,7 +37,7 @@ function getFirstCharacter(i) {
 function generalContactPostHTML(i) {
     return`
     <div class="contact-name-container display-start" onclick="showContact(${i})">
-        <span class="kontakt-circle" style="background-color:${colors[i]};">${contacts[i]['shortName']}</span>
+        <span class="kontakt-circle" style="background-color:${contacts[i]['color']};">${contacts[i]['shortName']}</span>
         <div class="mail-name">
             <span class="contact-name">${contacts[i]['name']}</span>
             <span class="contact-name" style="color:#4589FF">${contacts[i]['email']}</span>
@@ -44,7 +48,6 @@ function generalContactPostHTML(i) {
 function showContactPost(i) {
     document.getElementById('contactNameShowDetail').innerHTML = contacts[i].name;
 }
-
 
 let clicked = false;
 function showContact(i) {
@@ -57,7 +60,7 @@ function showContact(i) {
         document.getElementById('contact').classList.remove('overlay-contact');
         clicked = true;
     }
-    detailContact(i);
+    detailContactHTML(i);
 }
 
 function returnShowContact() {
@@ -65,43 +68,29 @@ function returnShowContact() {
     document.getElementById('contact').classList.add('overlay-contact');
 }
 
-function setContactID() {
-    let index = contacts.length -1;
-    let id = contacts[index].id +1;
-    return id;
-}
-
-function shortNames() {
-    contacts = contacts.sort((a, b) => {
-        if (a.name < b.name) {
-            return -1;
-        }
-    });
-}
-
 function getRandomColor() {
-    for (let i = 0; i < colors.length; i++) {
-        colors += colors[Math.floor(Math.random() * 16)];
+    var letters = '0123456789ABCDEF';
+    var colors = '#';
+    for (var i = 0; i < 6; i++) {
+      colors += letters[Math.floor(Math.random() * 16)];
     }
     return colors;
-}
+  }
 
 function addNewContact(event) {
     event.preventDefault();
-    let name = document.getElementById('contactName').value;
-    let email = document.getElementById('contactEmail').value;
-    let mobile = document.getElementById('contactPhone').value;
-    let id = contacts.length;
-    let shortName = shortNames();
+    let name = document.getElementById('contactName');
+    let email = document.getElementById('contactEmail');
+    let mobile = document.getElementById('contactPhone');
+    let shortName = getContactInitials(name.value).toUpperCase();
     let color = getRandomColor();
 
     let contactInfo = {
-        "name": name,
-        "email": email,
-        "phone": mobile,
+        "name": name.value,
+        "email": email.value,
+        "mobil": mobile.value,
         "shortName": shortName,
         "color": color,
-        "id": id,
         };
 
         contacts.push(contactInfo);
@@ -110,13 +99,26 @@ function addNewContact(event) {
         name = '';
         email = '';
         mobile = '';
- 
-        renderAllContact();
-        generalContactPostHTML();
+        shortName = '';
+        color = '';
 }
 
 async function saveContactsToServer() {
-    await backend.getItem('contacts', JSON.stringify(contacts));
+    await backend.setItem('contacts', JSON.stringify(contacts));
+    renderAllContact();
+}
+
+function getContactInitials(name) {
+    let stringName = name;
+    let stringletters = stringName.match(/\b(\w)/g);
+    let initials;
+    
+    if (stringletters.length > 1) {
+        initials = stringletters[0] + stringletters[1];
+    } else {
+        initials = stringletters[0];
+    }
+    return initials
 }
 
 // Name für Küzel aufteilen//
@@ -134,11 +136,6 @@ function getshortName() {
 function removeContact(i) {
     contacts.splice(i, 1);
     generalContactPostHTML()
-}
-
-function getColorForName(shortName) {
-    let number = (shortName.charCodeAt(0) + shortName.charCodeAt(1)) % colors.length;
-    return colors[number];
 }
 
 function removeContact(i) {
@@ -164,11 +161,11 @@ function addTaskContact() {
     window.open('./addTask.html');
 }
 
-function detailContact(i) {
+function detailContactHTML(i) {
     document. getElementById('contact').innerHTML +=
     ` <div class="display-column" id="detailContact">
         <div class="display-center margin-top">
-            <div class="kontakt-circle-big" style="background-color: ${colors[i]};>
+            <div class="kontakt-circle-big" style="background-color: ${contacts[i]['color']};>
             <span class="contact-name-contact">${contacts[i]['shortName']}</span>
             </div>
             <div>
@@ -232,7 +229,7 @@ function showEditContactHTML(i) {
         </div>
     </div>
     <form class="new-contact-list">
-        <div class="kontakt-circle-add" style="background-color:${colors[i]};">${contacts[i].shortName.id}</div>
+        <div class="kontakt-circle-add" style="background-color:${contacts[i]['color']};">${contacts[i].shortName}</div>
         <div class="new-contact-list-colum">
             <input id="editContactName" pattern="[A-Za-z]+" required minlength="2" class="input-title-user" type="text" placeholder="${contacts[i].name}">
             <img src="../img/User.svg">
