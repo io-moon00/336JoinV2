@@ -37,11 +37,14 @@ function getFirstCharacter(i) {
 function generalContactPostHTML(i) {
     return`
     <div class="contact-name-container display-start" onclick="showContact(${i})">
-        <span class="kontakt-circle" style="background-color:${contacts[i]['color']};">${contacts[i]['shortName']}</span>
-        <div class="mail-name">
-            <span class="contact-name">${contacts[i]['name']}</span>
-            <span class="contact-name" style="color:#4589FF">${contacts[i]['email']}</span>
+        <div class="contact-container-start">
+            <span class="kontakt-circle" style="background-color:${contacts[i]['color']};">${contacts[i]['shortName']}</span>
+            <div class="mail-name">
+                <span class="contact-name">${contacts[i]['name']}</span>
+                <span class="contact-name" style="color:#4589FF">${contacts[i]['email']}</span>
+            </div>
         </div>
+        <div class="crossEditContactNew"><img onclick="removeContact(${i})" src="../img/close-cross.svg"></div>
     </div>
   `
 }
@@ -77,8 +80,15 @@ function getRandomColor() {
     return colors;
   }
 
-function addNewContact(event) {
-    event.preventDefault();
+function saveEditContact() {
+    addNewContact();
+}
+
+function createNewContact() {
+    addNewContact();
+}
+
+function addNewContact() {
     let name = document.getElementById('contactName');
     let email = document.getElementById('contactEmail');
     let mobile = document.getElementById('contactPhone');
@@ -92,7 +102,6 @@ function addNewContact(event) {
         "shortName": shortName,
         "color": color,
         };
-
         contacts.push(contactInfo);
         saveContactsToServer();
 
@@ -101,12 +110,23 @@ function addNewContact(event) {
         mobile = '';
         shortName = '';
         color = '';
+
+        setTimeout(function (){
+        document.getElementById('newContact').classList.add('d-none')
+        }, 500);
+
 }
 
 async function saveContactsToServer() {
     await backend.setItem('contacts', JSON.stringify(contacts));
-    renderAllContact();
+    renderContacts();
 }
+function renderContacts() {
+//    document.getElementById('contacts').innerHTML = '';
+    for (let i = 0; i < contacts.length; i++) {
+    generalContactPostHTML(i);
+    }
+ }
 
 function getContactInitials(name) {
     let stringName = name;
@@ -135,13 +155,7 @@ function getshortName() {
 
 function removeContact(i) {
     contacts.splice(i, 1);
-    generalContactPostHTML()
-}
-
-function removeContact(i) {
-    cancelList();
-    contacts-splice(i, 1);
-    generalContactPostHTML();
+    saveContactsToServer();
 }
 
 function newContact(i) {
@@ -205,10 +219,7 @@ function detailContactHTML(i) {
     `;
 }
 
-function saveEditContact() {
-    contacts.push({ name: "Severin Wenger", email: "asdfas@ksjfa.de", mobile: "2314235123521"});
-    save();
-}
+
 
 function closeEditContact() {
     document.getElementById('editContact').innerHTML = '';
@@ -228,10 +239,10 @@ function showEditContactHTML(i) {
             <span>Tasks are better with a team!</span>
         </div>
     </div>
-    <form class="new-contact-list">
+    <form class="new-contact-list" onsubmit="saveEditContact()">
         <div class="kontakt-circle-add" style="background-color:${contacts[i]['color']};">${contacts[i].shortName}</div>
         <div class="new-contact-list-colum">
-            <input id="editContactName" pattern="[A-Za-z]+" required minlength="2" class="input-title-user" type="text" placeholder="${contacts[i].name}">
+            <input id="editContactName" required class="input-title-user" type="text" placeholder="${contacts[i].name}">
             <img src="../img/User.svg">
         </div>
         <div class="new-contact-list-colum">
@@ -239,11 +250,11 @@ function showEditContactHTML(i) {
             <img src="../img/eMail-icon.svg">
         </div>
         <div class="new-contact-list-colum">
-            <input id="editContactPhone" class="input-title-user" type="number" min="10" placeholder="${contacts[i].mobil}">
+            <input id="editContactPhone" required class="input-title-user" type="number" placeholder="${contacts[i].mobil}">
             <img src="../img/phone.svg">
         </div>
         <div class="btn-conect-btn">
-            <button class="btn-save" onclick="saveEditContact()">Save</button>
+            <button class="btn-save">Save</button>
         </div>
     </form>
     `
