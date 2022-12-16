@@ -23,11 +23,6 @@ async function renderAllContact() {
         generalContactPostHTML(i);
     }
 }
-function renderContact() {
-    for (let i = 0; i < generalContact.length; i++) {
-        generalContactPostHTML(i)
-    }
-}
 function getFirstCharacter(i) {
     let letter = contacts[i].name.charAt(0);
     letter = letter.toUpperCase();
