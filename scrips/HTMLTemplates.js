@@ -9,9 +9,9 @@ function loadTaskCardHTML(i){
         </div>
         <div class="pos-rel">
             <div class="assign">
-                <div class="kontakt-circle marketing">SM</div>
-                <div class="kontakt-circle media assign-sympol-1">MV</div>
-                <div class="kontakt-circle backoffice assign-sympol-2">EF</div>
+                <div id="colorName" class="kontakt-circle marketing"  >${tasks[i].shortName[0]}</div>
+                <div class="kontakt-circle media assign-sympol-1">${tasks[i].shortName[1]}</div>
+                <div class="kontakt-circle backoffice assign-sympol-2">${tasks[i].shortName[2]}</div>
             </div>
             <img src="../img/priority-${tasks[i].priority}.svg" class="task-priority">
         </div>

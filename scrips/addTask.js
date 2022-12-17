@@ -23,8 +23,9 @@ function getTitle() {
    return title;
 }
 
+
+let selectedContacts = [];
 function getContacts() {
-   let selectedContacts = [];
    for (let i = 0; i < contacts.length; i++) {
       let contact = document.getElementById('contact-' + i);
       if (contact.checked == true) {
@@ -33,6 +34,30 @@ function getContacts() {
    }
    return selectedContacts;
 }
+
+
+let selectedShortName = [];
+function getShortName() {
+   for (let i = 0; i < contacts.length; i++) {
+      let contact = document.getElementById('contact-' + i);
+      if (contact.checked == true) {
+         selectedShortName.push(contacts[i].shortName);
+      }
+   }
+   return selectedShortName;
+}
+
+let selectedNameColor = [];
+function getNameColor() {
+   for (let i = 0; i < contacts.length; i++) {
+      let contact = document.getElementById('contact-' + i);
+      if (contact.checked == true) {
+         selectedNameColor.push(contacts[i].color);
+      }
+   }
+   return selectedNameColor;
+}
+
 
 function getSubtasks() {
    let selectedSubtasks = [];
@@ -73,8 +98,12 @@ function setTask() {
       status: 'toDo',
       priority: priority,
       dueDate: getDueDate(),
+      contactCard: getContacts(),
+      shortName: getShortName(),
+      nameColor: getNameColor(),
    }
 }
+
 
 
 
@@ -147,11 +176,13 @@ function assignContacts() {
 }
 
 
+
 function renderContacts() {
    document.getElementById('contacts').innerHTML = '';
    for (let i = 0; i < contacts.length; i++) {
       console.log();
       document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name, i);
+      
    }
 }
 
