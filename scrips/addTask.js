@@ -36,18 +36,18 @@ function getContacts() {
 }
 
 
-/*
-let selectedShortName = [];
-function getShortName() {
+
+let assignedTo = [];
+function getAssignedContacts() {
    for (let i = 0; i < contacts.length; i++) {
       let contact = document.getElementById('contact-' + i);
       if (contact.checked == true) {
-         selectedShortName.push(contacts[i].shortName);
+         assignedTo.push(i);
       }
    }
-   return selectedShortName;
+   return assignedTo;
 }
-*/
+
 
 let selectedNameColor = [];
 function getNameColor() {
@@ -107,7 +107,7 @@ function setTask() {
       priority: priority,
       dueDate: getDueDate(),
       contactCard: getContacts(),
-      assignedTo: getShortName(),
+      assignedTo: getAssignedContacts(),
       nameColor: getNameColor(),
    }
 }
