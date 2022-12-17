@@ -1,19 +1,19 @@
-function loadTaskCardHTML(i){
-    return `<div onclick="showDetailContent(${i})" id="card-${tasks[i].id}" draggable="true" ondragstart="startDragging(${tasks[i].id})" onmousedown="showAllPlaceholderBorders('${tasks[i].status}')" onmouseup="hideAllPlaceholderBorders()" class="task-card pointer">
-        <div class="category-tag ${tasks[i].category}">${tasks[i].category}</div>
-        <h3 class="task-title">${tasks[i].title}</h3>
-        <span class="task-description">${tasks[i].description}</span>
-        <div class="progress flex">
+function loadTaskCardHTML(taskId, i){
+    return `<div onclick="showDetailContent(${taskId})" id="card-${tasks[taskId].id}" draggable="true" ondragstart="startDragging(${tasks[taskId].id})" onmousedown="showAllPlaceholderBorders('${tasks[taskId].status}')" onmouseup="hideAllPlaceholderBorders()" class="task-card pointer">
+        <div class="category-tag ${tasks[taskId].category}">${tasks[taskId].category}</div>
+        <h3 class="task-title">${tasks[taskId].title}</h3>
+        <span class="task-description">${tasks[taskId].description}</span>
+        <div class="progress flex d-none">
             <div class="progress-bar"></div>
             <span class="progress-text">1/2 Done</span>
         </div>
         <div class="pos-rel">
             <div class="assign">
-                <div id="colorName" class="kontakt-circle marketing"  >${tasks[i].shortName[0]}</div>
-                <div class="kontakt-circle media assign-sympol-1">${tasks[i].shortName[1]}</div>
-                <div class="kontakt-circle backoffice assign-sympol-2">${tasks[i].shortName[2]}</div>
+                <div id="${tasks[taskId].status}${i}assignedContact-0" class="kontakt-circle marketing d-none"></div>
+                <div id="${tasks[taskId].status}${i}assignedContact-1" class="kontakt-circle media assign-sympol-1 d-none"></div>
+                <div id="${tasks[taskId].status}${i}assignedContact-2" class="kontakt-circle backoffice assign-sympol-2 d-none"></div>
             </div>
-            <img src="../img/priority-${tasks[i].priority}.svg" class="task-priority">
+            <img src="../img/priority-${tasks[taskId].priority}.svg" class="task-priority">
         </div>
     </div>`;
 }

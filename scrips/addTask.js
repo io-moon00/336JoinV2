@@ -36,6 +36,7 @@ function getContacts() {
 }
 
 
+/*
 let selectedShortName = [];
 function getShortName() {
    for (let i = 0; i < contacts.length; i++) {
@@ -46,6 +47,7 @@ function getShortName() {
    }
    return selectedShortName;
 }
+*/
 
 let selectedNameColor = [];
 function getNameColor() {
@@ -82,8 +84,14 @@ function getDescription() {
 
 
 function setID() {
-   let index = tasks.length - 1;
-   let id = tasks[index].id + 1;
+   let id;
+   if(task.length < 1){
+      id = 0;
+   }
+   else{
+      let index = tasks.length - 1;
+      id = tasks[index].id + 1;
+   }
    return id;
 }
 
@@ -99,7 +107,7 @@ function setTask() {
       priority: priority,
       dueDate: getDueDate(),
       contactCard: getContacts(),
-      shortName: getShortName(),
+      assignedTo: getShortName(),
       nameColor: getNameColor(),
    }
 }
