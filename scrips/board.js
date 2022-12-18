@@ -1,6 +1,7 @@
 let currentDraggedTask;
 let statOfCurrentDraggedTask;
 let tasks = [];
+let contacts = [];
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 /**
@@ -13,6 +14,7 @@ async function init(){
     markActivePage('board');
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
+    contacts = JSON.parse(backend.getItem('contacts')) || [];
     setAllTaskArrays();
     renderAllTasks();
 }
@@ -42,35 +44,40 @@ function renderAllTasks(){
 }
 
 
-function setAssignedTo(i, status){
-    let numberOfContacts = tasks[i].assignedTo.length;
+function setAssignedTo(i, taskID, status){
+    let numberOfContacts = tasks[taskID].assignedTo.length;
+    let assignContacts = tasks[taskID].assignedTo;
+    let basicID = status + i +'assignedContact-';
+    console.log(numberOfContacts);
     switch (numberOfContacts){
         case 1:
-            document.getElementById(status + i + 'assignedContact-1').classList.remove('d-none');
-            document.getElementById(status + i + 'assignedContact-1').innerHTML = tasks[i].assignedTo[0];
+            document.getElementById(basicID + 0).classList.remove('d-none');
+            document.getElementById(basicID + 0).innerHTML = contacts[assignContacts[0]].shortName;
             break;
         case 2:
             for(let j = 0; j < 2; j++){
-                removeDNone(status + i +'assignedContact-' +j);
-                setInnerHTMLContactsToAssign(status + i +'assignedContact-'+j, tasks[i].assignedTo[j]);  
+                removeDNone(basicID +j);
+                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);  
             }
             break;
         case 3:
             for(let j = 0; j < 3; j++){
-                removeDNone(status + i + 'assignedContact-' +j);
-                setInnerHTMLContactsToAssign(status + i + 'assignedContact-'+j, tasks[i].assignedTo[j])  
+                removeDNone(basicID + j);
+                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName)  
             }
             break;
         default: 
-        for(let j = 0; j < 4; j++){
-            removeDNone(status + 'assignedContact-' +j);
-            if(j == 4){
-                setInnerHTMLContactsToAssign(status + i + 'assignedContact-'+j, `+` + numberOfContacts -2)
+        for(let j = 0; j < 3; j++){
+            removeDNone(basicID + j);  
+            if(j == 2){
+                let contactRest = numberOfContacts-2;
+                setInnerHTMLContactsToAssign(basicID + j,'+' + contactRest);
             }
             else{
-                setInnerHTMLContactsToAssign(status + i + 'assignedContact-'+j, tasks[i].assignedTo[j])  
+                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);
             }   
         }
+        break;
     }
 }
 
@@ -90,7 +97,7 @@ function setInnerHTMLContactsToAssign(id, html){
 function renderToDoTasks(){
     for(let i = 0; i<toDoTasks.length; i++){
         document.getElementById('toDo-tasks').innerHTML += loadTaskCardHTML(toDoTasks[i], i);
-        setAssignedTo(i, 'toDo');
+        setAssignedTo(i, toDoTasks[i], 'toDo');
     }  
 }
 
@@ -101,7 +108,7 @@ function renderToDoTasks(){
 function renderProgressTasks(){
     for(let i = 0; i<progressTasks.length; i++){
         document.getElementById('progress-tasks').innerHTML += loadTaskCardHTML(progressTasks[i], i);
-        setAssignedTo(i, 'progress');
+        setAssignedTo(i, progressTasks[i], 'progress');
     }
     
 }
@@ -113,7 +120,7 @@ function renderProgressTasks(){
 function renderFeedbackTasks(){
     for(let i = 0; i<feedbackTasks.length; i++){
         document.getElementById('feedback-tasks').innerHTML += loadTaskCardHTML(feedbackTasks[i], i);
-        setAssignedTo(i, 'feedback');
+        setAssignedTo(i, feedbackTasks[i], 'feedback');
     } 
 }
 
@@ -124,7 +131,7 @@ function renderFeedbackTasks(){
 function renderDoneTasks(){
     for(let i = 0; i<doneTasks.length; i++){
         document.getElementById('done-tasks').innerHTML += loadTaskCardHTML(doneTasks[i], i);
-        setAssignedTo(i, 'done');
+        setAssignedTo(i, doneTasks[i], 'done');
     }
 }
 

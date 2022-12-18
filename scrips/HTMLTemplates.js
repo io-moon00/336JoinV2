@@ -9,7 +9,7 @@ function loadTaskCardHTML(taskId, i){
         </div>
         <div class="pos-rel">
             <div class="assign">
-                <div id="${tasks[taskId].status}${i}assignedContact-0" class="kontakt-circle marketing d-none"></div>
+                <div id="${tasks[taskId].status}${i}assignedContact-0" class="kontakt-circle marketing"></div>
                 <div id="${tasks[taskId].status}${i}assignedContact-1" class="kontakt-circle media assign-sympol-1 d-none"></div>
                 <div id="${tasks[taskId].status}${i}assignedContact-2" class="kontakt-circle backoffice assign-sympol-2 d-none"></div>
             </div>
