@@ -85,7 +85,7 @@ function getDescription() {
 
 function setID() {
    let id;
-   if(task.length < 1){
+   if(tasks.length < 1){
       id = 0;
    }
    else{
