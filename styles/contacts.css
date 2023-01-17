@@ -41,7 +41,7 @@ body{
 .btn-container{
     position: absolute;
     top: 700px;
-    left: 900px;
+    left: 750px;
 }
 .new-contact-btn:hover {
     background-color: blue;
@@ -379,18 +379,35 @@ body{
     }
 
 }
-@media (max-width: 1070px) {
+
+
+@media (max-width: 1000px) {
+    .contact-summary {
+        top: 200px;  
+    }
     .btn-container {
-        display: none; 
+        position: absolute;
+        top: 120px;
+        left: 300px;
     }
 }
 @media (max-width: 908px) {
     .show-overlay-contact {
         display: none;
     }
-    .btn-container {
-        display: none; 
+   
+}
+
+@media (max-width: 600px) {
+    .contact-summary {
+        left: 140px;
     }
+    .btn-container {
+        position: absolute;
+        top: 120px;
+        left: 170px;
+    }
+   
 }
 @media (max-width: 555px) {
         .contact-summary {
