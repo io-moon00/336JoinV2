@@ -301,6 +301,14 @@ input{
         width: 235px;
         padding: 0px 10px;
     }
+    .empty-task-card {
+        width: 250px;
+        height: unset;
+        margin-top: 30px;
+    }
+    .task-card {
+        margin-top: 10px;
+    }
 
 }
 
