@@ -463,13 +463,22 @@ textarea:focus {
 }
 
 
-@media (max-width: 770px) {
+@media (max-width: 1000px) {
     .content {
         margin-left: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 }
 
-@media (max-width: 428px) {
+@media (max-width: 770px) {
+    .content {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
     .right-header-section {
         display: none;
     }

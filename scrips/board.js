@@ -313,8 +313,11 @@ let searchDescription;
 let searchInput = '';
 
 function filterTasks() {
-    let filteredTasks = [];
-    searchInput = document.getElementById('search-input').value.toLowerCase();
+    
+    searchInput = document.getElementById('search-input').value;
+    search = search.toLowerCase();
+
+    
     let length = tasks.length;
 
     for (i = 0; i < length; i++) {
