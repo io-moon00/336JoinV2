@@ -31,6 +31,11 @@ function getContacts() {
       if (contact.checked == true) {
          selectedContacts.push(contacts[i].name);
       }
+      else (contact.checked == false); {
+         document.getElementById('input-alert').innerHTML = `This field is required!`;
+      }
+   
+     
    }
    return selectedContacts;
 }
@@ -43,10 +48,13 @@ function getAssignedContacts() {
       let contact = document.getElementById('contact-' + i);
       if (contact.checked == true) {
          assignedTo.push(i);
-      }
+      } 
    }
    return assignedTo;
+
 }
+
+
 
 
 let selectedNameColor = [];
@@ -227,6 +235,8 @@ function setPriority(selectedPriority) {
  * @returns
  */
 function checkingEmptyValues() {
+  
+    
    if (document.getElementById("task-title").value == false) {
       document.getElementById('input-alert').innerHTML = `This field is required!`;
       return false;
@@ -243,6 +253,12 @@ function checkingEmptyValues() {
       return true;
    }
 }
+
+
+
+
+
+
 
 /**
  * the function animate add to board

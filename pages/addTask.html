@@ -21,24 +21,29 @@
 
 <body onload="init()">
     <header w3-include-html="../templates/header.html" class="d-none-for-mobile"> </header>
-    <div id="headerMobileAddtask" class="headerMobileAddtask d-none"> <img src="../img/joinlogoBlue.png" alt="LogoBlue"></div>
+    <div id="headerMobileAddtask" class="headerMobileAddtask d-none"> <img src="../img/joinlogoBlue.png" alt="LogoBlue">
+    </div>
     <div class="content">
 
         <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
         <div class="addTask-container">
 
+            <!-------------Title---------------------------->
             <div class="title-container">
                 <input id="task-title" class="input" type="text" placeholder="Enter a title">
             </div>
-            <span class="task-alert" id="input-alert"></span>
+           
+
+            <!-------------Contact---------------------------->
             <div class="select" onclick="assignContacts()">
                 <div>Select contacts to assign</div>
                 <img src="/img/drop-down-icon.svg" alt="drop down icon">
             </div>
             <div id="contacts" class="contacts">
-            
-
             </div>
+            <span class="task-alert" id="contact-alert"></span>
+
+            <!-------------Due Date---------------------------->
             <div>
                 <h2>Due Date</h2>
             </div>
@@ -47,14 +52,17 @@
             </div>
             <span class="task-alert" id="date-alert"></span>
 
+            <!-------------Category---------------------------->
             <h2>Category</h2>
             <div class="select" id="category">
                 <div class="" id="selected-category">Select taks category</div>
-                <img src="/img/drop-down-icon.svg" alt="drop down icon"  onclick="selectCategory()">
+                <img src="/img/drop-down-icon.svg" alt="drop down icon" onclick="selectCategory()">
             </div>
             <div class="option-container" id="category-container">
-
             </div>
+            <span class="task-alert" id="date-alert"></span>
+
+            <!-------------Priority---------------------------->
             <div class="priority" id="priority">
                 <button id="high" class="btn-priority red" onclick="setPriority('high')">
                     <span>Urgent</span>
@@ -93,11 +101,15 @@
                 </button>
             </div>
             <div>
+
+                <!-------------Description---------------------------->
                 <h2>Description</h2>
             </div>
             <textarea class="description-container" id="desc" placeholder="Enter a Discription"></textarea>
             <span class="task-alert" id="desc-alert"></span>
             <div>
+
+                <!-------------Subtask---------------------------->
                 <h2>Subtasks</h2>
             </div>
             <div class="select">
@@ -105,8 +117,9 @@
                 <img onclick="addSubtask()" src="/img/plus-blue.svg" alt="plus icon">
             </div>
             <div id="subtasks" class="subtasks">
-
             </div>
+
+            <!-------------Clear and Create Tast Button---------------------------->
             <div class="clear-create">
                 <button class="secondary-button button" onclick="taskClear()">
                     <span>Clear</span>
@@ -120,8 +133,9 @@
                     <span>Create Task</span>
                     <img src="../img/checkmark.svg">
                 </button>
-
             </div>
+
+            <!-------------Add to Board Screen---------------------------->
         </div>
         <img id="add-to-board" class="add-to-board" src="../img/added-to-board.png">
     </div>

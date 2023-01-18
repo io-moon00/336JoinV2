@@ -2,6 +2,7 @@ let currentDraggedTask;
 let statOfCurrentDraggedTask;
 let tasks = [];
 let contacts = [];
+marker = 0;
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 /**
@@ -305,4 +306,26 @@ function showPriorityOnDetailView(i){
         document.getElementById('priority-detail-view').innerHTML = priority;
     }
     document.getElementById('priority-detail-view-img').src = '../img/priority-'+priority+'.svg';
+}
+
+let searchTitle;
+let searchDescription;
+let searchInput = '';
+
+function filterTasks() {
+    
+    searchInput = document.getElementById('search-input').value;
+    search = search.toLowerCase();
+
+    
+    let length = tasks.length;
+
+    for (i = 0; i < length; i++) {
+        searchTitle = tasks[i]['title'].toLowerCase();
+        searchDescription = tasks[i]['description'].toLowerCase();
+        if (searchTitle.match(searchInput) == searchInput || searchDescription.match(searchInput) == searchInput) {
+            filteredTasks.push(tasks[i]);
+        }
+    }
+    renderAllTasks();
 }

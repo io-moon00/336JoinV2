@@ -40,7 +40,7 @@ function contactLabelHTML(name, i){
     return `
     <label class="contact-label">
        <span class="contact-name">${name}</span>
-       <input class="checkbox" type="checkbox" id="contact-${i}" value="yes">
+       <input  class="checkbox" type="checkbox" id="contact-${i}" value="yes">
     </label>
  `
  }
