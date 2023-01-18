@@ -254,6 +254,10 @@ input{
     color: var(--main-color);
     font-weight: 700;
 }
+
+.Kanban-Headline {
+    display: none;
+}
 @media (max-width: 1295px) {
     
     .category-top {
@@ -269,6 +273,9 @@ input{
 @media (max-width: 1000px) {
     .tasks {
         padding: 150px 200px 5px 220px ;
+    }
+    .Kanban-Headline {
+        display: unset;
     }
 }
 

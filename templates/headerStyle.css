@@ -30,6 +30,13 @@ header {
     border-radius: 50%;
     background-color: white;
 }
+@media (max-width: 1000px) {
+   
+    .Kanban-Headline2 {
+        display: none;
+    }
+}
+
 @media (max-width: 500px) {
     .right-header-section img {
         display: none;
