@@ -49,7 +49,6 @@ function setAssignedTo(i, taskID, status){
     let numberOfContacts = tasks[taskID].assignedTo.length;
     let assignContacts = tasks[taskID].assignedTo;
     let basicID = status + i +'assignedContact-';
-    console.log(numberOfContacts);
     switch (numberOfContacts){
         case 1:
             document.getElementById(basicID + 0).classList.remove('d-none');
@@ -308,24 +307,31 @@ function showPriorityOnDetailView(i){
     document.getElementById('priority-detail-view-img').src = '../img/priority-'+priority+'.svg';
 }
 
-let searchTitle;
 let searchDescription;
 let searchInput = '';
+let search;
+let filteredTasks = [];
 
 function filterTasks() {
-    
     searchInput = document.getElementById('search-input').value;
-    search = search.toLowerCase();
-
-    
-    let length = tasks.length;
-
-    for (i = 0; i < length; i++) {
-        searchTitle = tasks[i]['title'].toLowerCase();
-        searchDescription = tasks[i]['description'].toLowerCase();
-        if (searchTitle.match(searchInput) == searchInput || searchDescription.match(searchInput) == searchInput) {
-            filteredTasks.push(tasks[i]);
+    search = searchInput.toLowerCase();
+    console.log(search);
+    if (searchInput == ''){
+        renderAllTasks();
+    }
+    else{ 
+        clearTaskBoard();
+        for (i = 0; i < tasks.length; i++) {  
+        let searchTask = tasks[i]['title'].toLowerCase();
+        if (searchTask.includes(search)) {
+            let status = tasks[i].status;
+            let taskId = tasks[i].id;
+            elementId = status + '-tasks';
+            document.getElementById(elementId).innerHTML = loadSearchTaskCardHTML(taskId);
+            setAssignedTo(i, taskID, status);
         }
     }
-    renderAllTasks();
+    console.log(filteredTasks);
+    }
 }
+

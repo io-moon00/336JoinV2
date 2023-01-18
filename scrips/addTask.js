@@ -26,32 +26,37 @@ function getTitle() {
 
 let selectedContacts = [];
 function getContacts() {
-   for (let i = 0; i < contacts.length; i++) {
-      let contact = document.getElementById('contact-' + i);
-      if (contact.checked == true) {
-         selectedContacts.push(contacts[i].name);
+   try {
+      for (let i = 0; i < contacts.length; i++) {
+         let contact = document.getElementById('contact-' + i);
+         if (contact.checked == true) {
+            selectedContacts.push(contacts[i].name);
+         }
+         return selectedContacts;
       }
-      else (contact.checked == false); {
-         document.getElementById('input-alert').innerHTML = `This field is required!`;
-      }
-   
-     
+   } 
+   catch (error) {
+      return [];
    }
-   return selectedContacts;
 }
 
 
 
 let assignedTo = [];
 function getAssignedContacts() {
-   for (let i = 0; i < contacts.length; i++) {
-      let contact = document.getElementById('contact-' + i);
-      if (contact.checked == true) {
-         assignedTo.push(i);
-      } 
+   try {
+      for (let i = 0; i < contacts.length; i++) {
+         let contact = document.getElementById('contact-' + i);
+         if (contact.checked == true) {
+            assignedTo.push(i);
+         } 
+      }
+      return assignedTo;
+   
+   } 
+   catch (error) {
+      return [];
    }
-   return assignedTo;
-
 }
 
 
@@ -59,13 +64,18 @@ function getAssignedContacts() {
 
 let selectedNameColor = [];
 function getNameColor() {
-   for (let i = 0; i < contacts.length; i++) {
-      let contact = document.getElementById('contact-' + i);
-      if (contact.checked == true) {
-         selectedNameColor.push(contacts[i].color);
+   try {
+      for (let i = 0; i < contacts.length; i++) {
+         let contact = document.getElementById('contact-' + i);
+         if (contact.checked == true) {
+            selectedNameColor.push(contacts[i].color);
+         }
       }
+      return selectedNameColor;
+   } 
+   catch (error) {
+      return '';
    }
-   return selectedNameColor;
 }
 
 
@@ -235,8 +245,7 @@ function setPriority(selectedPriority) {
  * @returns
  */
 function checkingEmptyValues() {
-  
-    
+
    if (document.getElementById("task-title").value == false) {
       document.getElementById('input-alert').innerHTML = `This field is required!`;
       return false;
@@ -248,6 +257,13 @@ function checkingEmptyValues() {
    if (document.getElementById("desc").value == false) {
       document.getElementById('desc-alert').innerHTML = `Please give it a description!`;
       return false;
+   }
+   if (priority == ''){
+
+   }
+
+   if(category == ''){
+      
    }
    else {
       return true;

@@ -3,10 +3,6 @@ function loadTaskCardHTML(taskId, i){
         <div class="category-tag ${tasks[taskId].category}">${tasks[taskId].category}</div>
         <h3 class="task-title">${tasks[taskId].title}</h3>
         <span class="task-description">${tasks[taskId].description}</span>
-        <div class="progress flex d-none">
-            <div class="progress-bar"></div>
-            <span class="progress-text">1/2 Done</span>
-        </div>
         <div class="pos-rel">
             <div class="assign">
                 <div id="${tasks[taskId].status}${i}assignedContact-0" class="kontakt-circle marketing"></div>
@@ -16,6 +12,22 @@ function loadTaskCardHTML(taskId, i){
             <img src="../img/priority-${tasks[taskId].priority}.svg" class="task-priority">
         </div>
     </div>`;
+}
+
+function loadSearchTaskCardHTML(taskId){
+    return `<div onclick="showDetailContent(${taskId})" class="task-card pointer">
+    <div class="category-tag ${tasks[taskId].category}">${tasks[taskId].category}</div>
+    <h3 class="task-title">${tasks[taskId].title}</h3>
+    <span class="task-description">${tasks[taskId].description}</span>
+    <div class="pos-rel">
+        <div class="assign">
+            <div id="${tasks[taskId].status}${i}assignedContact-0" class="kontakt-circle marketing"></div>
+            <div id="${tasks[taskId].status}${i}assignedContact-1" class="kontakt-circle media assign-sympol-1 d-none"></div>
+            <div id="${tasks[taskId].status}${i}assignedContact-2" class="kontakt-circle backoffice assign-sympol-2 d-none"></div>
+        </div>
+        <img src="../img/priority-${tasks[taskId].priority}.svg" class="task-priority">
+    </div>
+    </div>`
 }
 
 function placeholderHTML(container){
