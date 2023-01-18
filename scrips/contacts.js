@@ -83,7 +83,7 @@ function createNewContact() {
     addNewContact();
 }
 
-function addNewContact() {
+async function addNewContact() {
     let name = document.getElementById('contactName');
     let email = document.getElementById('contactEmail');
     let mobile = document.getElementById('contactPhone');
@@ -98,23 +98,22 @@ function addNewContact() {
         "color": color,
         };
         contacts.push(contactInfo);
-        saveContactsToServer();
+        await saveContactsToServer();
 
-        name = '';
-        email = '';
-        mobile = '';
-        shortName = '';
-        color = '';
+        name.innerHTML = '';
+        email.innerHTML = '';
+        mobile.innerHTML = '';
+        shortName.innerHTML = '';
 
         setTimeout(function (){
-        document.getElementById('newContact').classList.add('d-none')
+        document.getElementById('newContact').classList.add('d-none');
+        renderContacts();
         }, 500);
 
 }
 
 async function saveContactsToServer() {
     await backend.setItem('contacts', JSON.stringify(contacts));
-    renderContacts();
 }
 function renderContacts() {
 //    document.getElementById('contacts').innerHTML = '';
