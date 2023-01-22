@@ -45,15 +45,16 @@ body{
 }
 .new-contact-btn:hover {
     background-color: blue;
+    color: white;
     transition: all 225ms ease-in-out;
     cursor: pointer;
 }
 .new-contact-btn {
-    background-color:white; 
+    background-color:#4589FF; 
     border: none;
     border-radius: 15px;
     box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px 2px;
-    color:#4589FF;
+    color: white;
     padding: 10px 15px 10px 15px;
     text-align: center;
     text-decoration: none;
@@ -68,7 +69,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 290px;
+    width: 320px;
 }
 .contact-container-start {
     display: flex;
@@ -158,7 +159,7 @@ body{
     margin-bottom: 40px;
 }
 .show-overlay-contact {
-    transform: translateX(600px);
+    transform: translateX(700px);
     transition: all 225ms ease-in-out;
 }
 .overlay-contact {
@@ -359,7 +360,7 @@ body{
     border: 3px solid #D1D1D1;
     cursor: pointer;
 }
-}
+
 .btn-save {
     border: 2px solid #D1D1D1;
     height: 61px;

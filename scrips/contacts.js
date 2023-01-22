@@ -16,10 +16,18 @@ async function init() {
     renderAllContact();
 }
 async function renderAllContact() {
+
     for (let i = 0; i < contacts.length; i++) {
-        let letter = getFirstCharacter(i);
-        console.log(letter);
-        document.getElementById(letter).innerHTML += generalContactPostHTML(i);
+
+        initials(i);
+/*        let shortName = contacts[i]['shortName'];
+        if (letter[i] == shortName[i]) {
+            document.getElementById(letter).innerHTML += generalContactPostHTML(i); 
+            findContact = true;
+        }
+        if (!findContact) {
+        document.getElementById(`letterContainer${letter.charAt(0)}`).classList.add("d-none");
+        }*/
         generalContactPostHTML(i);
     }
 }
@@ -29,20 +37,32 @@ function getFirstCharacter(i) {
     return letter;
 }
 
+function initials(i) {
+    let letContainer = document.getElementById(`letterContainer${i}`)
+    let letter = getFirstCharacter(i);
+    if (letContainer =''){
+        document.getElementById(`letterContainer${i}`).classList.add("d-none");
+    }else {
+        document.getElementById(letter).innerHTML += generalContactPostHTML(i); 
+    }
+}
+
 function generalContactPostHTML(i) {
     return`
-    <div class="contact-name-container display-start" onclick="showContact(${i})">
-        <div class="contact-container-start">
+    <div class="contact-name-container display-start">
+        <div class="contact-container-start" onclick="showContact(${i})">
             <span class="kontakt-circle" style="background-color:${contacts[i]['color']};">${contacts[i]['shortName']}</span>
             <div class="mail-name">
                 <span class="contact-name">${contacts[i]['name']}</span>
                 <span class="contact-name" style="color:#4589FF">${contacts[i]['email']}</span>
             </div>
         </div>
-        <div class="crossEditContactNew"><img onclick="removeContact(${i})" src="../img/close-cross.svg"></div>
     </div>
-  `
+`
 }
+//        <div class="crossEditContactNew"><img onclick="removeContact(${i})" src="../img/close-cross.svg"></div>
+
+
 function showContactPost(i) {
     document.getElementById('contactNameShowDetail').innerHTML = contacts[i].name;
 }
@@ -83,7 +103,7 @@ function createNewContact() {
     addNewContact();
 }
 
-function addNewContact() {
+async function addNewContact() {
     let name = document.getElementById('contactName');
     let email = document.getElementById('contactEmail');
     let mobile = document.getElementById('contactPhone');
@@ -98,8 +118,8 @@ function addNewContact() {
         "color": color,
         };
         contacts.push(contactInfo);
-        saveContactsToServer();
 
+ 
         name = '';
         email = '';
         mobile = '';
@@ -110,11 +130,13 @@ function addNewContact() {
         document.getElementById('newContact').classList.add('d-none')
         }, 500);
 
+        await saveContactsToServer();
+        renderContacts();
+
 }
 
 async function saveContactsToServer() {
     await backend.setItem('contacts', JSON.stringify(contacts));
-    renderContacts();
 }
 function renderContacts() {
 //    document.getElementById('contacts').innerHTML = '';
@@ -123,6 +145,7 @@ function renderContacts() {
     }
  }
 
+ // Name für Küzel aufteilen//
 function getContactInitials(name) {
     let stringName = name;
     let stringletters = stringName.match(/\b(\w)/g);
@@ -136,22 +159,12 @@ function getContactInitials(name) {
     return initials
 }
 
-// Name für Küzel aufteilen//
-function getshortName() {
-    let names = string.split(contacts[i].name);
-    let shortName = contacts[i]['shortName'];
-    names = names[0].substring(0, 1).toUpperCase();
-
-    if (names.length > 1) {
-        shortName += names[names.length - 1].substring(0, 1).toUpperCase();
-    }
-    return shortName;
-}
-
-function removeContact(i) {
+// siehe oben (ist raus)
+/*async function removeContact(i) {
     contacts.splice(i, 1);
-    saveContactsToServer();
-}
+    await saveContactsToServer();
+    renderContacts();
+}*/
 
 function newContact(i) {
     if (clicked) {
