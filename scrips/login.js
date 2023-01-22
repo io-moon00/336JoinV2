@@ -90,28 +90,3 @@ function setRememberStatusToLocalStorage(){
 function getRememberStatus(){
     return JSON.parse(localStorage.getItem('remember'));
 }
-
-let passwordVisible = false;
-function showEyeIcon(){
-
-    if(!passwordVisible){
-        document.getElementById('password-icon').src = '/img/eye.svg';
-        document.getElementById('password-icon').onclick = showPassword();
-        passwordVisible = true;
-    }
-    else{
-        document.getElementById('password-icon').src = '/img/notEye.svg';
-        document.getElementById('password-icon').onclick = hidePassword();
-        passwordVisible = false;
-    }
-
-}
-
-function showPassword(){
-    document.getElementById('password').classList.remove('security-text');
-}
-
-function hidePassword(){
-    document.getElementById('password').classList.add('security-text');
-}
-

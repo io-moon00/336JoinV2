@@ -23,16 +23,61 @@ function getTitle() {
    return title;
 }
 
+
+let selectedContacts = [];
 function getContacts() {
-   let selectedContacts = [];
-   for (let i = 0; i < contacts.length; i++) {
-      let contact = document.getElementById('contact-' + i);
-      if (contact.checked == true) {
-         selectedContacts.push(contacts[i].name);
+   try {
+      for (let i = 0; i < contacts.length; i++) {
+         let contact = document.getElementById('contact-' + i);
+         if (contact.checked == true) {
+            selectedContacts.push(contacts[i].name);
+         }
+         return selectedContacts;
       }
+   } 
+   catch (error) {
+      return [];
    }
-   return selectedContacts;
 }
+
+
+
+let assignedTo = [];
+function getAssignedContacts() {
+   try {
+      for (let i = 0; i < contacts.length; i++) {
+         let contact = document.getElementById('contact-' + i);
+         if (contact.checked == true) {
+            assignedTo.push(i);
+         } 
+      }
+      return assignedTo;
+   
+   } 
+   catch (error) {
+      return [];
+   }
+}
+
+
+
+
+let selectedNameColor = [];
+function getNameColor() {
+   try {
+      for (let i = 0; i < contacts.length; i++) {
+         let contact = document.getElementById('contact-' + i);
+         if (contact.checked == true) {
+            selectedNameColor.push(contacts[i].color);
+         }
+      }
+      return selectedNameColor;
+   } 
+   catch (error) {
+      return '';
+   }
+}
+
 
 function getSubtasks() {
    let selectedSubtasks = [];
@@ -57,8 +102,14 @@ function getDescription() {
 
 
 function setID() {
-   let index = tasks.length - 1;
-   let id = tasks[index].id + 1;
+   let id;
+   if(tasks.length < 1){
+      id = 0;
+   }
+   else{
+      let index = tasks.length - 1;
+      id = tasks[index].id + 1;
+   }
    return id;
 }
 
@@ -73,8 +124,12 @@ function setTask() {
       status: 'toDo',
       priority: priority,
       dueDate: getDueDate(),
+      contactCard: getContacts(),
+      assignedTo: getAssignedContacts(),
+      nameColor: getNameColor(),
    }
 }
+
 
 
 
@@ -147,11 +202,13 @@ function assignContacts() {
 }
 
 
+
 function renderContacts() {
    document.getElementById('contacts').innerHTML = '';
    for (let i = 0; i < contacts.length; i++) {
       console.log();
       document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name, i);
+      
    }
 }
 
@@ -188,6 +245,7 @@ function setPriority(selectedPriority) {
  * @returns
  */
 function checkingEmptyValues() {
+
    if (document.getElementById("task-title").value == false) {
       document.getElementById('input-alert').innerHTML = `This field is required!`;
       return false;
@@ -200,10 +258,23 @@ function checkingEmptyValues() {
       document.getElementById('desc-alert').innerHTML = `Please give it a description!`;
       return false;
    }
+   if (priority == ''){
+
+   }
+
+   if(category == ''){
+      
+   }
    else {
       return true;
    }
 }
+
+
+
+
+
+
 
 /**
  * the function animate add to board

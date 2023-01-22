@@ -1,6 +1,8 @@
 let currentDraggedTask;
 let statOfCurrentDraggedTask;
 let tasks = [];
+let contacts = [];
+marker = 0;
 setURL('https://gruppe-336.developerakademie.net/smallest_backend_ever');
 
 /**
@@ -13,6 +15,7 @@ async function init(){
     markActivePage('board');
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
+    contacts = JSON.parse(backend.getItem('contacts')) || [];
     setAllTaskArrays();
     renderAllTasks();
 }
@@ -42,12 +45,59 @@ function renderAllTasks(){
 }
 
 
+function setAssignedTo(i, taskID, status){
+    let numberOfContacts = tasks[taskID].assignedTo.length;
+    let assignContacts = tasks[taskID].assignedTo;
+    let basicID = status + i +'assignedContact-';
+    switch (numberOfContacts){
+        case 1:
+            document.getElementById(basicID + 0).classList.remove('d-none');
+            document.getElementById(basicID + 0).innerHTML = contacts[assignContacts[0]].shortName;
+            break;
+        case 2:
+            for(let j = 0; j < 2; j++){
+                removeDNone(basicID +j);
+                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);  
+            }
+            break;
+        case 3:
+            for(let j = 0; j < 3; j++){
+                removeDNone(basicID + j);
+                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName)  
+            }
+            break;
+        default: 
+        for(let j = 0; j < 3; j++){
+            removeDNone(basicID + j);  
+            if(j == 2){
+                let contactRest = numberOfContacts-2;
+                setInnerHTMLContactsToAssign(basicID + j,'+' + contactRest);
+            }
+            else{
+                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);
+            }   
+        }
+        break;
+    }
+}
+
+function removeDNone(id){
+    document.getElementById(id).classList.remove('d-none');
+}
+
+
+function setInnerHTMLContactsToAssign(id, html){
+    document.getElementById(id).innerHTML = html;
+}
+
+
 /**
  * The function iterates over the entire toDoTasks and displays a task card with the task parameters
  */
 function renderToDoTasks(){
     for(let i = 0; i<toDoTasks.length; i++){
-        document.getElementById('toDo-tasks').innerHTML += loadTaskCardHTML(toDoTasks[i]);
+        document.getElementById('toDo-tasks').innerHTML += loadTaskCardHTML(toDoTasks[i], i);
+        setAssignedTo(i, toDoTasks[i], 'toDo');
     }  
 }
 
@@ -57,7 +107,8 @@ function renderToDoTasks(){
  */
 function renderProgressTasks(){
     for(let i = 0; i<progressTasks.length; i++){
-        document.getElementById('progress-tasks').innerHTML += loadTaskCardHTML(progressTasks[i]);
+        document.getElementById('progress-tasks').innerHTML += loadTaskCardHTML(progressTasks[i], i);
+        setAssignedTo(i, progressTasks[i], 'progress');
     }
     
 }
@@ -68,7 +119,8 @@ function renderProgressTasks(){
  */
 function renderFeedbackTasks(){
     for(let i = 0; i<feedbackTasks.length; i++){
-        document.getElementById('feedback-tasks').innerHTML += loadTaskCardHTML(feedbackTasks[i]);
+        document.getElementById('feedback-tasks').innerHTML += loadTaskCardHTML(feedbackTasks[i], i);
+        setAssignedTo(i, feedbackTasks[i], 'feedback');
     } 
 }
 
@@ -78,7 +130,8 @@ function renderFeedbackTasks(){
  */
 function renderDoneTasks(){
     for(let i = 0; i<doneTasks.length; i++){
-        document.getElementById('done-tasks').innerHTML += loadTaskCardHTML(doneTasks[i]);
+        document.getElementById('done-tasks').innerHTML += loadTaskCardHTML(doneTasks[i], i);
+        setAssignedTo(i, doneTasks[i], 'done');
     }
 }
 
@@ -253,3 +306,34 @@ function showPriorityOnDetailView(i){
     }
     document.getElementById('priority-detail-view-img').src = '../img/priority-'+priority+'.svg';
 }
+
+let searchDescription;
+let searchInput = '';
+let search;
+let filteredTasks = [];
+
+function filterTasks() {
+    searchInput = document.getElementById('search-input').value;
+    search = searchInput.toLowerCase();
+    console.log(search);
+    if (searchInput == ''){
+        renderAllTasks();
+    }
+    else{ 
+        clearTaskBoard();
+        for (i = 0; i < tasks.length; i++) {  
+        let searchTask = tasks[i]['title'].toLowerCase();
+        if (searchTask.includes(search)) {
+            let status = tasks[i].status;
+            let taskId = tasks[i].id;
+            elementId = status + '-tasks';
+            document.getElementById(elementId).innerHTML = loadSearchTaskCardHTML(taskId);
+            setAssignedTo(i, taskID, status);
+        }
+    }
+    console.log(filteredTasks);
+    }
+}
+
+
+

@@ -173,3 +173,35 @@ input:focus{
   @keyframes bg {
     to{background-color: white;}
   }
+
+  @media (max-width: 700px) {
+    .login-panel {
+        width: unset;
+        position: absolute;
+    top: 230px;
+    }
+
+    .register {
+        top: 900px;
+        right: unset;
+    }
+    .login-buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+        width: 250px;
+    }
+    .remember-forgott-ps {
+        width: 380px;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 0px 35px;
+    }
+
+    .login-input {
+        width: 320px;
+    }
+
+}

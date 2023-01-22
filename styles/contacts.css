@@ -38,10 +38,19 @@ body{
     height: 30px;
     border-bottom: 1px solid #D1D1D1;
 }
-.btn-container{
+
+.button-new{
+    gap: 10px;
     position: absolute;
     top: 700px;
     left: 900px;
+}
+
+/*
+.btn-container{
+    position: absolute;
+    top: 700px;
+    left: 750px;
 }
 .new-contact-btn:hover {
     background-color: blue;
@@ -64,6 +73,8 @@ body{
 .new-contact-btn img {
     margin-left: 15px;
 }
+*/
+
 .contact-name-container {
     padding: 15px 15px 15px 15px;
     display: flex;
@@ -380,18 +391,35 @@ body{
     }
 
 }
-@media (max-width: 1070px) {
+
+
+@media (max-width: 1000px) {
+    .contact-summary {
+        top: 200px;  
+    }
     .btn-container {
-        display: none; 
+        position: absolute;
+        top: 120px;
+        left: 300px;
     }
 }
 @media (max-width: 908px) {
     .show-overlay-contact {
         display: none;
     }
-    .btn-container {
-        display: none; 
+   
+}
+
+@media (max-width: 600px) {
+    .contact-summary {
+        left: 140px;
     }
+    .btn-container {
+        position: absolute;
+        top: 120px;
+        left: 170px;
+    }
+   
 }
 @media (max-width: 555px) {
         .contact-summary {

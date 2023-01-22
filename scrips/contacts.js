@@ -118,6 +118,7 @@ async function addNewContact() {
         "color": color,
         };
         contacts.push(contactInfo);
+<<<<<<< HEAD
 
  
         name = '';
@@ -125,9 +126,18 @@ async function addNewContact() {
         mobile = '';
         shortName = '';
         color = '';
+=======
+        await saveContactsToServer();
+
+        name.innerHTML = '';
+        email.innerHTML = '';
+        mobile.innerHTML = '';
+        shortName.innerHTML = '';
+>>>>>>> c34adbdb847ed227a1ce8491d504976647e84bde
 
         setTimeout(function (){
-        document.getElementById('newContact').classList.add('d-none')
+        document.getElementById('newContact').classList.add('d-none');
+        renderContacts();
         }, 500);
 
         await saveContactsToServer();
