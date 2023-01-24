@@ -13,7 +13,9 @@ async function init() {
     markActivePage('contacts');
     await downloadFromServer();
     contacts = JSON.parse(backend.getItem('contacts')) || [];
-    renderAllContact();
+    printAlphabetLine ();
+    await renderAllContact();
+    deletEmptyAlphabetLines();
 }
 async function renderAllContact() {
     for (let i = 0; i < contacts.length; i++) {
@@ -265,4 +267,29 @@ function showEditContactHTML(i) {
         </div>
     </form>
     `
+}
+
+function printAlphabetLine(){
+document.getElementById('generalContactPostHTML').innerHTML = '';
+for (i = 65; i <= 90; i++) {
+    character = String.fromCharCode(i);
+    document.getElementById('generalContactPostHTML').innerHTML += `    
+    <div id="letterContainer">
+        <div class="headline">${character}</div>
+        <div id= ${character}></div>
+    </div>`
+    }
+}
+
+
+function deletEmptyAlphabetLines(){
+
+    for (i = 65; i <= 90; i++){
+        character = String.fromCharCode(i);
+        if (document.getElementById(character).innerHTML === "" ){
+            document.getElementById(character).classList.add('d-none');
+        }
+
+    }
+    
 }
