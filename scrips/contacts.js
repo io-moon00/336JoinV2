@@ -16,7 +16,6 @@ async function init() {
     renderAllContact();
 }
 async function renderAllContact() {
-
     for (let i = 0; i < contacts.length; i++) {
 
         initials(i);
