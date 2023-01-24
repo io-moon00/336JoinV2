@@ -182,7 +182,7 @@ let categories = ['sales', 'design', 'backoffice', 'marketing', 'media'];
 
 function renderCategories() {
    document.getElementById('category-container').innerHTML = '';
-   document.getElementById('category-container').innerHTML = `<div onclick="createCategory()" class="options"><span class="option-span">new category</span></div>`;
+   
    for (let i = 0; i < categories.length; i++) {
       document.getElementById('category-container').innerHTML += createCategoryHTML(categories[i]);
    }
