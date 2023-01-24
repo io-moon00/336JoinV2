@@ -284,9 +284,10 @@ function renderDetailContacts(taskID){
     document.getElementById('assigned-contacts').innerHTML = '';
     for(i = 0; i<assignContacts.length; i++){
         document.getElementById('assigned-contacts').innerHTML += `
-        <div classe = ''>
-            <div class = 'kontakt-circle'>${contacts[assignContacts[i]].shortName}<div>
-            <div>${contacts[assignContacts[i]].name}</div>
+        <div class ="kontakt-circle-div" >
+            <div class ="kontakt-circle color${i}">
+            ${contacts[assignContacts[i]].shortName}</div>
+            <div class="assigned-contacts-name">${contacts[assignContacts[i]].name}</div>
         </div>
  `
     }

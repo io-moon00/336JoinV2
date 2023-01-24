@@ -259,6 +259,49 @@ input{
 .Kanban-Headline {
     display: none;
 }
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.assigned-contacts-name{
+    left: 50px;
+    top: -27px;
+    position: relative;
+    color: black;
+    width: 150px;
+    font-size: 14px;
+}
+
+.kontakt-circle-div {
+    width: 175px;
+    
+}
+
+.color0{
+    background-color: #0038FF;
+}
+
+.color1{
+    background-color: #FFC701;
+}
+.color4{
+    background-color: #FF7A00;
+}
+
+.color2{
+    background-color: #1FD7C1;
+}
+
+.color3{
+    background-color: #FC71FF;
+}
+
+
+
+
+
 @media (max-width: 1295px) {
     
     .category-top {
