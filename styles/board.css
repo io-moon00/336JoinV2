@@ -75,6 +75,7 @@ input{
     width: fit-content;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .category-title{
