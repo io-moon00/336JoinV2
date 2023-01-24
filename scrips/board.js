@@ -271,12 +271,27 @@ function showDetailContent(i){
  * It sets and shows the title, the category and the priority of the task on the detail view container
  * @param {*} task -task is the task in the tasks array which is shown in the view container
  */
-function setDetailViewInnerHTML(task){
+function setDetailViewInnerHTML(task){ 
     document.getElementById('detail-view-category').innerHTML = task.category;
     document.getElementById('detail-view-task-title').innerHTML = task.title;
     document.getElementById('detail-view-description').innerHTML = task.description;
+    renderDetailContacts(task.id);
 }
 
+
+function renderDetailContacts(taskID){
+    let assignContacts = tasks[taskID].assignedTo;
+    document.getElementById('assigned-contacts').innerHTML = '';
+    for(i = 0; i<assignContacts.length; i++){
+        document.getElementById('assigned-contacts').innerHTML += `
+        <div classe = ''>
+            <div class = 'kontakt-circle'>${contacts[assignContacts[i]].shortName}<div>
+            <div>${contacts[assignContacts[i]].name}</div>
+        </div>
+ `
+    }
+   
+}
 
 function setDetailViewStyle(task){
     document.getElementById('task-details').classList.remove('d-none');
@@ -333,6 +348,10 @@ function filterTasks() {
     }
     console.log(filteredTasks);
     }
+}
+
+function editTask(e) {
+    e.innerHTML = '<input value="'+e.innerText+'">';
 }
 
 

@@ -30,6 +30,7 @@ function getArray(key){
 
 function showUserName(){
     userName = getArray('userName');
+    console.log(userName);
     document.getElementById('user-name').innerHTML = userName;
 }
 

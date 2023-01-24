@@ -7,7 +7,7 @@ async function init(){
         window.location.href = '/pages/summary.html';
     }
     await downloadFromServer();
-    users = backend.getItem('users') || [];
+    users = JSON.parse(backend.getItem('users')) || []
 }
 
 
@@ -37,16 +37,16 @@ function openRegisterPage(){
 }
 
 
-function addUser(){
+async function addUser(){
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     try{
-        clearRegisterPanel();
         users.push({name: name, email: email, password: password});
-        backend.setItem('users', JSON.stringify(users));
-        setUserName(user.name);
+        await backend.setItem('users', JSON.stringify(users));
+        setUserName(name);
         window.location.href = '/pages/summary.html';
+        clearRegisterPanel();
     }
     catch(e){
         console.log(e);
