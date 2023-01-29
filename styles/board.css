@@ -241,14 +241,29 @@ input{
 .title-container{
     width: 400px;
 }
+
+.detail-view{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(1px) brightness(60%);
+    z-index: 100;
+}
+
 .close-cross{
     position: absolute;
     top: 24px;
     right: 30px;
 }
+
 .close-cross:hover{
     cursor: pointer;
 }
+
 .header-section-respons {
     margin-bottom: 32px;
     margin-top: 32px;
@@ -276,7 +291,6 @@ input{
 
 .kontakt-circle-div {
     width: 175px;
-    
 }
 
 .color0{
