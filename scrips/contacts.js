@@ -29,7 +29,7 @@ function getFirstCharacter(i) {
 
 
 async function showContact(i) {
-    printAlphabetLine ();
+    printAlphabetLine();
     await renderAllContact();
     deletEmptyAlphabetLines();
     document.getElementById('contact-details').classList.add('slide-in-right');
@@ -38,7 +38,7 @@ async function showContact(i) {
 }
 
 function markActiveContact(i){
-    document.getElementById('contact-'+i).classList.remove('active-contact');
+    document.getElementById('contact-'+i).classList.add('active-contact');
     document.getElementById('contact-'+i).classList.remove('contact-container-hover');
 }
 
