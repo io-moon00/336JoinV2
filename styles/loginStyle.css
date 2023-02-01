@@ -40,7 +40,7 @@ h1{
 
 .logo {
     width: 265px;
-    animation: move 500ms;
+    animation: move 1s;
     animation-fill-mode: forwards;
     position: absolute;
     top: 30%;

@@ -69,7 +69,6 @@ function subtaskHTML(subtask, i){
 
  function newCategoryInputHTML(){
  return`
- 
     <div class="select-Categorie">
        <input class="input-new-category" type="text" placeholder="New category name" id="new-cat-name" required>
        <div class="new-category-buttons">
@@ -83,3 +82,47 @@ function subtaskHTML(subtask, i){
        </div>
     `;
  }
+
+
+ /* ---------------------------- Contacts ----------------------------------- */
+
+ function generalContactPostHTML(i) {
+    return`
+    <div id="contact-${i}" class="contact-container contact-container-hover display-start" onclick="showContact(${i})">
+        <span class="kontakt-circle" style="background-color:${contacts[i]['color']};">${contacts[i]['shortName']}</span>
+        <div class="mail-name">
+            <span>${contacts[i]['name']}</span>
+            <span class="mail-adress">${contacts[i]['email']}</span>
+        </div>
+    </div>
+`
+}
+
+function detailContactHTML(i) {
+    return ` 
+    <div class="contact-detail-topsection" id="detailContact">
+        <div class="display-center margin-top kontakt-circle-big" style="background-color: ${contacts[i]['color']};">
+                ${contacts[i]['shortName']}
+        </div> 
+        <div>
+            <div class="contact-name-h2"><b>${contacts[i]['name']}</b></div> 
+            <div class="add-task">
+                <img src="../img/plus-blue.svg">
+                <span onclick="addTaskContact()">Add Task</span>
+            </div>
+        </div>
+    </div>
+        <div>
+            <div class="contact-view">
+                <span><b>Contact Information</b></span>
+                <button onclick="showEditContactHTML(${i})" class="edit-contact-btn">
+                    <img class="pencil" src="../img/pencil-blue.svg">
+                    <span>Edit Contact</span>
+                </button>
+            </div>
+                <div class="margin-top"><b>Email</b></div>
+                <div class="mail-adress">${contacts[i]['email']}</div>
+                <div class="margin-top"><b>Mobile</b></div>
+                <div> +${contacts[i]['mobil']}</div> 
+        </div>`;
+}

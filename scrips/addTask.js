@@ -208,7 +208,6 @@ function renderContacts() {
    for (let i = 0; i < contacts.length; i++) {
       console.log();
       document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name, i);
-      
    }
 }
 

@@ -16,6 +16,7 @@
     <script src="../scrips/mini_backend.js"></script>
     <script src="../scrips/script.js"></script>
     <script src="../scrips/contacts.js"></script>
+    <script src="../scrips/HTMLTemplates.js"></script> 
     
 </head>
 
@@ -24,61 +25,78 @@
 
     <div class="content">
         <div w3-include-html="../templates/sideBar.html" class="sideBar"></div>
-        <!--Hier Arbeiten --->
-        <div class="contact-container">
-            <div id="generalContactPostHTML" class="contact-summary">
 
-            </div>
+        <!-- Contact List -->
+        <div id="contact-list" class="contact-list">
+  
         </div>
-    </div>
-            <!--New Contact-->
-            <div class="new-contact-container d-none" id="newContact">
-                <div>
-                    <div class="close-new-cotact">
-                        <img onclick="returnNewContact()" src="../img/close-cross-white.svg">
-                    </div>
-                    <div class="new-contact-header">
-                        <img src="../img/logo-white.svg">
-                        <h2>Add contact</h2>
-                        <span>Tasks are better with a team!</span>
-                    </div>
+   
+        <!-- New Contact -->
+        <div class="new-contact-container d-none" id="newContact">
+            <div id="slide-effekt" class="new-contact-body">
+                <div class="new-contact-header">
+                    <img class="close-cross" onclick="closeContactForm()" src="../img/close-cross-white.svg">
+                    <img src="../img/logo-white.svg">
+                    <h2 id="contact-form-title">Add contact</h2>
+                    <span id="new-contact-subtitle"></span>
                 </div>
-                <form class="new-contact-list" onsubmit="createNewContact();">
-                    <div class="kontakt-circle-add" style="background-color: #D1D1D1;"><img src="../img/user_head.svg"></div>
-                    <div class="new-contact-list-colum">
-                        <input id="contactName" required class="input-title-user" type="text" placeholder="Name">
-                        <img src="../img/User.svg">
-                    </div>
-                    <div class="new-contact-list-colum">
-                        <input id="contactEmail" required class="input-title-user" type="email" placeholder="Email">
-                        <img src="../img/eMail-icon.svg">
-                    </div>
-                    <div class="new-contact-list-colum">
-                        <input id="contactPhone" class="input-title-user" type="number" min="8" placeholder="Phone">
-                        <img src="../img/phone.svg">
-                    </div>
-                    <div class="btn-conect-btn">
-                        <button class="btn-cancel" type="reset">Cancel X</button>
-                        <button class="btn-create-contact" type="submit" >Create contact <img src="../img/checkmark.svg"></button>
-                    </div>
-                </form>
-            </div>
-            <!--Edit Contact-->
-            <div class="edit-contact-container d-none" id="editContact">
-            </div>
-            <!--Contact Information-->
-            <div id="contact" class="overlay-contact">
-            </div>
-            <!--Btn bottom-->
-            
-        </div>
-    </div>
-    </div>
+                <div class="form-bg">
+                    <form id="new-contact-form" class="new-contact-form d-none" onsubmit="createNewContact();">
+                        <div class="kontakt-circle-add" style="background-color: #D1D1D1;"><img src="../img/user_head.svg"></div>
+                        <div class="new-contact-list-colum">
+                            <input id="newContactName" required class="input-title-user" type="text" placeholder="Name">
+                            <img src="../img/User.svg">
+                        </div>
+                        <div class="new-contact-list-colum">
+                            <input id="newContactEmail" required class="input-title-user" type="email" placeholder="Email">
+                            <img src="../img/eMail-icon.svg">
+                        </div>
+                        <div class="new-contact-list-colum">
+                            <input id="newContactPhone" class="input-title-user" type="number" min="8" placeholder="Phone">
+                            <img src="../img/phone.svg">
+                        </div>
+                        <div class="btns">
+                            <button class="btn-cancel secondary-button" type="reset">
+                                <span>Cancel</span>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none">
+                                    <path class="cross"
+                                        d="M7.00106 6.50008L12.2441 11.7431M1.75806 11.7431L7.00106 6.50008L1.75806 11.7431ZM12.2441 1.25708L7.00006 6.50008L12.2441 1.25708ZM7.00006 6.50008L1.75806 1.25708L7.00006 6.50008Z"
+                                        stroke="#647188" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button class="btn-create-contact primary-button" type="submit" >Create contact <img src="../img/checkmark.svg"></button>
+                        </div>
+                    </form>
 
-    <button class = "button primary-button button-new" onclick="newContact()">
+                    <form id="edit-contact-form" class="new-contact-form d-none" onsubmit="saveContact();">
+                        <div id="contact-circle-edit" class="kontakt-circle-add"></div>
+                        <div class="new-contact-list-colum">
+                            <input id="contactName" required class="input-title-user" type="text" placeholder="Name">
+                            <img src="../img/User.svg">
+                        </div>
+                        <div class="new-contact-list-colum">
+                            <input id="contactEmail" required class="input-title-user" type="email" placeholder="Email">
+                            <img src="../img/eMail-icon.svg">
+                        </div>
+                        <div class="new-contact-list-colum">
+                            <input id="contactPhone" class="input-title-user" type="number" min="8" placeholder="Phone">
+                            <img src="../img/phone.svg">
+                        </div>
+                        <div class="btns">
+                            <button class="btn-save primary-button" type="submit" >Save <img src="../img/checkmark.svg"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Contact Information-->
+        <div id="contact-details" class="contact-details"></div></div>
+    <button class = "button primary-button button-new" onclick="openNewContactForm()">
         <span class="new-contact">New contact</span>
         <img src="../img/newContact.svg">
     </button>
+</div>
 </body>
 
 </html>

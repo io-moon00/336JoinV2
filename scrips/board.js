@@ -51,43 +51,73 @@ function setAssignedTo(i, taskID, status){
     let basicID = status + i +'assignedContact-';
     switch (numberOfContacts){
         case 1:
-            document.getElementById(basicID + 0).classList.remove('d-none');
-            document.getElementById(basicID + 0).innerHTML = contacts[assignContacts[0]].shortName;
+            showOneCircle(basicID, assignContacts);
             break;
         case 2:
-            for(let j = 0; j < 2; j++){
-                removeDNone(basicID +j);
-                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);  
-            }
+            showTwoCircles(basicID, assignContacts);
             break;
         case 3:
-            for(let j = 0; j < 3; j++){
-                removeDNone(basicID + j);
-                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName)  
-            }
+            shwoThreeCircles(basicID, assignContacts);
             break;
         default: 
-        for(let j = 0; j < 3; j++){
-            removeDNone(basicID + j);  
-            if(j == 2){
-                let contactRest = numberOfContacts-2;
-                setInnerHTMLContactsToAssign(basicID + j,'+' + contactRest);
-            }
-            else{
-                setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);
-            }   
-        }
+        showThreeCirclesAndCalcRest(basicID, assignContacts, numberOfContacts);
         break;
     }
 }
 
-function removeDNone(id){
+
+function removeDNone(id, assignContacts){
     document.getElementById(id).classList.remove('d-none');
+}
+
+
+function setContactCircleBg(id, assignContacts){
+    document.getElementById(id).style.background = assignContacts.color;
 }
 
 
 function setInnerHTMLContactsToAssign(id, html){
     document.getElementById(id).innerHTML = html;
+}
+
+
+function showOneCircle(basicID, assignContacts){
+    document.getElementById(basicID + 0).classList.remove('d-none');
+    document.getElementById(basicID + 0).style.background = contacts[assignContacts[0]].color;
+    document.getElementById(basicID + 0).innerHTML = contacts[assignContacts[0]].shortName;
+}
+
+
+function showTwoCircles(basicID, assignContacts){
+    for(let j = 0; j < 2; j++){
+        removeDNone(basicID +j);
+        setContactCircleBg(basicID + j, contacts[assignContacts[j]]),
+        setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);  
+    }
+}
+
+
+function shwoThreeCircles(basicID, assignContacts){
+    for(let j = 0; j < 3; j++){
+        removeDNone(basicID + j);
+        setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);
+        setContactCircleBg(basicID + j, contacts[assignContacts[j]]);
+    }
+}
+
+
+function showThreeCirclesAndCalcRest(basicID, assignContacts, numberOfContacts){
+    for(let j = 0; j < 3; j++){
+        removeDNone(basicID + j);  
+        if(j == 2){
+            let contactRest = numberOfContacts-2;
+            setInnerHTMLContactsToAssign(basicID + j,'+' + contactRest);
+        }
+        else{
+            setInnerHTMLContactsToAssign(basicID + j, contacts[assignContacts[j]].shortName);
+            setContactCircleBg(basicID + j, contacts[assignContacts[j]]);
+        }   
+    }
 }
 
 
