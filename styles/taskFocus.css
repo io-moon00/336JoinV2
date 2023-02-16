@@ -10,14 +10,25 @@
     position: relative;
     width: var(--detail-view-width);
     height: var(--detail-view-height);
-    left: calc(50% - var(--detail-view-width)/2);
-    top: calc(50% - var(--detail-view-height)/2 - 50px);
     padding: 50px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
     border-radius: 30px;
     gap: 25px;
     display: flex;
     flex-direction: column;
+    z-index: 100;
+}
+
+.detail-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(1px) brightness(60%);
     z-index: 100;
 }
 
@@ -100,4 +111,14 @@
 
 .bg-high{
     background-color: #FFD2D2;
+}
+
+@media (max-width: 700px){
+    .task-details{
+        width: 100%;
+        height: 100vh;
+        padding: 50px;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
 }
