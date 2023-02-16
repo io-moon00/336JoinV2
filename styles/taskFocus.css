@@ -7,7 +7,7 @@
 .task-details{
     background-color: white;
     z-index: 10;
-    position: fixed;
+    position: relative;
     width: var(--detail-view-width);
     height: var(--detail-view-height);
     left: calc(50% - var(--detail-view-width)/2);

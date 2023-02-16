@@ -44,6 +44,7 @@ function getContacts() {
 
 let assignedTo = [];
 function getAssignedContacts() {
+   assignedTo = [];
    try {
       for (let i = 0; i < contacts.length; i++) {
          let contact = document.getElementById('contact-' + i);
@@ -60,6 +61,11 @@ function getAssignedContacts() {
 }
 
 
+function markAssignedToContacts(taskId){
+   for(let i = 0; i< assignedTo.length; i++){
+       document.getElementById('contact-' + assignedTo[i]).checked = true;
+   }
+}
 
 
 let selectedNameColor = [];
@@ -192,6 +198,7 @@ function renderCategories() {
 let contactVisible;
 function assignContacts() {
    if (contactVisible) {
+      assignedTo = getAssignedContacts();
       document.getElementById('contacts').innerHTML = '';
       contactVisible = false;
    }
@@ -209,6 +216,9 @@ function renderContacts() {
       console.log();
       document.getElementById('contacts').innerHTML += contactLabelHTML(contacts[i].name, i);
    }
+   if(assignedTo.length !=0){
+      markAssignedToContacts(assignedTo);
+   }  
 }
 
 

@@ -20,7 +20,7 @@ function startDragging(taskId){
 function moveTo(status){
     pushTaskToArray(status, currentDraggedTask); 
     removeTaskFromArray();
-    tasks[currentDraggedTask].status = status;
+    saveNewStatus(currentDraggedTask, status)
     renderAllTasks();
 }
 
@@ -99,4 +99,11 @@ function removeTaskFromArray(){
         let index = doneTasks.indexOf(currentDraggedTask);
         doneTasks.splice(index, 1);
     }
+}
+
+
+
+async function saveNewStatus(taskId, newStatus){
+    tasks[taskId].status= newStatus;
+    await backend.setItem('tasks', JSON.stringify(tasks));
 }

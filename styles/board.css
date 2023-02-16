@@ -219,6 +219,7 @@ input{
 
 .priority{
     width: 400px;
+    padding: 0 !important;
 }
 
 .title-container{
@@ -258,9 +259,13 @@ input{
     display: none;
 }
 
-.flex-wrap {
+#assigned-contacts{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 25px;
+    overflow-y: auto;
+    max-height: 200px;
+    width: 70%;
 }
 
 .assigned-contacts-name{
@@ -272,23 +277,36 @@ input{
     font-size: 14px;
 }
 
+.contact-label{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 160px;
+    width: 60%;
+}
+
 .kontakt-circle-div {
     width: 175px;
 }
 
 /*style for all containers mit select options*/
 .select {
-    margin-top: 20px;
+    margin: 10px 0;
     display: flex;
+    height: 45px;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 52px;
     border-bottom: 1px solid #D1D1D1;
     color: #000000;
     font-size: 19px;
     line-height: 23px;
-    padding-left: 18px;
+    padding: 0 18px;
     box-sizing: border-box;
 }
 
@@ -326,6 +344,22 @@ textarea:focus {
 #contact-circles{
     display: flex;
     gap: 8px;
+}
+
+.save-btn{
+    width: 61px;
+    position: absolute;
+    bottom: 44px;
+    right: 31px;
+    height: 61px;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.edit-text{
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--menu-color);
 }
 
 @media (max-width: 1295px) {
