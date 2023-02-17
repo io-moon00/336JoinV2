@@ -50,6 +50,9 @@ function setAssignedTo(i, taskID, status){
     let assignContacts = tasks[taskID].assignedTo;
     let basicID = status + i +'assignedContact-';
     switch (numberOfContacts){
+        case 0:
+            document.getElementById(basicID + 0).style.background = 'white';
+            break;
         case 1:
             showOneCircle(basicID, assignContacts);
             break;
@@ -60,13 +63,13 @@ function setAssignedTo(i, taskID, status){
             shwoThreeCircles(basicID, assignContacts);
             break;
         default: 
-        showThreeCirclesAndCalcRest(basicID, assignContacts, numberOfContacts);
+            showThreeCirclesAndCalcRest(basicID, assignContacts, numberOfContacts);
         break;
     }
 }
 
 
-function removeDNone(id, assignContacts){
+function removeDNone(id){
     document.getElementById(id).classList.remove('d-none');
 }
 

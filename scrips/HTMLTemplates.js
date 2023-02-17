@@ -61,7 +61,7 @@ function detailContentHTML(task){
          <!-------------Date---------------------------->
          <div id="detail-view-date" class="date-detail-view">
              <span class="font-weight-700 font-family-inter">Due date:</span>
-             <span>${task.duDate}</span>
+             <span>${task.dueDate}</span>
          </div>
  
          <!-------------Date Edit---------------------------->

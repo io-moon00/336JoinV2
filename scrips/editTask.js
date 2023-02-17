@@ -26,6 +26,7 @@ function showInputFields(){
 function setInputFieldText(taskId){
     document.getElementById('edit-title-text').value = tasks[taskId].title;
     document.getElementById('edit-description-text').value = tasks[taskId].description;
+    document.getElementById('edit-due-date').value = tasks[taskId].dueDate;
 }
 
 
@@ -53,7 +54,9 @@ function renderCircles(taskID){
 
 
 let contactVisible = false;
+let editedContacts = false;
 async function assignContacts(taskId) {
+   editedContacts = true;
    if (contactVisible) {
       tasks[taskId].assignedTo = getAssignedContacts();
       document.getElementById('contacts').innerHTML = '';
@@ -90,7 +93,9 @@ function renderContacts(taskId) {
     tasks[taskId].description = description;
     tasks[taskId].dueDate = dueDate;
     tasks[taskId].priority = priority;
-    tasks[taskId].assignedTo = getAssignedContacts();
+    if(editedContacts){
+      tasks[taskId].assignedTo = getAssignedContacts(); 
+    }
     await backend.setItem('tasks', JSON.stringify(tasks));
     resetEditParameter();
     closeDetailView();
@@ -118,11 +123,12 @@ function renderContacts(taskId) {
     dueDate = '';
     assignedTo = [];
     contactVisible = false;
+    editedContacts = false;
  }
 
 let assignedTo = [];
 function getAssignedContacts() {
-    assignedTo = [];
+   assignedTo = [];
    try {
       for (let i = 0; i < contacts.length; i++) {
          let contact = document.getElementById('contact-' + i);
